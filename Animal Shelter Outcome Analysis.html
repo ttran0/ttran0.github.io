@@ -1,0 +1,3710 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://ttran0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Truong's Website Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Truong Tran" />
+<meta name="description" content="" />
+<meta name="keywords" content="python">
+<meta property="og:site_name" content="Truong's Website"/>
+<meta property="og:title" content="Austin Animal Shelter Analysis"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://ttran0.github.io/Animal Shelter Outcome Analysis.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-12-21 21:24:00-08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://ttran0.github.io/author/truong-tran.html">
+<meta property="article:section" content="Projects"/>
+<meta property="article:tag" content="python"/>
+<meta property="og:image" content="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg">
+
+  <title>Truong's Website &ndash; Austin Animal Shelter Analysis</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://ttran0.github.io">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg" alt="" title="">
+      </a>
+      <h1><a href="https://ttran0.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+
+          <li><a href="https://www.linkedin.com/in/truong-tran" target="_blank">LinkedIn</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://ttran0.github.io">    Home
+</a>
+
+
+      <a href="https://ttran0.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="Animal Shelter Outcome Analysis">Austin Animal Shelter Analysis</h1>
+    <p>
+          Posted on Wed 21 December 2016 in <a href="https://ttran0.github.io/category/projects.html">Projects</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [187]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">normalize</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">VotingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">log_loss</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="kn">import</span> <span class="nn">category_encoders</span> <span class="kn">as</span> <span class="nn">ce</span>
+
+
+<span class="kn">import</span> <span class="nn">xgboost</span> <span class="kn">as</span> <span class="nn">xgb</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Load-Data">Load Data<a class="anchor-link" href="#Load-Data">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [188]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'train.csv'</span><span class="p">)</span>
+<span class="n">orig_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'train.csv'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [189]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[189]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(26729, 10)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [190]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[190]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>AnimalID</th>
+<th>Name</th>
+<th>DateTime</th>
+<th>OutcomeType</th>
+<th>OutcomeSubtype</th>
+<th>AnimalType</th>
+<th>SexuponOutcome</th>
+<th>AgeuponOutcome</th>
+<th>Breed</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>A671945</td>
+<td>Hambone</td>
+<td>2014-02-12 18:22:00</td>
+<td>Return_to_owner</td>
+<td>NaN</td>
+<td>Dog</td>
+<td>Neutered Male</td>
+<td>1 year</td>
+<td>Shetland Sheepdog Mix</td>
+<td>Brown/White</td>
+</tr>
+<tr>
+<th>1</th>
+<td>A656520</td>
+<td>Emily</td>
+<td>2013-10-13 12:44:00</td>
+<td>Euthanasia</td>
+<td>Suffering</td>
+<td>Cat</td>
+<td>Spayed Female</td>
+<td>1 year</td>
+<td>Domestic Shorthair Mix</td>
+<td>Cream Tabby</td>
+</tr>
+<tr>
+<th>2</th>
+<td>A686464</td>
+<td>Pearce</td>
+<td>2015-01-31 12:28:00</td>
+<td>Adoption</td>
+<td>Foster</td>
+<td>Dog</td>
+<td>Neutered Male</td>
+<td>2 years</td>
+<td>Pit Bull Mix</td>
+<td>Blue/White</td>
+</tr>
+<tr>
+<th>3</th>
+<td>A683430</td>
+<td>NaN</td>
+<td>2014-07-11 19:09:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Cat</td>
+<td>Intact Male</td>
+<td>3 weeks</td>
+<td>Domestic Shorthair Mix</td>
+<td>Blue Cream</td>
+</tr>
+<tr>
+<th>4</th>
+<td>A667013</td>
+<td>NaN</td>
+<td>2013-11-15 12:52:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Dog</td>
+<td>Neutered Male</td>
+<td>2 years</td>
+<td>Lhasa Apso/Miniature Poodle</td>
+<td>Tan</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [191]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[191]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([u&apos;AnimalID&apos;, u&apos;Name&apos;, u&apos;DateTime&apos;, u&apos;OutcomeType&apos;, u&apos;OutcomeSubtype&apos;,
+       u&apos;AnimalType&apos;, u&apos;SexuponOutcome&apos;, u&apos;AgeuponOutcome&apos;, u&apos;Breed&apos;,
+       u&apos;Color&apos;],
+      dtype=&apos;object&apos;)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Convert-age-column-to-age-in-years">Convert age column to age in years<a class="anchor-link" href="#Convert-age-column-to-age-in-years">¶</a></h3><p>The age column contains strings and the unit of age is not consistent. So, we will convert the age column into age in years. There are some entries with no age value. We will first fill in those null values with -99, and then replace them with the average age.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [192]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'AgeuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[192]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&apos;1 year&apos;, &apos;2 years&apos;, &apos;3 weeks&apos;, &apos;1 month&apos;, &apos;5 months&apos;, &apos;4 years&apos;,
+       &apos;3 months&apos;, &apos;2 weeks&apos;, &apos;2 months&apos;, &apos;10 months&apos;, &apos;6 months&apos;,
+       &apos;5 years&apos;, &apos;7 years&apos;, &apos;3 years&apos;, &apos;4 months&apos;, &apos;12 years&apos;, &apos;9 years&apos;,
+       &apos;6 years&apos;, &apos;1 weeks&apos;, &apos;11 years&apos;, &apos;4 weeks&apos;, &apos;7 months&apos;, &apos;8 years&apos;,
+       &apos;11 months&apos;, &apos;4 days&apos;, &apos;9 months&apos;, &apos;8 months&apos;, &apos;15 years&apos;,
+       &apos;10 years&apos;, &apos;1 week&apos;, &apos;0 years&apos;, &apos;14 years&apos;, &apos;3 days&apos;, &apos;6 days&apos;,
+       &apos;5 days&apos;, &apos;5 weeks&apos;, &apos;2 days&apos;, &apos;16 years&apos;, &apos;1 day&apos;, &apos;13 years&apos;, nan,
+       &apos;17 years&apos;, &apos;18 years&apos;, &apos;19 years&apos;, &apos;20 years&apos;], dtype=object)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [193]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">Ages</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'AgeuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="s1">'year'</span> <span class="ow">in</span> <span class="n">age</span>
+     <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mf">52.</span> <span class="k">if</span> <span class="s1">'week'</span> <span class="ow">in</span> <span class="n">age</span>
+     <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mf">12.</span> <span class="k">if</span> <span class="s1">'month'</span> <span class="ow">in</span> <span class="n">age</span>
+     <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">age</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mf">352.</span> <span class="k">if</span> <span class="s1">'week'</span> <span class="ow">in</span> <span class="n">age</span>
+     <span class="k">else</span> <span class="o">-</span><span class="mf">99.0</span>
+     <span class="k">for</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">Ages</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [194]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="o">-</span><span class="mi">99</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">y</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">99</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Here,-we-replace-the-missing-ages-with-the-average-age-of-the-animals">Here, we replace the missing ages with the average age of the animals<a class="anchor-link" href="#Here,-we-replace-the-missing-ages-with-the-average-age-of-the-animals">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [195]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'AgeuponOutcome'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'AgeuponOutcome'</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [196]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[196]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>AnimalID</th>
+<th>Name</th>
+<th>DateTime</th>
+<th>OutcomeType</th>
+<th>OutcomeSubtype</th>
+<th>AnimalType</th>
+<th>SexuponOutcome</th>
+<th>AgeuponOutcome</th>
+<th>Breed</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>A671945</td>
+<td>Hambone</td>
+<td>2014-02-12 18:22:00</td>
+<td>Return_to_owner</td>
+<td>NaN</td>
+<td>Dog</td>
+<td>Neutered Male</td>
+<td>1.000000</td>
+<td>Shetland Sheepdog Mix</td>
+<td>Brown/White</td>
+</tr>
+<tr>
+<th>1</th>
+<td>A656520</td>
+<td>Emily</td>
+<td>2013-10-13 12:44:00</td>
+<td>Euthanasia</td>
+<td>Suffering</td>
+<td>Cat</td>
+<td>Spayed Female</td>
+<td>1.000000</td>
+<td>Domestic Shorthair Mix</td>
+<td>Cream Tabby</td>
+</tr>
+<tr>
+<th>2</th>
+<td>A686464</td>
+<td>Pearce</td>
+<td>2015-01-31 12:28:00</td>
+<td>Adoption</td>
+<td>Foster</td>
+<td>Dog</td>
+<td>Neutered Male</td>
+<td>2.000000</td>
+<td>Pit Bull Mix</td>
+<td>Blue/White</td>
+</tr>
+<tr>
+<th>3</th>
+<td>A683430</td>
+<td>NaN</td>
+<td>2014-07-11 19:09:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Cat</td>
+<td>Intact Male</td>
+<td>0.057692</td>
+<td>Domestic Shorthair Mix</td>
+<td>Blue Cream</td>
+</tr>
+<tr>
+<th>4</th>
+<td>A667013</td>
+<td>NaN</td>
+<td>2013-11-15 12:52:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Dog</td>
+<td>Neutered Male</td>
+<td>2.000000</td>
+<td>Lhasa Apso/Miniature Poodle</td>
+<td>Tan</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Stats-for-Dogs-vs-Cats">Basic Stats for Dogs vs Cats<a class="anchor-link" href="#Basic-Stats-for-Dogs-vs-Cats">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Average-age-upon-Outcome">Average age upon Outcome<a class="anchor-link" href="#Average-age-upon-Outcome">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [197]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">][</span><span class="s1">'AgeuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[197]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2.2319505758749227</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [198]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Cat'</span><span class="p">][</span><span class="s1">'AgeuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[198]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.6021397843519833</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Number-of-dogs-vs-cats">Number of dogs vs cats<a class="anchor-link" href="#Number-of-dogs-vs-cats">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [199]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[199]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>15595</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [200]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Cat'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[200]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>11134</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary on basic stats: The average age for a dog (2.75 yrs) is greater than the average age of cats (1.36 yrs) upon the outcome. The shelter also has sheltered more dogs than cats over the course of 3 years.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-columns-for-male-vs-female,-fixed-vs-intact">Create columns for male vs female, fixed vs intact<a class="anchor-link" href="#Create-columns-for-male-vs-female,-fixed-vs-intact">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [201]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[201]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&apos;Neutered Male&apos;, &apos;Spayed Female&apos;, &apos;Intact Male&apos;, &apos;Intact Female&apos;,
+       &apos;Unknown&apos;, nan], dtype=object)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [202]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s1">'Unknown'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [203]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sex</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'male'</span> <span class="k">if</span> <span class="s1">'Male'</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+       <span class="k">else</span> <span class="s1">'female'</span> <span class="k">if</span> <span class="s1">'Female'</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+       <span class="k">else</span> <span class="s1">'unknown'</span>
+       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]))]</span>
+
+<span class="n">spayed_neutered</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'fixed'</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'Neutered'</span><span class="p">,</span><span class="s1">'Spayed'</span><span class="p">])</span>
+                    <span class="k">else</span> <span class="s1">'not_fixed'</span> <span class="k">if</span> <span class="s1">'Intact'</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="k">else</span> <span class="s1">'unknown_fixed'</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'SexuponOutcome'</span><span class="p">]))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [204]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">spayed_neutered</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[204]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;fixed&apos;, &apos;not_fixed&apos;, &apos;unknown_fixed&apos;}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [205]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[205]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;female&apos;, &apos;male&apos;, &apos;unknown&apos;}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [206]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Fixed'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'fixed'</span><span class="p">:</span><span class="n">spayed_neutered</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Sex'</span><span class="p">:</span> <span class="n">sex</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'SexuponOutcome'</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simplify-the-Breed-Feature">Simplify the Breed Feature<a class="anchor-link" href="#Simplify-the-Breed-Feature">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [207]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[207]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>AnimalID</th>
+<th>Name</th>
+<th>DateTime</th>
+<th>OutcomeType</th>
+<th>OutcomeSubtype</th>
+<th>AnimalType</th>
+<th>AgeuponOutcome</th>
+<th>Breed</th>
+<th>Color</th>
+<th>Fixed</th>
+<th>Sex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>A671945</td>
+<td>Hambone</td>
+<td>2014-02-12 18:22:00</td>
+<td>Return_to_owner</td>
+<td>NaN</td>
+<td>Dog</td>
+<td>1.000000</td>
+<td>Shetland Sheepdog Mix</td>
+<td>Brown/White</td>
+<td>fixed</td>
+<td>male</td>
+</tr>
+<tr>
+<th>1</th>
+<td>A656520</td>
+<td>Emily</td>
+<td>2013-10-13 12:44:00</td>
+<td>Euthanasia</td>
+<td>Suffering</td>
+<td>Cat</td>
+<td>1.000000</td>
+<td>Domestic Shorthair Mix</td>
+<td>Cream Tabby</td>
+<td>fixed</td>
+<td>female</td>
+</tr>
+<tr>
+<th>2</th>
+<td>A686464</td>
+<td>Pearce</td>
+<td>2015-01-31 12:28:00</td>
+<td>Adoption</td>
+<td>Foster</td>
+<td>Dog</td>
+<td>2.000000</td>
+<td>Pit Bull Mix</td>
+<td>Blue/White</td>
+<td>fixed</td>
+<td>male</td>
+</tr>
+<tr>
+<th>3</th>
+<td>A683430</td>
+<td>NaN</td>
+<td>2014-07-11 19:09:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Cat</td>
+<td>0.057692</td>
+<td>Domestic Shorthair Mix</td>
+<td>Blue Cream</td>
+<td>not_fixed</td>
+<td>male</td>
+</tr>
+<tr>
+<th>4</th>
+<td>A667013</td>
+<td>NaN</td>
+<td>2013-11-15 12:52:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Dog</td>
+<td>2.000000</td>
+<td>Lhasa Apso/Miniature Poodle</td>
+<td>Tan</td>
+<td>fixed</td>
+<td>male</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [208]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[208]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1380</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Currently,-there-are-1380-different-breed-classifications-among-cats-and-dogs">Currently, there are 1380 different breed classifications among cats and dogs<a class="anchor-link" href="#Currently,-there-are-1380-different-breed-classifications-among-cats-and-dogs">¶</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [209]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[209]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Domestic Shorthair Mix       8810
+Pit Bull Mix                 1906
+Chihuahua Shorthair Mix      1766
+Labrador Retriever Mix       1363
+Domestic Medium Hair Mix      839
+German Shepherd Mix           575
+Domestic Longhair Mix         520
+Siamese Mix                   389
+Australian Cattle Dog Mix     367
+Dachshund Mix                 318
+Name: Breed, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [210]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Cat'</span><span class="p">][</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[210]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Domestic Shorthair Mix      8810
+Domestic Medium Hair Mix     839
+Domestic Longhair Mix        520
+Siamese Mix                  389
+Domestic Shorthair           143
+Snowshoe Mix                  75
+Maine Coon Mix                44
+Manx Mix                      44
+Domestic Medium Hair          42
+Russian Blue Mix              33
+Name: Breed, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [211]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Cat'</span><span class="p">][</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[211]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>60</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [212]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">][</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[212]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1320</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Domestic-Shorthair-Mix-seems-to-be-a-classification-for-cats-only">Domestic Shorthair Mix seems to be a classification for cats only<a class="anchor-link" href="#Domestic-Shorthair-Mix-seems-to-be-a-classification-for-cats-only">¶</a></h4><ul>
+<li>Cat breeds seem to be somewhat limited with 60 different breeds while dogs have 1320 different classifications. We will only simplify dog breeds.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [213]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">][</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[213]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Pit Bull Mix                 1906
+Chihuahua Shorthair Mix      1766
+Labrador Retriever Mix       1363
+German Shepherd Mix           575
+Australian Cattle Dog Mix     367
+Dachshund Mix                 318
+Boxer Mix                     245
+Miniature Poodle Mix          233
+Border Collie Mix             229
+Australian Shepherd Mix       163
+Rat Terrier Mix               157
+Catahoula Mix                 157
+Jack Russell Terrier Mix      146
+Yorkshire Terrier Mix         143
+Chihuahua Longhair Mix        142
+Siberian Husky Mix            138
+Miniature Schnauzer Mix       136
+Beagle Mix                    124
+Rottweiler Mix                113
+American Bulldog Mix          109
+Name: Breed, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Let&#x27;s-remove-the-&quot;Mix&quot;-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-&quot;breed-1-/-breed-2&quot;,-assuming-that-the-first-breed-listed-is-the-dominant-breed">Let's remove the "Mix" from the dog breeds and also take only the first breed from classifications in the form "breed 1 / breed 2", assuming that the first breed listed is the dominant breed<a class="anchor-link" href="#Let&#x27;s-remove-the-&quot;Mix&quot;-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-&quot;breed-1-/-breed-2&quot;,-assuming-that-the-first-breed-listed-is-the-dominant-breed">¶</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [214]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">breeds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">][</span><span class="s1">'Breed'</span><span class="p">])</span>
+<span class="n">dog_breeds</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">' Mix'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">dog</span><span class="p">)</span> <span class="k">if</span> <span class="s1">'Mix'</span> <span class="ow">in</span> <span class="n">dog</span> <span class="k">else</span> <span class="n">dog</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">breeds</span><span class="p">]</span>
+<span class="c1"># for i in range(len(dog_breeds)):</span>
+<span class="c1">#     if ('Mix' in dog_breeds[i]):</span>
+<span class="c1">#         dog_breeds[i] = re.sub(' Mix', '', dog_breeds[i])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         dog_breeds[i] = dog_breeds[i].split("/")[0]</span>
+    
+            
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [215]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dog_breeds</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[215]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>188</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [216]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dog_breeds_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Breed'</span><span class="p">:</span><span class="n">dog_breeds</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="We-were-able-to-narrow-down-the-different-classes-of-dog-breeds-from-1320-to-188">We were able to narrow down the different classes of dog breeds from 1320 to 188<a class="anchor-link" href="#We-were-able-to-narrow-down-the-different-classes-of-dog-breeds-from-1320-to-188">¶</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [217]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dog_breeds_df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[217]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Chihuahua Shorthair      2145
+Pit Bull                 2113
+Labrador Retriever       1915
+German Shepherd           826
+Australian Cattle Dog     511
+Dachshund                 510
+Boxer                     360
+Border Collie             334
+Miniature Poodle          310
+Australian Shepherd       229
+Name: Breed, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Now-let&#x27;s-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications">Now let's replace all the dog breed classifications from the original dataframe with the new breed classifications<a class="anchor-link" href="#Now-let&#x27;s-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications">¶</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [218]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">AnimalType</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">,</span> <span class="s1">'Breed'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dog_breeds</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [219]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[219]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>248</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [220]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [221]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">common_breed</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'Breed'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">common_breed</span><span class="p">)][</span><span class="s1">'Breed'</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">'OutcomeType'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[221]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>OutcomeType</th>
+<th>Adoption</th>
+<th>Died</th>
+<th>Euthanasia</th>
+<th>Return_to_owner</th>
+<th>Transfer</th>
+</tr>
+<tr>
+<th>Breed</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Australian Cattle Dog</th>
+<td>243</td>
+<td>1</td>
+<td>20</td>
+<td>126</td>
+<td>121</td>
+</tr>
+<tr>
+<th>Chihuahua Shorthair</th>
+<td>966</td>
+<td>13</td>
+<td>90</td>
+<td>478</td>
+<td>598</td>
+</tr>
+<tr>
+<th>Dachshund</th>
+<td>243</td>
+<td>0</td>
+<td>15</td>
+<td>95</td>
+<td>157</td>
+</tr>
+<tr>
+<th>Domestic Longhair Mix</th>
+<td>199</td>
+<td>12</td>
+<td>56</td>
+<td>48</td>
+<td>205</td>
+</tr>
+<tr>
+<th>Domestic Medium Hair Mix</th>
+<td>357</td>
+<td>11</td>
+<td>62</td>
+<td>26</td>
+<td>383</td>
+</tr>
+<tr>
+<th>Domestic Shorthair Mix</th>
+<td>3273</td>
+<td>112</td>
+<td>535</td>
+<td>352</td>
+<td>4538</td>
+</tr>
+<tr>
+<th>German Shepherd</th>
+<td>372</td>
+<td>3</td>
+<td>37</td>
+<td>237</td>
+<td>177</td>
+</tr>
+<tr>
+<th>Labrador Retriever</th>
+<td>857</td>
+<td>4</td>
+<td>82</td>
+<td>498</td>
+<td>474</td>
+</tr>
+<tr>
+<th>Pit Bull</th>
+<td>625</td>
+<td>8</td>
+<td>287</td>
+<td>678</td>
+<td>515</td>
+</tr>
+<tr>
+<th>Siamese Mix</th>
+<td>173</td>
+<td>5</td>
+<td>30</td>
+<td>27</td>
+<td>154</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simplify-Dog-Color-Column">Simplify Dog Color Column<a class="anchor-link" href="#Simplify-Dog-Color-Column">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-color-column-has-366-different-colors.-We-will-simplify-this-column-similar-to-the-breed-column,-taking-the-first-color-as-the-dominant-color.">The color column has 366 different colors. We will simplify this column similar to the breed column, taking the first color as the dominant color.<a class="anchor-link" href="#The-color-column-has-366-different-colors.-We-will-simplify-this-column-similar-to-the-breed-column,-taking-the-first-color-as-the-dominant-color.">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [222]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Color'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[222]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>366</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [223]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">][</span><span class="s1">'Color'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[223]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>262</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [224]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">][</span><span class="s1">'Color'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[224]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Black/White            1730
+Brown/White             882
+Black                   851
+White                   806
+Tan/White               773
+Tricolor                751
+Black/Tan               672
+Brown                   637
+Tan                     627
+White/Brown             562
+White/Black             475
+Brown Brindle/White     450
+Black/Brown             435
+Blue/White              414
+White/Tan               389
+Name: Color, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [225]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Cat'</span><span class="p">][</span><span class="s1">'Color'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[225]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Brown Tabby           1635
+Black                 1441
+Black/White           1094
+Brown Tabby/White      940
+Orange Tabby           841
+Tortie                 530
+Calico                 517
+Orange Tabby/White     455
+Blue Tabby             433
+Blue                   385
+Torbie                 335
+Blue/White             288
+Blue Tabby/White       241
+Cream Tabby            198
+White/Black            168
+Name: Color, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [226]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Take the first color</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Color'</span><span class="p">]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Color'</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [227]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Color'</span><span class="p">:</span><span class="n">color</span><span class="p">})[</span><span class="s1">'Color'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[227]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>57</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [228]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Color'</span><span class="p">:</span><span class="n">color</span><span class="p">})[</span><span class="s1">'Color'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[228]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Black            6422
+White            3344
+Brown Tabby      2592
+Brown            1951
+Tan              1674
+Orange Tabby     1299
+Blue             1199
+Tricolor          800
+Red               779
+Brown Brindle     699
+Blue Tabby        678
+Tortie            580
+Calico            552
+Chocolate         448
+Torbie            398
+Name: Color, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong> Taking the first listed color as the dominant color, we reduced the number of possibilites for color definition from 366 to 57 </strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [229]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [230]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[230]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>AnimalID</th>
+<th>Name</th>
+<th>DateTime</th>
+<th>OutcomeType</th>
+<th>OutcomeSubtype</th>
+<th>AnimalType</th>
+<th>AgeuponOutcome</th>
+<th>Breed</th>
+<th>Color</th>
+<th>Fixed</th>
+<th>Sex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>A671945</td>
+<td>Hambone</td>
+<td>2014-02-12 18:22:00</td>
+<td>Return_to_owner</td>
+<td>NaN</td>
+<td>Dog</td>
+<td>1.000000</td>
+<td>Shetland Sheepdog</td>
+<td>Brown</td>
+<td>fixed</td>
+<td>male</td>
+</tr>
+<tr>
+<th>1</th>
+<td>A656520</td>
+<td>Emily</td>
+<td>2013-10-13 12:44:00</td>
+<td>Euthanasia</td>
+<td>Suffering</td>
+<td>Cat</td>
+<td>1.000000</td>
+<td>Domestic Shorthair Mix</td>
+<td>Cream Tabby</td>
+<td>fixed</td>
+<td>female</td>
+</tr>
+<tr>
+<th>2</th>
+<td>A686464</td>
+<td>Pearce</td>
+<td>2015-01-31 12:28:00</td>
+<td>Adoption</td>
+<td>Foster</td>
+<td>Dog</td>
+<td>2.000000</td>
+<td>Pit Bull</td>
+<td>Blue</td>
+<td>fixed</td>
+<td>male</td>
+</tr>
+<tr>
+<th>3</th>
+<td>A683430</td>
+<td>NaN</td>
+<td>2014-07-11 19:09:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Cat</td>
+<td>0.057692</td>
+<td>Domestic Shorthair Mix</td>
+<td>Blue Cream</td>
+<td>not_fixed</td>
+<td>male</td>
+</tr>
+<tr>
+<th>4</th>
+<td>A667013</td>
+<td>NaN</td>
+<td>2013-11-15 12:52:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Dog</td>
+<td>2.000000</td>
+<td>Lhasa Apso</td>
+<td>Tan</td>
+<td>fixed</td>
+<td>male</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simplify-the-date-and-time-column">Simplify the date and time column<a class="anchor-link" href="#Simplify-the-date-and-time-column">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [231]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'DateTime'</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[231]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0    2014-02-12 18:22:00
+1    2013-10-13 12:44:00
+2    2015-01-31 12:28:00
+3    2014-07-11 19:09:00
+4    2013-11-15 12:52:00
+Name: DateTime, dtype: object</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [232]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'DateTime'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'DateTime'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'DateTime'</span><span class="p">]))]</span>
+<span class="n">date</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [233]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># season = ['Winter' if d.month % 11 <= 2</span>
+<span class="c1">#          else 'Spring' if (d.month % 11 >= 3) & (d.month % 11 <= 5)</span>
+<span class="c1">#          else 'Summer' if (d.month % 11 >= 6) & (d.month % 11 <= 8)</span>
+<span class="c1">#          else 'Fall'</span>
+<span class="c1">#          for d in date]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [234]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">week</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">day</span> <span class="o"><=</span> <span class="mi">7</span>
+       <span class="k">else</span> <span class="mi">2</span> <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">day</span> <span class="o">></span> <span class="mi">7</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">day</span> <span class="o"><=</span> <span class="mi">14</span><span class="p">)</span>
+       <span class="k">else</span> <span class="mi">3</span> <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">day</span> <span class="o">></span> <span class="mi">14</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">day</span> <span class="o"><=</span> <span class="mi">21</span><span class="p">)</span>
+       <span class="k">else</span> <span class="mi">4</span>
+       <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">date</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [235]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># df['Season'] = season</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'Week'</span><span class="p">]</span> <span class="o">=</span> <span class="n">week</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [236]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[236]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>AnimalID</th>
+<th>Name</th>
+<th>DateTime</th>
+<th>OutcomeType</th>
+<th>OutcomeSubtype</th>
+<th>AnimalType</th>
+<th>AgeuponOutcome</th>
+<th>Breed</th>
+<th>Color</th>
+<th>Fixed</th>
+<th>Sex</th>
+<th>Week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>A671945</td>
+<td>Hambone</td>
+<td>2014-02-12 18:22:00</td>
+<td>Return_to_owner</td>
+<td>NaN</td>
+<td>Dog</td>
+<td>1.000000</td>
+<td>Shetland Sheepdog</td>
+<td>Brown</td>
+<td>fixed</td>
+<td>male</td>
+<td>2</td>
+</tr>
+<tr>
+<th>1</th>
+<td>A656520</td>
+<td>Emily</td>
+<td>2013-10-13 12:44:00</td>
+<td>Euthanasia</td>
+<td>Suffering</td>
+<td>Cat</td>
+<td>1.000000</td>
+<td>Domestic Shorthair Mix</td>
+<td>Cream Tabby</td>
+<td>fixed</td>
+<td>female</td>
+<td>2</td>
+</tr>
+<tr>
+<th>2</th>
+<td>A686464</td>
+<td>Pearce</td>
+<td>2015-01-31 12:28:00</td>
+<td>Adoption</td>
+<td>Foster</td>
+<td>Dog</td>
+<td>2.000000</td>
+<td>Pit Bull</td>
+<td>Blue</td>
+<td>fixed</td>
+<td>male</td>
+<td>4</td>
+</tr>
+<tr>
+<th>3</th>
+<td>A683430</td>
+<td>NaN</td>
+<td>2014-07-11 19:09:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Cat</td>
+<td>0.057692</td>
+<td>Domestic Shorthair Mix</td>
+<td>Blue Cream</td>
+<td>not_fixed</td>
+<td>male</td>
+<td>2</td>
+</tr>
+<tr>
+<th>4</th>
+<td>A667013</td>
+<td>NaN</td>
+<td>2013-11-15 12:52:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>Dog</td>
+<td>2.000000</td>
+<td>Lhasa Apso</td>
+<td>Tan</td>
+<td>fixed</td>
+<td>male</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-Indicator-Column-whether-the-animal-was-given-a-name-or-not">Create Indicator Column whether the animal was given a name or not<a class="anchor-link" href="#Create-Indicator-Column-whether-the-animal-was-given-a-name-or-not">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [237]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Name'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Name'</span><span class="p">:</span><span class="s1">'NoName'</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-column-for-indicator-of-Animal-Type">Create column for indicator of Animal Type<a class="anchor-link" href="#Create-column-for-indicator-of-Animal-Type">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [238]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[238]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&apos;Dog&apos;, &apos;Cat&apos;], dtype=object)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [239]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'AnimalType'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Dog'</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-Dummy-Variables-for-Columns-with-Categorical-Variables">Create Dummy Variables for Columns with Categorical Variables<a class="anchor-link" href="#Create-Dummy-Variables-for-Columns-with-Categorical-Variables">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [240]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">categorical_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Color'</span><span class="p">,</span> <span class="s1">'Breed'</span><span class="p">,</span><span class="s1">'Fixed'</span><span class="p">,</span> <span class="s1">'Sex'</span><span class="p">]</span>
+<span class="n">binary</span> <span class="o">=</span> <span class="n">ce</span><span class="o">.</span><span class="n">binary</span><span class="o">.</span><span class="n">BinaryEncoder</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="n">categorical_var</span><span class="p">)</span>
+<span class="n">binary</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">binary</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># dat = pd.concat([df.drop(categorical_var, axis = 1), pd.get_dummies(df[categorical_var])], axis = 1)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [241]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_columns'</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">dat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[241]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Color_0</th>
+<th>Color_1</th>
+<th>Color_2</th>
+<th>Color_3</th>
+<th>Color_4</th>
+<th>Color_5</th>
+<th>Breed_0</th>
+<th>Breed_1</th>
+<th>Breed_2</th>
+<th>Breed_3</th>
+<th>Breed_4</th>
+<th>Breed_5</th>
+<th>Breed_6</th>
+<th>Breed_7</th>
+<th>Fixed_0</th>
+<th>Fixed_1</th>
+<th>Sex_0</th>
+<th>Sex_1</th>
+<th>AnimalID</th>
+<th>NoName</th>
+<th>DateTime</th>
+<th>OutcomeType</th>
+<th>OutcomeSubtype</th>
+<th>AnimalType</th>
+<th>AgeuponOutcome</th>
+<th>Week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>A671945</td>
+<td>0.0</td>
+<td>2014-02-12 18:22:00</td>
+<td>Return_to_owner</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>1.000000</td>
+<td>2</td>
+</tr>
+<tr>
+<th>1</th>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>A656520</td>
+<td>0.0</td>
+<td>2013-10-13 12:44:00</td>
+<td>Euthanasia</td>
+<td>Suffering</td>
+<td>0.0</td>
+<td>1.000000</td>
+<td>2</td>
+</tr>
+<tr>
+<th>2</th>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>A686464</td>
+<td>0.0</td>
+<td>2015-01-31 12:28:00</td>
+<td>Adoption</td>
+<td>Foster</td>
+<td>1.0</td>
+<td>2.000000</td>
+<td>4</td>
+</tr>
+<tr>
+<th>3</th>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>A683430</td>
+<td>1.0</td>
+<td>2014-07-11 19:09:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>0.0</td>
+<td>0.057692</td>
+<td>2</td>
+</tr>
+<tr>
+<th>4</th>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>A667013</td>
+<td>1.0</td>
+<td>2013-11-15 12:52:00</td>
+<td>Transfer</td>
+<td>Partner</td>
+<td>1.0</td>
+<td>2.000000</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Check-dimensions-of-data-frame-to-check-dummy-function">Check dimensions of data frame to check dummy function<a class="anchor-link" href="#Check-dimensions-of-data-frame-to-check-dummy-function">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-Labels">Create Labels<a class="anchor-link" href="#Create-Labels">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [242]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lab</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="s1">'OutcomeType'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [243]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lab</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[243]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Adoption           10769
+Transfer            9422
+Return_to_owner     4786
+Euthanasia          1555
+Died                 197
+Name: OutcomeType, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [244]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="s1">'OutcomeType'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Drop-columns-not-needed-for-models">Drop columns not needed for models<a class="anchor-link" href="#Drop-columns-not-needed-for-models">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [245]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dat</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'AnimalID'</span><span class="p">,</span><span class="s1">'DateTime'</span><span class="p">,</span><span class="s1">'OutcomeType'</span><span class="p">,</span><span class="s1">'OutcomeSubtype'</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[245]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([dtype(&apos;int64&apos;), dtype(&apos;float64&apos;)], dtype=object)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [246]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'AnimalID'</span><span class="p">,</span><span class="s1">'DateTime'</span><span class="p">,</span><span class="s1">'OutcomeType'</span><span class="p">,</span><span class="s1">'OutcomeSubtype'</span><span class="p">,</span> <span class="s1">'AnimalType'</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-Training-and-Testing-Sets">Create Training and Testing Sets<a class="anchor-link" href="#Create-Training-and-Testing-Sets">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [247]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [248]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">OutcomeType</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[248]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Adoption           0.402896
+Transfer           0.352501
+Return_to_owner    0.179056
+Euthanasia         0.058177
+Died               0.007370
+Name: OutcomeType, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [249]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">Y_train</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Y_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[249]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0.40177592,  0.00768233,  0.05706874,  0.17863913,  0.35483388])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [250]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">Y_test</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[250]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0.40625468,  0.00643424,  0.06149933,  0.18030824,  0.34550352])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We now need to normalize the training and testing set.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [251]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Logistic-Regression-Grid-Search-and-Cross-Validation">Logistic Regression Grid Search and Cross Validation<a class="anchor-link" href="#Logistic-Regression-Grid-Search-and-Cross-Validation">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [252]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">log_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span> <span class="o">=</span> <span class="s1">'l1'</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'C'</span><span class="p">:[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
+<span class="n">gs_model</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">log_model</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="n">gs_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[252]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>GridSearchCV(cv=None, error_score=&apos;raise&apos;,
+       estimator=LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class=&apos;ovr&apos;, n_jobs=1,
+          penalty=&apos;l1&apos;, random_state=None, solver=&apos;liblinear&apos;, tol=0.0001,
+          verbose=0, warm_start=False),
+       fit_params={}, iid=True, n_jobs=1,
+       param_grid={&apos;C&apos;: [0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]},
+       pre_dispatch=&apos;2*n_jobs&apos;, refit=True, return_train_score=True,
+       scoring=None, verbose=0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [253]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gs_model</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[253]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;C&apos;: 4.5}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [254]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">C_val</span> <span class="o">=</span> <span class="n">gs_model</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]</span>
+
+<span class="n">best_log_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span> <span class="o">=</span> <span class="n">C_val</span><span class="p">,</span> <span class="n">penalty</span> <span class="o">=</span> <span class="s1">'l1'</span><span class="p">)</span>
+<span class="n">best_log_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<span class="n">best_log_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[254]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6304055065090528</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [255]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">log_loss</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">best_log_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[255]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.92958350834823378</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [256]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">best_log_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Predicted Label'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Label'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Confusion Matrix'</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">cm</span>
+
+<span class="n">le</span><span class="o">.</span><span class="n">classes_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[2317    0    0  301   97]
+ [   4    0    0    5   34]
+ [  62    0    0  109  240]
+ [ 574    0    0  504  127]
+ [ 704    0    0  213 1392]]
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[256]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&apos;Adoption&apos;, &apos;Died&apos;, &apos;Euthanasia&apos;, &apos;Return_to_owner&apos;, &apos;Transfer&apos;], dtype=object)</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Gaussian-Naive-Bayes">Gaussian Naive Bayes<a class="anchor-link" href="#Gaussian-Naive-Bayes">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [257]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">nb_model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">nb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<span class="n">nb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[257]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.43872512344755349</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gradient-Boosting">Gradient Boosting<a class="anchor-link" href="#Gradient-Boosting">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Grid-Search-for-Gradient-Boosting">Grid Search for Gradient Boosting<a class="anchor-link" href="#Grid-Search-for-Gradient-Boosting">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [258]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># params = {'n_estimators': [200, 300, 450], 'learning_rate':[0.1, 0.5],</span>
+<span class="c1">#           'max_depth':[5, 6, 7, 8], 'max_features':['sqrt', .40], 'min_samples_split':[2, 20, 30, 50, 100]}</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'n_estimators'</span><span class="p">:[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="s1">'max_features'</span><span class="p">:[</span><span class="s1">'sqrt'</span><span class="p">,</span> <span class="s1">'log2'</span><span class="p">],</span> <span class="s1">'max_depth'</span><span class="p">:[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]}</span>
+<span class="n">grid_search_gb</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">GradientBoostingClassifier</span><span class="p">(),</span> <span class="n">params</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">grid_search_gb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Fitting 3 folds for each of 8 candidates, totalling 24 fits
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[Parallel(n_jobs=1)]: Done  24 out of  24 | elapsed:  5.6min finished
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[258]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>GridSearchCV(cv=None, error_score=&apos;raise&apos;,
+       estimator=GradientBoostingClassifier(criterion=&apos;friedman_mse&apos;, init=None,
+              learning_rate=0.1, loss=&apos;deviance&apos;, max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=100, presort=&apos;auto&apos;, random_state=None,
+              subsample=1.0, verbose=0, warm_start=False),
+       fit_params={}, iid=True, n_jobs=1,
+       param_grid={&apos;n_estimators&apos;: [200, 300], &apos;max_features&apos;: [&apos;sqrt&apos;, &apos;log2&apos;], &apos;max_depth&apos;: [5, 7]},
+       pre_dispatch=&apos;2*n_jobs&apos;, refit=True, return_train_score=True,
+       scoring=None, verbose=1)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [259]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">grid_search_gb</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[259]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;max_depth&apos;: 5, &apos;max_features&apos;: &apos;sqrt&apos;, &apos;n_estimators&apos;: 200}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [260]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">num_estimators</span> <span class="o">=</span> <span class="n">grid_search_gb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'n_estimators'</span><span class="p">]</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">grid_search_gb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'max_depth'</span><span class="p">]</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">grid_search_gb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'max_features'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [261]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">best_gb_model</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="n">num_estimators</span><span class="p">,</span> <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="n">depth</span><span class="p">)</span>
+<span class="n">best_gb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<span class="n">best_gb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[261]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.63055513990722734</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [262]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">log_loss</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">best_gb_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[262]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.89120449184557038</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [263]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">best_gb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Predicted Label'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Label'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Confusion Matrix'</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">cm</span>
+
+<span class="n">le</span><span class="o">.</span><span class="n">classes_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[2244    3   12  289  167]
+ [  10    0    0    2   31]
+ [  57    1   62  102  189]
+ [ 557    2   21  517  108]
+ [ 637    8   53  220 1391]]
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[263]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&apos;Adoption&apos;, &apos;Died&apos;, &apos;Euthanasia&apos;, &apos;Return_to_owner&apos;, &apos;Transfer&apos;], dtype=object)</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [264]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">feat_imp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'features'</span><span class="p">:</span><span class="n">dat</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="s1">'values'</span><span class="p">:</span><span class="n">best_gb_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [265]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">top_feat</span> <span class="o">=</span> <span class="n">feat_imp</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'values'</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span>
+<span class="n">top_feat</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/truong/anaconda2/lib/python2.7/site-packages/ipykernel/__main__.py:1: FutureWarning: sort(columns=....) is deprecated, use sort_values(by=.....)
+  if __name__ == &apos;__main__&apos;:
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[265]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>features</th>
+<th>values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2</th>
+<td>Color_2</td>
+<td>0.042355</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Color_1</td>
+<td>0.044922</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Color_0</td>
+<td>0.047059</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Breed_2</td>
+<td>0.048157</td>
+</tr>
+<tr>
+<th>17</th>
+<td>Sex_1</td>
+<td>0.049916</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Color_5</td>
+<td>0.051596</td>
+</tr>
+<tr>
+<th>18</th>
+<td>NoName</td>
+<td>0.059181</td>
+</tr>
+<tr>
+<th>14</th>
+<td>Fixed_0</td>
+<td>0.079279</td>
+</tr>
+<tr>
+<th>20</th>
+<td>Week</td>
+<td>0.082495</td>
+</tr>
+<tr>
+<th>19</th>
+<td>AgeuponOutcome</td>
+<td>0.120870</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [266]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Top 10 Features'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">top_feat</span><span class="p">[</span><span class="s1">'features'</span><span class="p">],</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">top_feat</span><span class="p">[</span><span class="s1">'values'</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">best_gb_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[266]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><matplotlib.axes._subplots.axessubplot at 0x7fa731a98850></pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABJYAAAJuCAYAAADihog9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xuc3Xdd5/F3SEppGpCkTa/Yhob2g7qwrq4uIFJugmi9
+YNsFLQWtUlZAUHyI8lBuVRQRkLsrVWqp3FQUWqiVO+ICiuIqInwrzU5b29KmTcCmN9o0+8c5wSGk
+yZkvc+Y3Z/J8Ph595MzvnPnOZ+aXTCev/C6rdu3aFQAAAABYqLsNPQAAAAAAs0lYAgAAAKCLsAQA
+AABAF2EJAAAAgC7CEgAAAABdhCUAAAAAuqwZegAAgIWqqjckecT4zc1Jrkpya5JdSb6rtXbTInyM
+g5L8TpJnJTmqtXbdvOdeluSHk9yZ5J2ttefv5f1/Osmrklw53rRqPN8rWmt/2DnTg5L8R2vtX3ve
+HwBgsQlLAMDMaa09fffjqtqS5IzW2icW+cO8J8knMopBX1VVT0ry4CTflmR1ko9V1adaaxfuZY2P
+tdZ+YBFn+ukkH0giLAEAy4KwBADMulXj/76qqo5Pcm6S45J8JclLW2tvrapHJXlZko8leVxGYegJ
+rbV/2Mu6L0jy9+Nf5zstyXmttZ1JdlbVHyc5PcnewtJdqqofS/KiJGuTtIzi2Jeqam2S85M8IMnd
+k/xJa+1XquoZSX4iyfdX1RFJjkhyeGvtZ8fr/XqSw1prT6+qjyX5SJIfS/KUJF9I8vok/338Ob+4
+tXbB+P1+K8njx2NdkeTM1tq1C/lcAIADl2ssAQAr0R8kuaS1dv+MTll7Q1UdO37ugUk+0lqrjE51
++729LdBa+9u7WPukJJfNe/uyJPdfyHBVdb8k5yU5rbV2vyQfnzfHM5McNJ79O5OcXVXf3Vp7fZJP
+J3lOa+2149fuyl37r621b2ut/X1Gp+TdPP6cH5zkt2rkgRl9fb5l/PHek+SRC/lcAIADmyOWAIAV
+paoOziiO/EiStNbmquqjGV2T6Zok21tr7xq//J0ZRac1rbU7JvwQazO6ntNutyQ59C5e+71Vtfu0
+td3XWHpWkm9J8v7W2qXj534/42sxtdZeVlVrxo+3j9//hCR/N2+dSVw87/EPJTl5vObWqvqLjI5S
+ekuSo5I8qaoubK29ZsK1AQCSCEsAwMpzeJLbW2s3z9v2pYxOHbsmyfZ527dnFGruneT6Cde/Kck9
+5r29NsmOu3jtXq+xVFUPTvKoPaLTl6vq3uM5X1FVJ2V0cfBvTt9R5tvmPf6mJH9eVXeMP9Y9kryt
+tXZlVZ2W5JcyCmwfSvKzrbWrOz4eAHAAEpYAgJVma5I1VbWutbY7+ByW5Np5j3fbkFG8mR+b9ufz
+Se6X5KPjt0/Mwi+mfXWSv2yt/cSeT1TVO5P8TWvth8Zvf/Iu1tiZ0fWSdlu/n493yrwjpL6qtfbh
+JB8eX9vpd5O8JMlPTfRZAAAHPNdYAgBWlNbaV5K8P8nZSVJVJ2Z0XaEPjl9yr6rafRTR6Un+dnwh
+7r3Z22lnf5LkaVV1j6q6V5KnJnnbAse8JMnDxxcZT1U9uKpePn7uiCT/ON7+/Unum2Td+LnbMzq6
+KhkdffWAqlpVVRszuhj5XXl3kt0X+T6oql5VVQ+sqsdV1auratX4CK9/zr6v2wQA8DWEJQBg1u0t
+hDwtyWOr6nNJ/jTJT7bWvjh+7gsZnYbWkvxiRhfL/hpVdcz4fXeHlo9V1b9W1cbW2juSfCjJZzK6
+7tFbWmt/tZCBW2tXJflfSS6sqs8meWVGwSpJfj3Ja6rqn5P8jyS/keQ3quq7k/xFRqfJ/XaSt2cU
+mr6Q5E1J3rGPr8mvJTmiqj4/nnvn+NcPZ3Sa3KVV9S8ZXXfphQv5XACAA9uqXbum+49SVfVfkrwr
+yStba2+oqvskuSCjqHVNRre0vb2qzkjy7Ix+0Dm3tfamqQ4GABxwqupRSV7bWvvWoWcBAFgJpnrE
+0vhc/dck+cC8zedk9APdyRndnves8euen9EdXB6R5BfGF68EAAAAYJma9qlwt2Z0vv8187Y9PMlF
+48cXJfm+jA7z/rvW2o7W2q1J/ibJ90x5NgAAAAC+AVO9K1xr7c4kt1XV/M2HttZuHz++LsnRSY7M
+6A4uu20dbwcAWDSttQ8mcRocAMAiGfri3Xu708q+tgMAAACwTEz1iKW7cGNVHdxauy3JsUmuSnJ1
+vvYIpWOTfGJfi9xxx85da9asnt6UAAAAwFRdeuml+fQr35fjNhwz9Cgr1hXbrs53POcxOemkkyZ9
+lwUd7DNEWPpAklOTvHX86yUZ3ar3D6rqXknuTPKQjO4Qd5e2b795ymMCAAAA07Rt244ct+GYbD7i
++KFHWdG2bduRrVtvnOi1Gzfec0FrTzUsVdV3JHlFkuOT3F5VpyU5I8n5VfW0JJcnOb+1trOqfiXJ
++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
+AAAA7sKyCksAAAAAzI7ldCocAAAAADNEWAIAAACgi7AEAAAAQBdhaUBV9f+q6pyh56CP/Tfb7L8D
+T1U9qqrurKrjhp4FZpHvm7C4qurzVfX8Ka5/QVV9aFrrs7Sq6vjxzzGPHHoW2NOaoQeYVVV1VJJf
+TnJKkqOT3Jzks0n+d2vtHUPONl9VrU7yq0nOTHJUkn9P8rrW2usHHWxgs7L/kqSqDk3y8iRnJ/mp
+1tqbBx5pcDO2/56d5KlJjktyRZJzW2uvHnaqpVNVH0ny0CRfGW/6Skbfh97SWvutAUZa0B0rqur0
+JL+S5MQkX0ryriTPba3dOoXZZk5V3S3Jc5M8Icl9kxyc5Kok70zywqX6Ovk+uX+z8n2zqs7L6GeW
+3d8zVmX05/aZrbU3DTbYEhp/3/zeJA9trX1ij+fOS7KrtXbWBOu8KMkLkjyvtfbbezz3lCQvaq3d
+d7Hm5uvt5f+ByX/+nn5ta+3+Q8x1V8bf089JcnpGf2/4QpKXt9beNuhgy0xVfTLJla210/fY/ldJ
+HtBaO2aP7c9P8gtJNrbWdn6DH34m7rxVVYckuTrJQUnu01r70sAjTUVVrUny9CQ/keRbMjpw58ok
+Fyb5ndbaDQtY69AkZ7fWfncas06bI5Y6VNXmJP+Y0V8UT2mtrUtyUpJ3JHlTVb1kyPn28BtJfirJ
+45PcK6O/IL2qqk4ZdKoBzdL+q6qTkvxTkjuHnmW5mLH99+QkL87ofzgbkjwtyYur6sxBB1tau5K8
+tbW2trW2NqOvwy8meX5VPWvY0fatqh6b5IKMvo/eO8ljk/xokmXze2wZeHlGv7+fmWRjkkOTnJHR
+X0qWJAL4Prl/s/R9c+zNu79ntNYOGf96QESlsV1JtiZ54/gvLd/IOtdn9P32hLt4nun6mv8H7vF7
++peHHm4vfi2jsPs/kxyW0c8wf1RVDxt0quXnwiSPHv8DfpKvhpSHJVlbVd++x+sfl+TiRYhKyShM
+zoInZfQPiZ/L6O+iK05VHZTkfRn9fP/8JIe31u6Z5MeTPDDJp6vqPgtY8pFJnrPogy4RRyz1eUOS
+a1prp+7eMK6w/7+9+w6Xqjr3OP4Fb2yxRKPG8qBGwTf2e80VE7HEAlessV1LsIuFYsPYe9RH47Wi
+oSpGrxULYgEsUQx6RWNBUXxBsVewC9jP/eNdm7MZ9jlnZjgoc+b3eR6ew5m9Z8+es2bWWnutd717
+oJl9CGxsZu2A9YhO90bELO4TwPHu/nzRQc1sN+AUorP3FTAKOMbdPzGz1YDXiA/uacD97t6zjHP9
+GjjW3Sem3+8ys4nANsA9Fb7vtqKWym9FoDfwIHBkNW+2Daql8usLXO3uj6bfHzOza4BjiAGLuuPu
+PwBjzGwysCaAmf1ANKRHAG+6ezczWxa4FNiK6NxOAk5391HZscysV3rOGsDHwI3AKek1MLM9iJnX
+DsC/gEpnXJclZvTvTL9PMrPbiYZfwnbAne7+WO6x8en7tDJAc2VpZr8EJhIz4hen/bcAHiCiNZ4q
+4xxUT7aslupNCUOBXYi/b+Hyw7Ss91Lg98Tk4QSiDhyb220iMAUYQvT9CpnZr4DLgS2JAeLJwInu
+/lDaPgxYHHiGmBxYCLgEuAO4mriImgTs7+6T0nNWS/tsCiwBPE1EfD5Z2Z+i7TKz12icwHgaGOvu
+fdK2TkSZ/snd72ypXTSzhYky3I0YfLieyoMIegPnuvuE9PtIM7sXOBp4tOmn1Z2RRJltBmTft22I
+iN1nge2B52B2G9iZmNhfFLgQ2Ilou14DLnD32X3CFCl9AmBEZOldQD93/7L0JFKE2QhgGaDrAhZN
+3Ru4gWgbehGfXQDMbGNgIBHhM4XoL98H9Moijpvr45nZlsDDQEd3n5r234boO6zu7m+m79YwIuJ8
+Z+B7YKi7n5A7j3LasO2A44l69iOiX3htOkQ/YBNgLXd/Jzuuu09IQRzjgKuIujzr7x6aTZSkgclv
+gQOBxYArgfZmNhPYz91vT5Oc56a/1btEpGP/9PzFgPOJz9NKRKTU5e4+IG0/k/gs/o3GSdLriAnS
+a4Au6TmHufu49JwW+99NUcRShVIneFvg4qLt7n6Hu58MLA08ArwArEZ0sN8D7k9hbqXH3RK4lahs
+lgU2BtZn7ovPHsDvyu2cuftZ7j4i9zqLpHN5s5zntzU1WH6PuvuYcvatB7VUfqmD9+9A6YXxk8AG
+qXNRd8xs0dRpWoPoJGQOBnZx927p9xFEOW5ENIRDgRFmtno6zsHETOrhKfpiB2I51ilp++rEQNJQ
+okyPJsLQy+buN7n7BSUPr0E0whImAnuY2XapgwuAuz/n7velX5ssyxQifihwVsodsTAwCDivzEEl
+1ZMtqKV6M2dDMxtnZp9Y5KA5KQ181ZNviKWdJ5mZlW5MFyQPEhdD6xAXAI8A95lZh5Ld/wysY2YH
+NvN6Q4hy7EhcpI4G7jCzJXL7bElMWK5M1KnnEJ+rvdPrT0+PZTP5DxKRV52IiMZxwKiSYwrg7t8Q
+kUIHm1nn9PAg4Obc5EZRXXpX1i4SS113Jb7vqxAXxTuXew4psnF5ivstv6vwLbVpacL+NaLvkdme
+GOwYW/J4d2JQYzQwmBhk2ooYbD0FGGpmmwGY2bbA34Fz3H0pYjDjt8BlTZzKIKKst1+QBpXMbHOi
+XrqWaBNWNbNuuV1uJv5+KxCf0TOJgZXs+c328ZKiiMvSx/oAw4m6bTegdzp2JW3YOUT/cSliUGaA
+mS2Ttu0D3JQfVMqkSc6rgO3NbOmCcy3dfxAx+PNOimi83czWI773FxPf+f2A88xs3/S0AcRkZ3dg
+SWJA8oo0sZrpRAxKdUz7HQncRgyWLQ08Tm7Qjxb6383RwFLl1kw/J7WwXw8iLP8kd5+ZRpmPIyrs
+7gX79yFCJIe7+3fu/gbx4epuZsvn9rvF3d+bh/MfQIx+D5mHY9SyWi+/eldL5bcsMaP7ccnj04m6
+95dlHqct2NfMZqYZmBk0dprG5/YZ7e4OYGYbELOAx7v7dHf/1t0HEhe8WTh1H2CQp/wj7v4C0fAe
+lrbvCXwCXJqe/zzROFbNIidJN6KzI6E3Mct+LzDdzO4xsxPTBUpZZenu9xKzmgOJnICfE98/aR21
+VG9CXGxMJT4fKxCDIqcSneC6kuq3YRTXXdsRA91Hufun7v41cXE2i7gAyx/nc+Ao4OKSssnbE/ij
+u8/wWK5zI3Hhu05un2/d/TJ3/47Io9aOGPh4M73+yNz+2xNLL4919y/TRe/pxAX2HHlpJLj7c8RF
+7FAzO4zIW3cUNFuXPk9ju7gXkb/whbT9SuD1Ck5heeLCvKjf0tTnpp7dTXzOM92JwaMHgM5m9ov0
++HZEtNdCRB6e0939DXf/wd3vSsfJBt57AXe4+90A7v4a0efYLwUHzGZmZxOfiW7u/sX8eIPzoBcw
+yt3fTxNII9JjpIHT1Yl+4Jep7biAOZf4tdTHK9f/uftId//e3R8BxgBZ5G65bdgwd3/R3RuICctF
+iGgyiEGbl5p5/ZeJPn+nCs87czAw0d1vTuc4nhg8fsnMliTa7bPcfUr6PI0koq4OzB1jibTP1ykq
+aRrR556YBr9uJ9XbZrYhLfe/m6SlcJXLRkK/aXav6Mi9khpfANz9IzObRmMnL68jURnlZR/UNYD3
+0/+nVna6IUVHXAf8J7CtF4RT1omaLD+ZrS2VXz3ltrjR3feH2WHb6xK5QzZ29+wCKP+3zZKZPp+b
+qG+X/r2Q22ddM+tH49+yXXqNfyOWv72ZOgKZF6t9A2b2Z+KiaE93f7ra47Q17j4N2NnMViFyS3Qh
+IpDOt8jbky3DLirLiblD9SPKdgtgw9TZkdZRU/Wmu5cu+7rbzAYTFxQXVXKsNuIk4iLi8DSjnekI
+TPNcYlh3/87MXqGgvNx9uJn1APoTEUalNgDONbPfEkvhsou8fHTtG7njzUrf6XwE/Ewaow6MSNr7
+Ucl3vz1xUVlP9i2JIMiSdx9RsO9fiWUzfwO2zvXXy2kXVyUGZvNeJAZo51U99VnKNRLom5ZM/ZyI
+HHrA3T83s7eA/zKzW4n8jOcQgwvtiTot329pB2RJ+n8DdExLtMjtQzp+lqOpJ5EHq6tXkBz6x2Bx
+o4jdmHMA+WoiWrEDkOUcyrcNc9ykgJb7eOUqnVCZSkwQQvlt2Ku57TPTz8XTzwZiwLApCxHnXW2f
+phMl32lvXJ68YTp26cDWS6Sld8mHJdFsM5m73s7q+axyaanPVkgDS5WbTHyINqb5P/CiFCdXa09x
+5Vy0f3saG59MSx3DuZjZcsS61a+Azu4+vdJjtCE1V34yh1oqv4+A75g7Mmm59Hhdfg/TgMELaaBm
+rEUOCZjzbzuL+LuvmGbai8wCznb3K4o2ppm90oa84ijdtPxmCNEx3EqDSsU8wsBvSv8wszOI6Ilj
+abksIb4nyxDfjY7EnYikddRSvdmUV4iLqrrj7l+YWV9gmJmNzG2qtLwgZugnmlk+ygIzW4qYyb8H
+WNvdp1kkxX+55PlFF0dNXTDNAj5z92Wa2F5PZk+ulEpRJ3k/J3LvfElEEWR5jcppF+e13fuA+EwV
+9Vs+qOA49eJR4DMiImlxYHyubMakx6cSf8+7iaVUAJt4E3nriHK+yt0Ll+6nQSyI5XSjgEvMrLPH
+UsoFxRHEGMPfS1bxtkvbnk2/58+5tM5qqY9X9HDRAE/pY/lBnnLbsOYGhV4mchM2ZV2iXzOlie3N
+DUpBDCQ29R3OBoOK3kNL599cvV1On62QlsJVyN0/IwZpTi4aMTWzHc1sAjES2Cnli8i2rUhUzqUN
+NUTHb4OSx9YnPlBNfRhblNaxj0nH2KrOB5VqrvxkTrVUfu7+LbFEqDQvwebAvxawTsBPIWsIFy/Y
+Njn93Cj/YMn67skF25fP5YJ5i4hayist43Jk+RA21qDSnMxsVTO7Kn23St2bfj5LlHVzZQmRRPJm
+Im/LNRbJI6UV1FK9aWbtzexCM9ukZNM61PFgo0euzH8Q+Toyk4HlLJJuA7Nz+3WkuLxw97eIyMsB
+xPKIzNpETo1LUhQiRNs1L1Eqk4GlzOzX+QdLf5e5XE6U367ARWbWMT1eTrv4FpEfLW/9cl84Lbt6
+n7n7LZsB/yz3OPUiRXeOJnJabc2c0S+jga5EQu+JaZnVVKJ+LC3DDtZ4d7nJwH+UbF86l9MncziR
+32dJ4jOzQEhtTE9i2dqGJf/OBw4BPiT6Bfk7VW5acqiW+niz0jHyfcii5Walj61JY7ROa7Rh1wN7
+WcFdN9PE5DHAiNxSxa/KOOe8yTRGK2bH3SlNDmRtYul7WA/w8k6/8PWg5T5bIUUsVacvUcGOM7M+
+xMXj0sS62QuBM4i16ScAfzWzk4nQ4MuIMOLSsDuIRv4eM9ubSDK2JnEXlds8MtMvVfCccpxH5DTZ
+T0sLZqul8svUW9LS5tRS+V0CXG1md6Vz/gOwf/pXt1IDfBYwnsgPMQd3dzO7n8gH8t9EGPAuwA1m
+1tXjDmSXEbdAvodYu78qMTDxLNHhuhs4O830DyQa3v0qPM9diXDudd39/Zb2r0PvEx3qLFz9eaJD
+tjbR9rwIPEZMbjRZlqmMOhHJ22ek7+FgYI+5XrF5qiebVhP1psfdfjoCg9LnZSqRtPUgUn6OOtaX
+WOLwBZHD5T7iVt79zawn8d37C/E9uKWZ4/Qnyv0k4m5EEGX8PdDF4s7BWxJ1H0TdWo0HiGUoA8zs
+ICJK9xAiwmIdd3+9yuO2WWa2E5H/ZV13f9vMbgL+18w2LbNdHEnk4rmOuOjsRdwpqpIcZ5cC/cxs
+LBHhuDtRz3dppbfZ1owkBnYWIqJ0Mw8Rean2J3LYkNq3ocCZZvYc0WZuRtxZsS8R8Xs5UU8fSeRX
+y5In/4yInM78kKIZ9wb+aWYPuftt8+9tlm134n1f7iUJrc3sCiJnXgfiM3mamR2e9s8veYOW+3iv
+EvXX3ilC+jfAAQXns5nF3dlGE0vtu9GYz6o12rD+RLk8mtrWUUQk1gZEvqbFiLLNvAzsYnGH6MXT
+6+UnmmcAy5jZSkQ03BDgaDM7gpiAW49IiN43LVUfTnyeniHyqe1ODGjuWMa5z6XMeqZJiliqQhp1
+3ojIon4zEa46iSjEP7r7pe7+AfFBW5+YQZhINPab5yIVGnLHHE10nE4kkubdl/7lE2VVM3PUi7gN
+4gxLyXPNbJaZtZTEs82qpfIzs8FmNotIZtsADFH51U75uftworEcTJThlUSi1TubfWLbs0+u/plB
+zLy/BOyYciAV/W17EAMT44FPica3R9aoufstRAflfOJv+zAxiHFU2j6BGEjqQ0riTVx0VaIXEbo+
+taT+nGlz33Wp7qTvUheio3cjsfzzS6IT+DLwhzSh0WRZWiyFPJ+488uMdOjDga5mVtZAoOrJltVS
+vUkkHR1H3FHscyKp6xGebkFdJ+b6u7n7u8Rg0MpAg0ey7K7EhctkYhDOgC6pLAulOrcnkXenIT32
+PlF3nkJ8j3sTg0DDiUG+fYuP1nT5pu/+jkRkwSQiSqEH0F2DSnNoABos7t44GDjR3d9O244nyvvU
+9Pt+NNMupv3uI+4O+DYRvXRDJSfj7hcRkzF3ERe2JwK7K2K3SaOIZdzfuvsz2YMpN9bjxHcyv4T1
+WGLiazRRvw0ATnP3m9LzniAGfo8k6tVniO/OPrlj5Ovhp4goxCELSDRgL+Du0kElmJ2T8Q7ivfUg
+7nb3IdEmnUlumVoZfbyPiAjnA4jP6eXEBEmpa4mk9tOJO6Fd7O43pGNU24bl//7fE5MfFxD15zRi
+8P9GYAIR7Z6vj48ilrpOS+9pUDr/zB3EoNtU4EB3n0IMhvUi+rK3EEnPs7sqH0JMGj2Y3mM/YDdv
+/k65LbXLzfa/m9OuoUG52ERERERERERk/krLxNqngZlsqdVUIm3L2FZ6jdeA6929aMBJ5gMthRMR
+ERERERGRH8ME4m6Xh6bfzwLeAZ78yc5I5pkGlmpUWg86jOJwttm3Ma2z0PGaofKrbSq/2mZmKxPr
+85srvxvd/dCC7fIj0fesbVF5ivx0zOxE4uK9ue9f99aKFhFpwV7E8rW3iPxuzxLpEWa14mtoWdaP
+TEvhRERERERERESkKkreLSIiIiIiIiIiVdHAkoiIiIiIiIiIVEUDSyIiIiIiIiIiUhUNLImIiIiI
+iIiISFV0VzgRERGRAmZ2K7AGsLO7v1vB834PvOfur8+vcxMRERFZUChiSURERKTYbkCXSgaVkoOA
+NefD+YiIiIgscNo1NDT81OcgIiIiskAxsyHAIcBY4BqgZ9o0DTjU3T8xsyOA/YGvga+AvYCtgWHA
+68BxwBnAX9z9H2a2GjDO3TuY2bD0vLWAPwHLARcT0eQ/A/q4+wQzOzptnwHMBHq4+yfz+/2LiIiI
+lEsRSyIiIiIl3L0n0AD0APoB27j7FsRA06lpt0WBru6+FfAGMegzAngOOM7dHy44dH5Gb3F339rd
+3wNuAA53962B3sDVaZ+zgR3Sa1wGrNya71NERERkXinHkoiIiEixdsCmwErAGDNrBywMTE3bPwZG
+mdkPwGrAuyXPbcnjAGa2PGDA1ek1AJZIP4em174NGO7uU+bh/YiIiIi0Og0siYiIiDTtK2C8u++c
+f9DMVgH+B1jb3T8ys4uaeH4+Qmnhkm3fpJ9fA1+laKU5uPvxZtYB2AEYYWbHufuYat6IiIiIyPyg
+pXAiIiIiTXsW6GxmvwIwsz3MbCdgBWBaGlRaFugGLJKe8wORJwngc6BD+v82RS/g7p8Dr5tZ9/Qa
+a5nZ6Wb2CzM7E3jb3QcCVwGdW/8tioiIiFRPEUsiIiIixRqI5W3HAPeYWZZA+wBgOjDFzJ4AXiWS
+dA8ws3uBB4BBZnYMcCUw0Mz2BZqLNNof6G9mJxH9s+Pc/VMzWxJ4ysw+ISKcDpkfb1RERESkWror
+nIiIiIiIiIiIVEVL4UREREREREREpCoaWBIRERERERERkapoYElERERERERERKqigSURERERERER
+EamKBpZERERERERERKQqGlgSEREREREREZGqaGBJRERERERERESqooElERERERERERGpyv8DXcMP
+/6Yr9ZEAAAAASUVORK5CYII=
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="XgBoost">XgBoost<a class="anchor-link" href="#XgBoost">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [267]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'n_estimators'</span><span class="p">:[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="s1">'max_depth'</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">'subsample'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]}</span>
+<span class="n">gs_xgb</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(),</span> <span class="n">params</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">gs_xgb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Fitting 3 folds for each of 12 candidates, totalling 36 fits
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[Parallel(n_jobs=1)]: Done  36 out of  36 | elapsed:  2.1min finished
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[267]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>GridSearchCV(cv=None, error_score=&apos;raise&apos;,
+       estimator=XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective=&apos;binary:logistic&apos;, reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1),
+       fit_params={}, iid=True, n_jobs=1,
+       param_grid={&apos;n_estimators&apos;: [200, 300], &apos;subsample&apos;: [1, 0.8], &apos;max_depth&apos;: [4, 5, 6]},
+       pre_dispatch=&apos;2*n_jobs&apos;, refit=True, return_train_score=True,
+       scoring=None, verbose=1)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [268]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gs_xgb</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[268]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;max_depth&apos;: 4, &apos;n_estimators&apos;: 200, &apos;subsample&apos;: 1}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [269]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="n">gs_xgb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'max_depth'</span><span class="p">]</span>
+<span class="n">estimators</span> <span class="o">=</span> <span class="n">gs_xgb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'n_estimators'</span><span class="p">]</span>
+<span class="n">sub_sample</span> <span class="o">=</span> <span class="n">gs_xgb</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">'subsample'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [278]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">xgb_model</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="n">estimators</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="n">depth</span><span class="p">,</span> <span class="n">subsample</span> <span class="o">=</span> <span class="n">sub_sample</span><span class="p">,</span>
+                             <span class="n">objective</span> <span class="o">=</span> <span class="s1">'multi:softmax'</span><span class="p">)</span>
+<span class="n">xgb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">eval_metric</span> <span class="o">=</span> <span class="s1">'merror'</span><span class="p">,</span> <span class="n">eval_set</span> <span class="o">=</span> <span class="p">[(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)],</span>
+              <span class="n">early_stopping_rounds</span> <span class="o">=</span> <span class="mi">150</span><span class="p">,</span><span class="n">verbose</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[278]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.64132874457578937</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [279]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">log_loss</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[279]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.86109146072771603</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Majority-Vote">Majority Vote<a class="anchor-link" href="#Majority-Vote">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [275]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mv_model</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">([(</span><span class="s1">'nb'</span><span class="p">,</span><span class="n">nb_model</span><span class="p">),</span> <span class="p">(</span><span class="s1">'xgb'</span><span class="p">,</span><span class="n">best_gb_model</span><span class="p">),</span> <span class="p">(</span><span class="s1">'log'</span><span class="p">,</span><span class="n">best_log_model</span><span class="p">)],</span> <span class="n">voting</span> <span class="o">=</span> <span class="s1">'soft'</span><span class="p">)</span>
+<span class="n">mv_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<span class="n">mv_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[275]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.59120155618734105</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [276]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">log_loss</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">mv_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[276]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.99900816780210555</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ZeroR-Baseline">ZeroR Baseline<a class="anchor-link" href="#ZeroR-Baseline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [274]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lab</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[274]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.40289573122825395</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong> Using the zero rule baseline, we would get a 40% accuracy by "guessing" all animals will be adopted. After testing numerous models, the best result is 64% prediction accuracy. </strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://ttran0.github.io/tag/python.html">python</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Truong Tran </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Truong's Website ",
+  "url" : "https://ttran0.github.io",
+  "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>
