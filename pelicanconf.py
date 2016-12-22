@@ -27,8 +27,10 @@ SOCIAL = (('linkedin', 'https://www.linkedin.com/in/truong-tran'),
             ('github', 'https://github.com/ttran0'),)
 
 MENUITEMS = (('Archives', '/archives.html'),
-             ('Categories', '/categories.html'),
-             ('Tags', '/tags.html'),)
+             ('Data Science Projects', '/category/projects.html')
+             ,)
+
+STATIC_PATHS = ['pdfs']
 
 DEFAULT_PAGINATION = 10
 
