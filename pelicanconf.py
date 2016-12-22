@@ -20,11 +20,15 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('LinkedIn', 'https://www.linkedin.com/in/truong-tran'),)
+# LINKS = ((),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('linkedin', 'https://www.linkedin.com/in/truong-tran'),
+            ('github', 'https://github.com/ttran0'),)
+
+MENUITEMS = (('Archives', '/archives.html'),
+             ('Categories', '/categories.html'),
+             ('Tags', '/tags.html'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -33,6 +37,7 @@ DEFAULT_PAGINATION = 10
 SITELOGO = 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg'
 MARKUP = ('md', 'ipynb')
 THEME = './Flex'
-MAIN_MENU = True 
+MAIN_MENU = True
+DISPLAY_PAGES_ON_MENU = True
 PLUGIN_PATH = './plugins'
 PLUGINS = ['ipynb.markup']
