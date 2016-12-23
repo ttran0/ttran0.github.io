@@ -31,7 +31,7 @@ Title: Resume
   <li><p>Create an early detection model to predict student outcomes, creating opportunities for early intervention to improve student retention and persistence</p></li>
 </ul>
 <span>
-<p style = "float:left;"><strong>Lecturer - Department of Mathematics and Statistics, Department of Computer Engineering and Computer Science</strong> </p>
+<p style = "float:left;"><strong>Lecturer - Department of Mathematics and Statistics, Computer Engineering and Computer Science</strong> </p>
 <p style = "float:right;">January 2016 - Present</p>
 </span>
 <p style="clear:both; line-height: 3px"><em>California State University, Long Beach</em></p>
