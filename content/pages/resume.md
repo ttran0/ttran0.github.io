@@ -1,6 +1,6 @@
 Title: Resume
 <p><strong>Truong Phan Viet Tran</strong></p>
-<p><strong>17631 Harvest Ave, Cerritos CA (562) 739-5095 truongtran0@gmail.com</strong></p>
+<p><strong> Cerritos CA (562) 739-5095 truongtran0@gmail.com</strong></p>
 <p><strong>&#x25cf;linkedin.com/in/truong-tran &#x25cf;github.com/ttran0 </strong></p>
 <hr size = "7" noshade>
 <h4>EDUCATION: </h4>
