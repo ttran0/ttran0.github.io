@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Truong's Website</title><link href="https://ttran0.github.io/" rel="alternate"></link><link href="https://ttran0.github.io/feeds/projects.atom.xml" rel="self"></link><id>https://ttran0.github.io/</id><updated>2016-12-21T21:24:00-08:00</updated><entry><title>Austin Animal Shelter Analysis</title><link href="https://ttran0.github.io/Animal%20Shelter%20Outcome%20Analysis.html" rel="alternate"></link><published>2016-12-21T21:24:00-08:00</published><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-21:Animal Shelter Outcome Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Truong's Website</title><link href="https://ttran0.github.io/" rel="alternate"></link><link href="https://ttran0.github.io/feeds/projects.atom.xml" rel="self"></link><id>https://ttran0.github.io/</id><updated>2016-12-21T21:24:00-08:00</updated><entry><title>Austin Animal Shelter Analysis</title><link href="https://ttran0.github.io/Animal%20Shelter%20Outcome%20Analysis.html" rel="alternate"></link><published>2016-12-21T21:24:00-08:00</published><updated>2016-12-21T21:24:00-08:00</updated><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-21:Animal Shelter Outcome Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -993,7 +993,7 @@ Name: Breed, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h6 id="Let&amp;#x27;s-remove-the-&amp;quot;Mix&amp;quot;-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-&amp;quot;breed-1-/-breed-2&amp;quot;,-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;Let's remove the "Mix" from the dog breeds and also take only the first breed from classifications in the form "breed 1 / breed 2", assuming that the first breed listed is the dominant breed&lt;a class="anchor-link" href="#Let&amp;#x27;s-remove-the-&amp;quot;Mix&amp;quot;-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-&amp;quot;breed-1-/-breed-2&amp;quot;,-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;¶&lt;/a&gt;&lt;/h6&gt;
+&lt;h6 id="Let's-remove-the-"Mix"-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-"breed-1-/-breed-2",-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;Let's remove the "Mix" from the dog breeds and also take only the first breed from classifications in the form "breed 1 / breed 2", assuming that the first breed listed is the dominant breed&lt;a class="anchor-link" href="#Let's-remove-the-"Mix"-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-"breed-1-/-breed-2",-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;¶&lt;/a&gt;&lt;/h6&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1092,7 +1092,7 @@ Name: Breed, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h6 id="Now-let&amp;#x27;s-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;Now let's replace all the dog breed classifications from the original dataframe with the new breed classifications&lt;a class="anchor-link" href="#Now-let&amp;#x27;s-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;¶&lt;/a&gt;&lt;/h6&gt;
+&lt;h6 id="Now-let's-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;Now let's replace all the dog breed classifications from the original dataframe with the new breed classifications&lt;a class="anchor-link" href="#Now-let's-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;¶&lt;/a&gt;&lt;/h6&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3584,7 +3584,7 @@ EamKBpZERERERERERKQqGlgSEREREREREZGqaGBJRERERERERESqooElERERERERERGpyv8DXcMP
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category></entry><entry><title>Long Beach City College Retention Analysis</title><link href="https://ttran0.github.io/Retention%20Analysis.html" rel="alternate"></link><published>2016-12-20T02:07:00-08:00</published><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-20:Retention Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="python"></category></entry><entry><title>Long Beach City College Retention Analysis</title><link href="https://ttran0.github.io/Retention%20Analysis.html" rel="alternate"></link><published>2016-12-20T02:07:00-08:00</published><updated>2016-12-20T02:07:00-08:00</updated><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-20:Retention Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
