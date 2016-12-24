@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Truong's Website</title><link href="https://ttran0.github.io/" rel="alternate"></link><link href="https://ttran0.github.io/feeds/all.atom.xml" rel="self"></link><id>https://ttran0.github.io/</id><updated>2016-12-23T20:48:00-08:00</updated><entry><title>Teaching Page</title><link href="https://ttran0.github.io/teaching.html" rel="alternate"></link><published>2016-12-23T20:48:00-08:00</published><updated>2016-12-23T20:48:00-08:00</updated><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-23:teaching.html</id><summary type="html">&lt;p&gt;&lt;strong&gt; Teaching philosophy:&lt;/strong&gt;&lt;br /&gt;
-My teaching philosophy is to bring the curiosity out of students and to communicate that all students are capable of understanding mathematics. Through my experience as a lecturer, I have noticed that students are more successful when they become invested in the material. Thus, I aspire to ignite the curiosity within my students. In order to do so, I make out-of-classroom connections between course content and their future careers. As a vast majority of my students are engineers and as I teach courses in the computer science and computer engineering departments, I have the opportunity to develop a deep understanding from my colleagues of how mathematics is applied in the field of engineering. Furthermore, I strive to remain aware of trends in the mathematics and engineering fields by subscribing to newsletters, following prominent organizations in the media, and attending conferences and meet-ups.&lt;br /&gt;
-In addition to promoting curiosity, my teaching philosophy includes the mindset that mathematics is a skill that anyone can learn  by constantly encouraging my students to learn critical and applicable concepts. My students have also learned that the understanding of these concepts is possible, regardless of natural ability, given time and practice. I also create an atmosphere of inclusion and approachability, my students feel comfortable asking questions whenever they arise. This includes during class time, office hours, if they see me on campus, and even via email.&lt;br /&gt;
-The courses I have taught are: Algebra, Business Calculus, Calculus I, Calculus II, Applied Mathematics/Differential Equations, Introduction to Java Programming, and Numerical Methods.&lt;/p&gt;</summary><category term="teaching"></category></entry><entry><title>Austin Animal Shelter Analysis</title><link href="https://ttran0.github.io/Animal%20Shelter%20Outcome%20Analysis.html" rel="alternate"></link><published>2016-12-21T21:24:00-08:00</published><updated>2016-12-21T21:24:00-08:00</updated><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-21:Animal Shelter Outcome Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Truong's Website</title><link href="https://ttran0.github.io/" rel="alternate"></link><link href="https://ttran0.github.io/feeds/all.atom.xml" rel="self"></link><id>https://ttran0.github.io/</id><updated>2016-12-23T20:48:00-08:00</updated><entry><title>Teaching Page</title><link href="https://ttran0.github.io/teaching.html" rel="alternate"></link><published>2016-12-23T20:48:00-08:00</published><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-23:teaching.html</id><summary type="html">&lt;p&gt;&lt;strong&gt; Teaching philosophy:&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;My teaching philosophy is to bring the curiosity out of students and to communicate that all students are capable of understanding mathematics. Through my experience as a lecturer, I have noticed that students are more successful when they become invested in the material. Thus, I aspire to ignite the curiosity within my students. In order to do so, I make out-of-classroom connections between course content and their future careers. As a vast majority of my students are engineers and as I teach courses in the computer science and computer engineering departments, I have the opportunity to develop a deep understanding from my colleagues of how mathematics is applied in the field of engineering. Furthermore, I strive to remain aware of trends in the mathematics and engineering fields by subscribing to newsletters, following prominent organizations in the media, and attending conferences and meet-ups.  &lt;/p&gt;
+&lt;p&gt;In addition to promoting curiosity, my teaching philosophy includes the mindset that mathematics is a skill that anyone can learn  by constantly encouraging my students to learn critical and applicable concepts. My students have also learned that the understanding of these concepts is possible, regardless of natural ability, given time and practice. I also create an atmosphere of inclusion and approachability, my students feel comfortable asking questions whenever they arise. This includes during class time, office hours, if they see me on campus, and even via email.&lt;/p&gt;
+&lt;p&gt;The courses I have taught are: Algebra, Business Calculus, Calculus I, Calculus II, Applied Mathematics/Differential Equations, Introduction to Java Programming, and Numerical Methods.&lt;/p&gt;
+&lt;p&gt;I have attached all of my instructor evaluations below:&lt;/p&gt;</summary><category term="teaching"></category></entry><entry><title>Austin Animal Shelter Analysis</title><link href="https://ttran0.github.io/Animal%20Shelter%20Outcome%20Analysis.html" rel="alternate"></link><published>2016-12-21T21:24:00-08:00</published><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-21:Animal Shelter Outcome Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -996,7 +997,7 @@ Name: Breed, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h6 id="Let's-remove-the-"Mix"-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-"breed-1-/-breed-2",-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;Let's remove the "Mix" from the dog breeds and also take only the first breed from classifications in the form "breed 1 / breed 2", assuming that the first breed listed is the dominant breed&lt;a class="anchor-link" href="#Let's-remove-the-"Mix"-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-"breed-1-/-breed-2",-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;¶&lt;/a&gt;&lt;/h6&gt;
+&lt;h6 id="Let&amp;#x27;s-remove-the-&amp;quot;Mix&amp;quot;-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-&amp;quot;breed-1-/-breed-2&amp;quot;,-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;Let's remove the "Mix" from the dog breeds and also take only the first breed from classifications in the form "breed 1 / breed 2", assuming that the first breed listed is the dominant breed&lt;a class="anchor-link" href="#Let&amp;#x27;s-remove-the-&amp;quot;Mix&amp;quot;-from-the-dog-breeds-and-also-take-only-the-first-breed-from-classifications-in-the-form-&amp;quot;breed-1-/-breed-2&amp;quot;,-assuming-that-the-first-breed-listed-is-the-dominant-breed"&gt;¶&lt;/a&gt;&lt;/h6&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1095,7 +1096,7 @@ Name: Breed, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h6 id="Now-let's-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;Now let's replace all the dog breed classifications from the original dataframe with the new breed classifications&lt;a class="anchor-link" href="#Now-let's-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;¶&lt;/a&gt;&lt;/h6&gt;
+&lt;h6 id="Now-let&amp;#x27;s-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;Now let's replace all the dog breed classifications from the original dataframe with the new breed classifications&lt;a class="anchor-link" href="#Now-let&amp;#x27;s-replace-all-the-dog-breed-classifications-from-the-original-dataframe-with-the-new-breed-classifications"&gt;¶&lt;/a&gt;&lt;/h6&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3587,7 +3588,7 @@ EamKBpZERERERERERKQqGlgSEREREREREZGqaGBJRERERERERESqooElERERERERERGpyv8DXcMP
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category></entry><entry><title>Long Beach City College Retention Analysis</title><link href="https://ttran0.github.io/Retention%20Analysis.html" rel="alternate"></link><published>2016-12-20T02:07:00-08:00</published><updated>2016-12-20T02:07:00-08:00</updated><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-20:Retention Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="python"></category></entry><entry><title>Long Beach City College Retention Analysis</title><link href="https://ttran0.github.io/Retention%20Analysis.html" rel="alternate"></link><published>2016-12-20T02:07:00-08:00</published><author><name>Truong Tran</name></author><id>tag:ttran0.github.io,2016-12-20:Retention Analysis.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -6672,123 +6673,6 @@ Mcb4xgKMMcY3FmCMMb6xAGOM8Y0FGGOMb/4fLEbCpkgKh9wAAAAASUVORK5CYII=
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Gaussian-Mixture-Model"&gt;Gaussian Mixture Model&lt;a class="anchor-link" href="#Gaussian-Mixture-Model"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [188]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.mixture&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;GaussianMixture&lt;/span&gt;
-&lt;span class="n"&gt;gm&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;GaussianMixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_components&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [189]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;gm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[189]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;GaussianMixture(covariance_type=&amp;apos;full&amp;apos;, init_params=&amp;apos;kmeans&amp;apos;, max_iter=100,
-        means_init=None, n_components=2, n_init=1, precisions_init=None,
-        random_state=None, reg_covar=1e-06, tol=0.001, verbose=0,
-        verbose_interval=10, warm_start=False, weights_init=None)&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [190]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;'gm_labels'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;gm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="s1"&gt;'labels'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;Y_test&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [191]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;lab1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gm_labels&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'labels'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;lab1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[191]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;0.13166454532597935&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [192]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;lab2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gm_labels&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'labels'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gm_df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;lab2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[192]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;0.41059727525573941&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [193]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lab1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;lab2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[193]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;54.226182058171879&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

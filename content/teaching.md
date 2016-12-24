@@ -16,4 +16,5 @@ In addition to promoting curiosity, my teaching philosophy includes the mindset 
 
 The courses I have taught are: Algebra, Business Calculus, Calculus I, Calculus II, Applied Mathematics/Differential Equations, Introduction to Java Programming, and Numerical Methods.
 
+
 I have attached all of my instructor evaluations below:
