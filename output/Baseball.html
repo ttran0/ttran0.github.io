@@ -1,0 +1,2027 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://ttran0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Truong's Website Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Truong Tran" />
+<meta name="description" content="" />
+<meta name="keywords" content="python">
+<meta property="og:site_name" content="Truong's Website"/>
+<meta property="og:title" content="Baseball Analysis"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://ttran0.github.io/Baseball.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-12-21 21:24:00-08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://ttran0.github.io/author/truong-tran.html">
+<meta property="article:section" content="Projects"/>
+<meta property="article:tag" content="python"/>
+<meta property="og:image" content="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg">
+
+  <title>Truong's Website &ndash; Baseball Analysis</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://ttran0.github.io">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg" alt="" title="">
+      </a>
+      <h1><a href="https://ttran0.github.io"></a></h1>
+
+<p>Mathematician & Aspiring Data Scientist</p>
+      <nav>
+        <ul class="list">
+          <li><a href="https://ttran0.github.io/pages/about-me.html#about-me">About Me</a></li>
+          <li><a href="https://ttran0.github.io/pages/contact.html#contact">Contact</a></li>
+          <li><a href="https://ttran0.github.io/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/truong-tran" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/ttran0" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://ttran0.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/category/projects.html">Data Science Projects</a>
+      <a href="/category/teaching-page.html">Teaching Page</a>
+
+      <a href="https://ttran0.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="Baseball">Baseball Analysis</h1>
+    <p>
+          Posted on Wed 21 December 2016 in <a href="https://ttran0.github.io/category/projects.html">Projects</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'pitchRx1314.sqlite3'</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_columns'</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+
+<span class="kn">from</span> <span class="nn">hmmlearn.hmm</span> <span class="kn">import</span> <span class="n">MultinomialHMM</span>
+<span class="kn">from</span> <span class="nn">hmmlearn.hmm</span> <span class="kn">import</span> <span class="n">GaussianHMM</span>
+<span class="c1"># from pomegranate import *</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">normalize</span>
+
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">figure</span>
+<span class="kn">from</span> <span class="nn">bokeh.charts</span> <span class="kn">import</span> <span class="n">Scatter</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">output_notebook</span>
+
+<span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="kn">as</span> <span class="nn">py</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
+<span class="c1"># %load_ext rpy2.ipython</span>
+<span class="c1"># %load_ext pymatbridge</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_split_index</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">batter_old</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">batter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">batter_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">batter</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">batter_old</span> <span class="o">!=</span> <span class="n">batter_new</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">split_3rd</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">before_3rd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">after_3rd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+        <span class="n">game_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">split_index</span> <span class="o">=</span> <span class="n">get_split_index</span><span class="p">(</span><span class="n">game_df</span><span class="p">)</span> <span class="c1"># Get row number that splits third time through order</span>
+        <span class="n">before_3rd</span> <span class="o">=</span> <span class="n">before_3rd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">split_index</span><span class="p">,:])</span> <span class="c1"># Append dataframes</span>
+        <span class="n">after_3rd</span> <span class="o">=</span> <span class="n">after_3rd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">split_index</span><span class="p">:,:])</span>
+        
+    <span class="k">return</span> <span class="n">before_3rd</span><span class="p">,</span> <span class="n">after_3rd</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">one_out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Groundout'</span><span class="p">,</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Lineout'</span><span class="p">,</span><span class="s1">'Sac Bunt'</span><span class="p">,</span><span class="s1">'Pop Out'</span><span class="p">,</span><span class="s1">'Flyout'</span><span class="p">,</span><span class="s1">'Sac Fly'</span><span class="p">,</span><span class="s1">'Forceout'</span><span class="p">,</span>
+                     <span class="s1">'Runner Out'</span><span class="p">,</span><span class="s1">'Fielders Choice Out'</span><span class="p">,</span><span class="s1">'Bunt Groundout'</span><span class="p">,</span><span class="s1">'Fielders Choice'</span><span class="p">,</span><span class="s1">'Bunt Pop Out'</span><span class="p">,</span><span class="s1">'Sac Fly'</span><span class="p">,</span>
+                    <span class="s1">'Bunt Lineout'</span><span class="p">]</span>
+    <span class="n">two_out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Double Play'</span><span class="p">,</span><span class="s1">'Grounded Into DP'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">,</span><span class="s1">'Sac Fly DP'</span><span class="p">,</span><span class="s1">'Sacrifice Bunt DP'</span><span class="p">]</span>
+    <span class="n">three_out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Triple Play'</span><span class="p">]</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+        <span class="n">max_inning</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">inning</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">game_ip</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">max_inning</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="p">:</span>
+            <span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">inning</span> <span class="o">==</span> <span class="n">i</span><span class="p">)]</span>
+            <span class="n">one_outs</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">one_out_plays</span><span class="p">))</span>
+            <span class="n">two_outs</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">two_out_plays</span><span class="p">))</span>
+            <span class="n">three_outs</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">three_out_plays</span><span class="p">))</span>
+            <span class="n">game_ip</span> <span class="o">+=</span> <span class="p">(</span><span class="n">one_outs</span> <span class="o">+</span> <span class="n">two_outs</span> <span class="o">+</span> <span class="n">three_outs</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span>
+            <span class="n">ip</span> <span class="o">+=</span> <span class="p">(</span><span class="n">one_outs</span> <span class="o">+</span> <span class="n">two_outs</span> <span class="o">+</span> <span class="n">three_outs</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span>
+    <span class="k">return</span> <span class="n">ip</span>
+
+<span class="k">def</span> <span class="nf">strikeout_ratio</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">9.0</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">]))</span><span class="o">/</span><span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fip</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">hr</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Home Run'</span><span class="p">]))</span>
+    <span class="n">bb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Walk'</span><span class="p">]))</span>
+    <span class="n">hbp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Hit By Pitch'</span><span class="p">]))</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">]))</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="n">hr</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">bb</span> <span class="o">+</span> <span class="n">hbp</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">ip</span> <span class="o">+</span> <span class="mf">3.10</span>
+
+<span class="k">def</span> <span class="nf">whip</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">bb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Walk'</span><span class="p">]))</span>
+    <span class="n">hits</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Single'</span><span class="p">,</span><span class="s1">'Home Run'</span><span class="p">,</span><span class="s1">'Double'</span><span class="p">,</span><span class="s1">'Triple'</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">bb</span> <span class="o">+</span> <span class="n">hits</span><span class="p">)</span><span class="o">/</span><span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">walks_ratio</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Walk'</span><span class="p">]))</span><span class="o">/</span><span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="mf">9.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pitchers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'pitchers.csv'</span><span class="p">)[</span><span class="s1">'name'</span><span class="p">])</span>
+
+<span class="n">before_fip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_fip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">before_whip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_whip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">before_strikeout</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_strikeout</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">before_walks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_walks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pitcher</span> <span class="ow">in</span> <span class="n">pitchers</span><span class="p">:</span>
+<span class="c1">#     print pitcher</span>
+    <span class="n">sql_query</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">    SELECT *</span>
+<span class="s1">    FROM atbat</span>
+<span class="s1">    WHERE pitcher_name == ? AND (date >  '2014_03_30' AND date < '2014_09_30' )</span>
+<span class="s1">    '''</span>
+    <span class="n">player_bat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_query</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">conn</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">pitcher</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">player_bat_df</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">player_bat_df</span> <span class="o">=</span> <span class="n">player_bat_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'date'</span><span class="p">,</span> <span class="s1">'num'</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    
+    <span class="n">before</span><span class="p">,</span><span class="n">after</span> <span class="o">=</span> <span class="n">split_3rd</span><span class="p">(</span><span class="n">player_bat_df</span><span class="p">)</span>
+    
+    <span class="n">before_fip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fip</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_fip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fip</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">before_whip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">whip</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_whip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">whip</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">before_strikeout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">strikeout_ratio</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_strikeout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">strikeout_ratio</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">before_walks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">walks_ratio</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_walks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">walks_ratio</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">pitch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pitcher</span><span class="p">)</span>
+    
+<span class="n">stats_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'aaname'</span><span class="p">:</span><span class="n">pitch</span><span class="p">,</span>
+                        <span class="s1">'before_fip'</span><span class="p">:</span><span class="n">before_fip</span><span class="p">,</span>
+                        <span class="s1">'after_fip'</span><span class="p">:</span><span class="n">after_fip</span><span class="p">,</span>
+                       <span class="s1">'before_whip'</span><span class="p">:</span><span class="n">before_whip</span><span class="p">,</span>
+                       <span class="s1">'after_whip'</span><span class="p">:</span><span class="n">after_whip</span><span class="p">,</span>
+                       <span class="s1">'before_strikeout'</span><span class="p">:</span><span class="n">before_strikeout</span><span class="p">,</span>
+                       <span class="s1">'after_strikeout'</span><span class="p">:</span><span class="n">after_strikeout</span><span class="p">,</span>
+                       <span class="s1">'before_walks'</span><span class="p">:</span><span class="n">before_walks</span><span class="p">,</span>
+                       <span class="s1">'after_walks'</span><span class="p">:</span><span class="n">after_walks</span><span class="p">})</span>
+                            
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'aaname'</span><span class="p">,</span><span class="s1">'before_fip'</span><span class="p">,</span><span class="s1">'after_fip'</span><span class="p">,</span><span class="s1">'before_whip'</span><span class="p">,</span><span class="s1">'after_whip'</span><span class="p">,</span>
+       <span class="s1">'before_strikeout'</span><span class="p">,</span><span class="s1">'after_strikeout'</span><span class="p">,</span><span class="s1">'before_walks'</span><span class="p">,</span><span class="s1">'after_walks'</span><span class="p">]</span>
+
+<span class="n">stats_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>aaname</th>
+<th>before_fip</th>
+<th>after_fip</th>
+<th>before_whip</th>
+<th>after_whip</th>
+<th>before_strikeout</th>
+<th>after_strikeout</th>
+<th>before_walks</th>
+<th>after_walks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>C.C. Sabathia</td>
+<td>5.089796</td>
+<td>3.904878</td>
+<td>1.346939</td>
+<td>1.756098</td>
+<td>8.540816</td>
+<td>11.195122</td>
+<td>2.479592</td>
+<td>0.658537</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Clayton Kershaw</td>
+<td>1.579675</td>
+<td>2.124631</td>
+<td>0.845528</td>
+<td>0.886700</td>
+<td>11.048780</td>
+<td>10.906404</td>
+<td>1.390244</td>
+<td>1.463054</td>
+</tr>
+<tr>
+<th>2</th>
+<td>David Price</td>
+<td>2.726697</td>
+<td>2.741196</td>
+<td>1.160633</td>
+<td>0.956811</td>
+<td>9.895928</td>
+<td>9.777409</td>
+<td>1.466063</td>
+<td>1.166113</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Justin Verlander</td>
+<td>3.776923</td>
+<td>3.653398</td>
+<td>1.261538</td>
+<td>1.616505</td>
+<td>6.369231</td>
+<td>7.995146</td>
+<td>2.700000</td>
+<td>2.883495</td>
+</tr>
+<tr>
+<th>4</th>
+<td>R.A. Dickey</td>
+<td>3.679775</td>
+<td>5.584848</td>
+<td>1.105618</td>
+<td>1.484848</td>
+<td>7.644944</td>
+<td>6.409091</td>
+<td>2.730337</td>
+<td>3.681818</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_fip</span> <span class="o"><</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_fip</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6533333333333333</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_whip</span> <span class="o"><</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_whip</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6266666666666667</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_strikeout</span> <span class="o">></span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_strikeout</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.72</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_walks</span> <span class="o"><</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_walks</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5333333333333333</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_strikeout</span> <span class="o">-</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_strikeout</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>65   -2.852871e+00
+0    -2.654306e+00
+71   -2.166921e+00
+43   -1.913485e+00
+3    -1.625915e+00
+53   -1.541791e+00
+38   -1.361345e+00
+25   -1.237316e+00
+29   -1.198631e+00
+57   -9.627907e-01
+60   -9.209976e-01
+41   -9.202063e-01
+20   -8.557615e-01
+19   -8.115950e-01
+51   -6.731456e-01
+15   -6.380345e-01
+69   -1.145889e-01
+5    -1.050468e-01
+27   -5.414843e-02
+40   -7.105427e-15
+42    0.000000e+00
+8     3.339123e-02
+2     1.185190e-01
+22    1.258741e-01
+1     1.423765e-01
+49    2.552521e-01
+31    3.120567e-01
+66    3.947214e-01
+62    4.207602e-01
+44    4.372826e-01
+37    4.534022e-01
+26    4.558983e-01
+30    5.181346e-01
+35    5.718974e-01
+18    6.583703e-01
+24    6.594470e-01
+72    6.630027e-01
+34    7.180779e-01
+10    7.473383e-01
+28    7.511459e-01
+12    7.736037e-01
+61    7.773541e-01
+52    7.915593e-01
+9     8.517881e-01
+59    8.952007e-01
+48    9.172681e-01
+7     9.937500e-01
+33    1.023061e+00
+23    1.046108e+00
+55    1.159274e+00
+32    1.197233e+00
+4     1.235853e+00
+6     1.276673e+00
+21    1.289930e+00
+46    1.446143e+00
+11    1.454346e+00
+58    1.468410e+00
+64    1.488095e+00
+54    1.493415e+00
+56    1.521536e+00
+13    1.529624e+00
+17    1.548701e+00
+50    1.661153e+00
+63    1.808217e+00
+68    1.831247e+00
+14    1.902439e+00
+67    1.930995e+00
+36    2.505305e+00
+74    2.712752e+00
+73    3.092245e+00
+16    3.472284e+00
+45    3.665336e+00
+47    3.734043e+00
+70    5.062500e+00
+39    7.363636e+00
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># stats_df.aaname[abs(stats_df.before_strikeout - stats_df.after_strikeout).argsort()[len(stats_df)]]</span>
+<span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span><span class="p">[</span><span class="mi">67</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;Jon Lester&apos;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">SELECT </span>
+<span class="s1">X.date as date,</span>
+<span class="s1">X.event as event,</span>
+<span class="s1">pitch.inning as inning,</span>
+<span class="s1">X.o as o,</span>
+<span class="s1">X.s as o,</span>
+<span class="s1">X.b as b, </span>
+<span class="s1">X.s as s, </span>
+<span class="s1">X.pitcher_name as pitcher_name,</span>
+<span class="s1">X.batter_name as batter,</span>
+<span class="s1">pitch.type as type,</span>
+<span class="s1">pitch.x0 as x_location,</span>
+<span class="s1">pitch.z0 as z_location</span>
+<span class="s1">FROM (</span>
+<span class="s1">    SELECT *</span>
+<span class="s1">    FROM atbat</span>
+<span class="s1">    WHERE pitcher_name = ? AND (date >  '2014_03_30' AND date < '2014_09_30')</span>
+<span class="s1">) AS X</span>
+<span class="s1">INNER JOIN pitch on X.gameday_link = pitch.gameday_link AND X.num = pitch.num</span>
+<span class="s1">ORDER BY date,inning, id, o ASC</span>
+<span class="s1">'''</span>
+<span class="n">pitcher</span> <span class="o">=</span> <span class="s1">'Jered Weaver'</span>
+<span class="n">player_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_query</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">conn</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">pitcher</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [31]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Unnamed: 0</th>
+<th>date</th>
+<th>event</th>
+<th>inning</th>
+<th>o</th>
+<th>o.1</th>
+<th>b</th>
+<th>s</th>
+<th>pitcher_name</th>
+<th>batter</th>
+<th>type</th>
+<th>x_location</th>
+<th>z_location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>0</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>Jered Weaver</td>
+<td>Abraham Almonte</td>
+<td>S</td>
+<td>-2.588</td>
+<td>6.037</td>
+</tr>
+<tr>
+<th>1</th>
+<td>1</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>Jered Weaver</td>
+<td>Abraham Almonte</td>
+<td>S</td>
+<td>-2.655</td>
+<td>5.939</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>Jered Weaver</td>
+<td>Abraham Almonte</td>
+<td>B</td>
+<td>-2.781</td>
+<td>5.963</td>
+</tr>
+<tr>
+<th>3</th>
+<td>3</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>Jered Weaver</td>
+<td>Abraham Almonte</td>
+<td>S</td>
+<td>-2.668</td>
+<td>5.848</td>
+</tr>
+<tr>
+<th>4</th>
+<td>4</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>2.0</td>
+<td>Jered Weaver</td>
+<td>Abraham Almonte</td>
+<td>B</td>
+<td>-2.492</td>
+<td>5.760</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">x_location</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">z_location</span><span class="p">,</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s1">'markers'</span>
+<span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="p">]</span>
+<span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="s1">'pitches'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/34.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [32]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span> <span class="o">==</span> <span class="s1">'Jered Weaver'</span><span class="p">][</span><span class="n">cols</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>aaname</th>
+<th>before_fip</th>
+<th>after_fip</th>
+<th>before_whip</th>
+<th>after_whip</th>
+<th>before_strikeout</th>
+<th>after_strikeout</th>
+<th>before_walks</th>
+<th>after_walks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Jered Weaver</td>
+<td>3.799519</td>
+<td>4.666667</td>
+<td>1.088942</td>
+<td>1.483333</td>
+<td>7.59375</td>
+<td>6.6</td>
+<td>2.53125</td>
+<td>3.45</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [34]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># dates = list(player_df.date.unqiue())</span>
+<span class="c1"># sequences = np.array((player_df[player_df.date == dates[0]].type == 'S') * 1).reshape(len(player_df[player_df.date == dates[0]]), 1)</span>
+<span class="c1"># lengths = [len(sequences)]</span>
+<span class="c1"># for d in list(player_df.date.unique())[1:3]:</span>
+<span class="c1">#     seq = np.array((player_df[player_df.date == d].type == 'S') * 1).reshape(len(player_df[player_df.date == d]), 1)</span>
+<span class="c1">#     sequences = np.concatenate([sequences, seq]) </span>
+<span class="c1">#     lengths.append(len(seq))</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sequences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># sequences = np.array((player_df[player_df.date == dates[j]].type == 'S') * 1)</span>
+<span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">sequences</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [99]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># for j in range(len(player_df.date.unique())):</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+
+    <span class="n">sequences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">sequences</span><span class="p">)]</span>
+    <span class="n">hmm</span> <span class="o">=</span> <span class="n">MultinomialHMM</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">hmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">sequences</span><span class="p">)</span>
+    <span class="n">hmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sequences</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="n">hmm</span><span class="o">.</span><span class="n">transmat_</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="n">hmm</span><span class="o">.</span><span class="n">startprob_</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="n">hmm</span><span class="o">.</span><span class="n">emissionprob_</span>
+
+    <span class="n">hmmdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'states'</span><span class="p">:</span><span class="n">hmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sequences</span><span class="p">),</span>
+                          <span class="s1">'event'</span><span class="p">:</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                          <span class="s1">'date'</span><span class="p">:</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+                          <span class="s1">'batter'</span><span class="p">:</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">batter_name</span><span class="p">,</span> 
+                          <span class="s1">'event'</span><span class="p">:</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">event</span><span class="p">,</span>
+                          <span class="s1">'inning'</span><span class="p">:</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dates</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">inning</span>
+                         <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">before</span><span class="p">,</span> <span class="n">after</span> <span class="o">=</span> <span class="n">split_3rd</span><span class="p">(</span><span class="n">hmmdf</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="n">before</span><span class="o">.</span><span class="n">states</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="n">after</span><span class="o">.</span><span class="n">states</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="s1">'fip before'</span><span class="p">,</span> <span class="n">fip</span><span class="p">(</span><span class="n">before</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s1">''</span>
+    <span class="k">print</span> <span class="s1">'fip after'</span><span class="p">,</span> <span class="n">fip</span><span class="p">(</span><span class="n">after</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+[[ 0.42251964  0.20835775  0.36912261]
+ [ 0.28205842  0.41709086  0.30085072]
+ [ 0.40908447  0.22760384  0.36331169]]
+
+[  8.62504768e-10   9.99996326e-01   3.67327312e-06]
+
+[[ 0.89152613  0.10847387]
+ [ 0.0550439   0.9449561 ]
+ [ 0.72994495  0.27005505]]
+
+0    38
+1    31
+Name: states, dtype: int64
+
+0    19
+1     7
+Name: states, dtype: int64
+
+fip before 1.01304347826
+
+fip after 12.1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [108]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="n">hmmdf</span><span class="o">.</span><span class="n">states</span>
+
+<span class="n">grouped_states</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="n">states</span><span class="p">)]</span>
+
+<span class="n">groupby</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[108]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><itertools.groupby at 0x7f37c9f16c00></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [106]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">grouped_states</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[106]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[(1, 2),
+ (0, 1),
+ (1, 1),
+ (0, 5),
+ (1, 1),
+ (0, 3),
+ (1, 1),
+ (0, 1),
+ (1, 1),
+ (0, 4),
+ (1, 2),
+ (0, 1),
+ (1, 1),
+ (0, 1),
+ (1, 2),
+ (0, 1),
+ (1, 2),
+ (0, 8),
+ (1, 4),
+ (0, 3),
+ (1, 1),
+ (0, 3),
+ (1, 7),
+ (0, 2),
+ (1, 3),
+ (0, 4),
+ (1, 2),
+ (0, 1),
+ (1, 2),
+ (0, 2),
+ (1, 1),
+ (0, 1),
+ (1, 1),
+ (0, 2),
+ (1, 1),
+ (0, 1),
+ (1, 1),
+ (0, 3),
+ (1, 1),
+ (0, 5),
+ (1, 1),
+ (0, 5)]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [109]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">hmmdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[109]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>index</th>
+<th>batter</th>
+<th>date</th>
+<th>event</th>
+<th>inning</th>
+<th>states</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>0</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>1</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>3</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>4</th>
+<td>4</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>5</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>6</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>7</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>8</th>
+<td>8</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>9</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>1.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>10</th>
+<td>10</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>11</th>
+<td>11</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>12</th>
+<td>12</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>13</th>
+<td>13</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>1.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>14</th>
+<td>14</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>15</th>
+<td>15</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>1.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>16</th>
+<td>16</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>17</th>
+<td>17</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>18</th>
+<td>18</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>19</th>
+<td>19</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>20</th>
+<td>20</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>21</th>
+<td>21</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>22</th>
+<td>22</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>23</th>
+<td>23</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>24</th>
+<td>24</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>25</th>
+<td>25</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>26</th>
+<td>26</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>27</th>
+<td>27</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>28</th>
+<td>28</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>29</th>
+<td>29</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Field Error</td>
+<td>2.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>30</th>
+<td>30</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Field Error</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>31</th>
+<td>31</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Field Error</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>32</th>
+<td>32</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Sac Fly</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>33</th>
+<td>33</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Sac Fly</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>34</th>
+<td>34</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>35</th>
+<td>35</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>36</th>
+<td>36</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>37</th>
+<td>37</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>38</th>
+<td>38</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>3.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>39</th>
+<td>39</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>3.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>40</th>
+<td>40</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>3.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>41</th>
+<td>41</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>3.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>42</th>
+<td>42</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>43</th>
+<td>43</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>44</th>
+<td>44</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>45</th>
+<td>45</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>3.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>46</th>
+<td>46</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Pop Out</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>47</th>
+<td>47</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>4.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>48</th>
+<td>48</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>4.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>49</th>
+<td>49</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>50</th>
+<td>50</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>51</th>
+<td>51</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>52</th>
+<td>52</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>53</th>
+<td>53</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>54</th>
+<td>54</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>55</th>
+<td>55</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>4.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>56</th>
+<td>56</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>4.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>57</th>
+<td>57</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>58</th>
+<td>58</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>59</th>
+<td>59</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>60</th>
+<td>60</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>61</th>
+<td>61</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>62</th>
+<td>62</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>63</th>
+<td>63</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>64</th>
+<td>64</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>65</th>
+<td>65</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>66</th>
+<td>66</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>67</th>
+<td>67</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>68</th>
+<td>68</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Strikeout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>69</th>
+<td>69</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Lineout</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>70</th>
+<td>70</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Lineout</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>71</th>
+<td>71</td>
+<td>Abraham Almonte</td>
+<td>2014_03_31</td>
+<td>Lineout</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>72</th>
+<td>72</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>6.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>73</th>
+<td>73</td>
+<td>Brad Miller</td>
+<td>2014_03_31</td>
+<td>Groundout</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>74</th>
+<td>74</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Lineout</td>
+<td>6.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>75</th>
+<td>75</td>
+<td>Robinson Cano</td>
+<td>2014_03_31</td>
+<td>Lineout</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>76</th>
+<td>76</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>77</th>
+<td>77</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>78</th>
+<td>78</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>79</th>
+<td>79</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>80</th>
+<td>80</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>81</th>
+<td>81</td>
+<td>Justin Smoak</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>82</th>
+<td>82</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>83</th>
+<td>83</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>84</th>
+<td>84</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>85</th>
+<td>85</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>86</th>
+<td>86</td>
+<td>Logan Morrison</td>
+<td>2014_03_31</td>
+<td>Walk</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>87</th>
+<td>87</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>88</th>
+<td>88</td>
+<td>Kyle Seager</td>
+<td>2014_03_31</td>
+<td>Double</td>
+<td>6.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>89</th>
+<td>89</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>7.0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>90</th>
+<td>90</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>7.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>91</th>
+<td>91</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>7.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>92</th>
+<td>92</td>
+<td>Michael Saunders</td>
+<td>2014_03_31</td>
+<td>Flyout</td>
+<td>7.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>93</th>
+<td>93</td>
+<td>Dustin Ackley</td>
+<td>2014_03_31</td>
+<td>Single</td>
+<td>7.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>94</th>
+<td>94</td>
+<td>Mike Zunino</td>
+<td>2014_03_31</td>
+<td>Triple</td>
+<td>7.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://ttran0.github.io/tag/python.html">python</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Truong Tran </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Truong's Website ",
+  "url" : "https://ttran0.github.io",
+  "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>
