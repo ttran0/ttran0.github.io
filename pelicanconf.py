@@ -28,7 +28,7 @@ SOCIAL = (('linkedin', 'https://www.linkedin.com/in/truong-tran'),
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Data Science Projects', '/category/projects.html'),
-             ('Teaching Page','/category/teaching.html')
+             ('Teaching','/category/teaching.html')
              ,)
 
 STATIC_PATHS = ['pdfs']
