@@ -30,6 +30,6 @@ I have attached all of my instructor evaluations below:
 <br></br>
 [Calculus I - Spring 16]({filename}/pdfs/Math122_S16.pdf)
 <br></br>
-[Introduction to Java Programming and Problem Solving]({filename}/pdfs/Cecs174_S16.pdf)
+[Introduction to Java Programming and Problem Solving - Spring 16]({filename}/pdfs/Cecs174_S16.pdf)
 <br></br>
-[Numerical Methods]({filename}/pdfs/Cecs271_S16.pdf)
+[Numerical Methods - Spring 16]({filename}/pdfs/Cecs271_S16.pdf)
