@@ -1,7 +1,7 @@
 Title: Teaching Page
 Slug: teaching
 Date: 2016-12-23 20:48
-Category: Teaching-Page
+Category: Teaching
 Tags: teaching
 Author: Truong Tran
 
@@ -18,3 +18,12 @@ The courses I have taught are: Algebra, Business Calculus, Calculus I, Calculus 
 
 
 I have attached all of my instructor evaluations below:
+
+
+[Intermediate Algebra - Fall 13]({filename}/pdfs/MAPB7_F13.pdf)
+[Calculus II - Spring 14]({filename}/pdfs/Math123_S14.pdf)
+[Calculus II - Fall 14]({filename}/pdfs/Math123_F14.pdf)
+[Calculus II - Fall 15]({filename}/pdfs/Math123_F15.pdf)
+[Calculus I - Spring 16]({filename}/pdfs/Math122_S16.pdf)
+[Introduction to Java Programming and Problem Solving]({filename}/pdfs/Cecs174_S16.pdf)
+[Numerical Methods]({filename}/pdfs/Cecs271_S16.pdf)
