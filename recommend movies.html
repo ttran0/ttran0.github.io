@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://ttran0.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://ttran0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Truong's Website Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Truong Tran" />
+<meta name="description" content="Motivation¶It has been a year or two since I have done any analysis involving recommendation systems so I wanted to shake off the rust and dive into building a recommendation system for movies. At the end of the day, it will let me practice. Since I am on break and have some free time, it doesn't hurt to have a working recommendation system so I know what to watch movies to watch next." />
+<meta name="keywords" content="python">
+<meta property="og:site_name" content="Truong's Website"/>
+<meta property="og:title" content="I Don't Know What Movies to Watch"/>
+<meta property="og:description" content="Motivation¶It has been a year or two since I have done any analysis involving recommendation systems so I wanted to shake off the rust and dive into building a recommendation system for movies. At the end of the day, it will let me practice. Since I am on break and have some free time, it doesn't hurt to have a working recommendation system so I know what to watch movies to watch next."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://ttran0.github.io/recommend movies.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-01-11 18:08:00-08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://ttran0.github.io/author/truong-tran.html">
+<meta property="article:section" content="Projects"/>
+<meta property="article:tag" content="python"/>
+<meta property="og:image" content="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg">
+
+  <title>Truong's Website &ndash; I Don't Know What Movies to Watch</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://ttran0.github.io">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg" alt="" title="">
+      </a>
+      <h1><a href="https://ttran0.github.io"></a></h1>
+
+<p>Mathematician & Aspiring Data Scientist</p>
+      <nav>
+        <ul class="list">
+          <li><a href="https://ttran0.github.io/pages/about-me.html#about-me">About Me</a></li>
+          <li><a href="https://ttran0.github.io/pages/contact.html#contact">Contact</a></li>
+          <li><a href="https://ttran0.github.io/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/truong-tran" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/ttran0" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://ttran0.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/category/projects.html">Data Science Projects</a>
+      <a href="/category/teaching.html">Teaching</a>
+
+      <a href="https://ttran0.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="recommend movies">I Don't Know What Movies to Watch</h1>
+    <p>
+          Posted on Wed 11 January 2017 in <a href="https://ttran0.github.io/category/projects.html">Projects</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">¶</a></h2><p>It has been a year or two since I have done any analysis involving recommendation systems so I wanted to shake off the rust and dive into building a recommendation system for movies. At the end of the day, it will let me practice. Since I am on break and have some free time, it doesn't hurt to have a working recommendation system so I know what to watch movies to watch next.</p>
+<p>Additionally, since my girlfriend and I never know what to watch after we finish our Netflix and Hulu queues, I can use this model to aid with our problem.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">graphlab</span> <span class="kn">as</span> <span class="nn">gl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dataset was downloaded from MovieLens via <a href="http://grouplens.org/datasets/movielens/">http://grouplens.org/datasets/movielens/</a>. It is the most recent dataset published on the site, updated in October 2016. There are 24,404,096 total ratings by 259,137 different users in this dataset for 40,110 movies.</p>
+<p>I will be using Graphlab Create to build the models for this analysis. Graphlab Create is a machine learning tool created by Turi, formerly known as Dato.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [48]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># ratings = pd.read_csv('ratings.csv')</span>
+<span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'movies.csv'</span><span class="p">)</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'ratings.csv'</span><span class="p">)</span>
+<span class="c1"># movies = gl.SFrame.read_csv('movies.csv')</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Finished parsing file /home/truong/google_drive/cf_movie/ratings.csv</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Parsing completed. Parsed 100 lines in 0.544938 secs.</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>------------------------------------------------------
+Inferred types from first 100 line(s) of file as 
+column_type_hints=[int,int,float,int]
+If parsing fails due to incorrect types, you can correct
+the inferred type list above and pass it to read_csv in
+the column_type_hints argument
+------------------------------------------------------
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Read 2008883 lines. Lines per second: 2.03851e+06</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Read 23162339 lines. Lines per second: 3.83319e+06</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Finished parsing file /home/truong/google_drive/cf_movie/ratings.csv</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Parsing completed. Parsed 24404096 lines in 6.2078 secs.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [49]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ratings</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[49]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;"><table frame="box" rules="cols">
+<tr>
+<th style="padding-left: 1em; padding-right: 1em; text-align: center">userId</th>
+<th style="padding-left: 1em; padding-right: 1em; text-align: center">movieId</th>
+<th style="padding-left: 1em; padding-right: 1em; text-align: center">rating</th>
+<th style="padding-left: 1em; padding-right: 1em; text-align: center">timestamp</th>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">122</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">2.0</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">945544824</td>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">172</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1.0</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">945544871</td>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1221</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">5.0</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">945544788</td>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">1441</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">4.0</td>
+<td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">945544871</td>
+</tr>
+</table>
+[4 rows x 4 columns]<br />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [50]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">movies</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>movieId</th>
+<th>title</th>
+<th>genres</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>Toy Story (1995)</td>
+<td>Adventure|Animation|Children|Comedy|Fantasy</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>Jumanji (1995)</td>
+<td>Adventure|Children|Fantasy</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>Grumpier Old Men (1995)</td>
+<td>Comedy|Romance</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4</td>
+<td>Waiting to Exhale (1995)</td>
+<td>Comedy|Drama|Romance</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [51]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">ratings</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(24404096, 4) (40110, 3)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">'userId'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[52]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>259137</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [53]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ratings</span><span class="p">[</span><span class="s1">'genres'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="s1">'genres'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Collaborative-Filtering">Collaborative Filtering<a class="anchor-link" href="#Collaborative-Filtering">¶</a></h3><p>I will use two algorithms under the category of collaborative filtering algorithms, <strong>Cosine Similarity</strong> and <strong>Non-negative Matrix Factorization</strong>. Let's take a quick look at the two algorithms before we build the models.</p>
+<p>The Cosine Similarity simply takes in the matrix of users and their ratings and calculates the vector orientations of either user to user, or item to item, measuring similarity. Let's take an example user-movie rating matrix:</p>
+<table>
+<thead><tr>
+<th></th>
+<th style="text-align:left">movie 1</th>
+<th style="text-align:left">movie 2</th>
+<th style="text-align:left">movie 3</th>
+<th style="text-align:left">movie 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user 1</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td>user 2</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>user 3</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Cosine Similarity: </strong></p>
+<p>The cosine similarity measures the  is defined as:</p>
+$$\displaystyle \cos(\pmb x, \pmb y) = \frac {\pmb x \cdot \pmb y}{||\pmb x|| \cdot ||\pmb y||}, \quad ||\pmb x|| = \sqrt{\sum_{i}^{n} x_i^2}$$<p>The larger $\displaystyle \cos(\pmb x, \pmb y)$ is, the closer the vectors are, implying that the two vectors are more similar. The less $\displaystyle \cos(\pmb x, \pmb y)$ is, the less similar the vectors are. 
+To measure similarity between users, we take the values corresponding to their rows and calculate their cosine similarity value. To measure similarity between movies, we do the same but take the values corresponding to the movie's column. In either case, we fill in the missing values with a 0.</p>
+<p>Let's say we want to measure how similar user 1 is to user 2 compared to user 1 to user 3.</p>
+<p><strong> User 1 - User 2: </strong></p>
+<p>Using the formula above, we will let $\pmb x$ = (3, 5, 0 , 1) and $\pmb y$ = (0, 1, 2, 0), then:</p>
+<p>$\displaystyle \cos (\pmb x, \pmb y) = \frac{3 \times 0 + 5 \times 1 + 0 \times 2 + 1 \times 0}{\sqrt{3^2 + 5^2 + 0^2 + 1^2} + \sqrt{0^2 + 1^2 + 2^2 + 0^2}}$ = 0.6133</p>
+<p><strong> User 1 - User 3:</strong></p>
+<p>Let $\pmb x$ = (3, 5, 0 , 1) and $\pmb y$ = (0, 5, 4, 1), then:</p>
+<p>$\displaystyle \cos (\pmb x, \pmb y) = \frac{3 \times 0 + 5 \times 5 + 0 \times 4 + 1 \times 1}{\sqrt{3^2 + 5^2 + 0^2 + 1^2} + \sqrt{0^2 + 5^2 + 4^2 + 1^2}}$ = 2.097</p>
+<p>From the calculations, we can see that User 1 is more similar to User 3 than User 2 by comparing the similarity values. We can also observe this from the table/matrix. User 1 and User 3 gave exactly the same rating for movie 2 and movie 4, while User 1 and User 2 gave opposite ratings for movie 2. We can use this result to recommend User 1 a movie or multiple movies that User 2 rated highly.</p>
+<p>Above is a user based recommender. We can go though the same process to do a item based recommender: find items/movies that are closest in similarity and recommend users movies that are most similar to the ones they rated highly.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Non-Negative-Matrix-Factorization">Non-Negative Matrix Factorization<a class="anchor-link" href="#Non-Negative-Matrix-Factorization">¶</a></h3><p>Cosider the same matrix/table:</p>
+<table>
+<thead><tr>
+<th></th>
+<th style="text-align:left">movie 1</th>
+<th style="text-align:left">movie 2</th>
+<th style="text-align:left">movie 3</th>
+<th style="text-align:left">movie 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user 1</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td>user 2</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>user 3</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<p>Let <strong>A</strong> be the matrix of values from the table</p>
+<p>$
+A = \begin{bmatrix}
+       3 & 5 &   & 1           \\
+         & 1 & 2 &             \\
+         & 5 & 4 & 1
+     \end{bmatrix}
+$</p>
+<p>The fundamental idea of this process is as its name states, it takes the data matrix and factors it into a product of two matrices that best approximates the data matrix <strong>A</strong>:</p>
+<p>$
+A = \begin{bmatrix}
+       3 & 5 &   & 1           \
+         & 1 & 2 &             \
+         & 5 & 4 & 1
+     \end{bmatrix}</p>
+<h1 id="$">$<a class="anchor-link" href="#$">¶</a></h1><p>$
+\begin{bmatrix}
+      & & \\
+      & & \\
+      & &
+     \end{bmatrix}
+$
+$
+\begin{bmatrix}
+      & & & & \\
+      & & & &
+     \end{bmatrix}
+$</p>
+<p>The goal here is if we find the two matrices that best approximates <strong>A</strong>, then we can use the values from the product as approximations for the missing values in <strong>A</strong>. Therefore, we can use these approximations to recommend or not recommend movies to users. The model Graphlab uses is fundamentally this process described above. However, Graphlab adds in bias and weight terms to account for either user bias or item bias.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll get started now. First I will split the data into a train and test set then I will add my movies and ratings along with my girlfriend's movies and ratings so we can get recommendations from our models.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [54]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create train and test set</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">recommender</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">random_split_by_user</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">user_id</span> <span class="o">=</span> <span class="s1">'userId'</span><span class="p">,</span> <span class="n">item_id</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [55]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cos_rec</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">item_similarity_recommender</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s1">'userId'</span><span class="p">,</span>
+                                                <span class="n">item_id</span><span class="o">=</span><span class="s1">'movieId'</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">'rating'</span><span class="p">,</span> 
+                                                <span class="n">similarity_type</span><span class="o">=</span><span class="s1">'cosine'</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Recsys training: model = item_similarity</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [56]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">my_id</span> <span class="o">=</span> <span class="n">ratings</span><span class="p">[</span><span class="s1">'userId'</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [57]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">search_title</span><span class="p">(</span><span class="n">movie_title</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="k">if</span> <span class="n">movie_title</span> <span class="ow">in</span> <span class="n">movie</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]])</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">movies</span><span class="p">[</span><span class="s1">'title'</span><span class="p">][</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [58]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">search_title</span><span class="p">(</span><span class="s1">'Avengers'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2070                                  Avengers, The (1998)
+10886                             Ultimate Avengers (2006)
+17935                                 Avengers, The (2012)
+23288    Avengers Confidential: Black Widow & Punisher ...
+24716    Crippled Avengers (Can que) (Return of the 5 D...
+26705                       Avengers: Age of Ultron (2015)
+30595             Next Avengers: Heroes of Tomorrow (2008)
+30677                                Avengers Grimm (2015)
+34339    The New Adventures of the Elusive Avengers (1968)
+38519                          The Shaolin Avengers (1976)
+Name: title, dtype: object
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [59]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">my_movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Hitch (2005)'</span><span class="p">,</span> <span class="s1">'Iron Man (2008)'</span><span class="p">,</span> <span class="s1">'Everybody</span><span class="se">\'</span><span class="s1">s Fine (2009)'</span><span class="p">,</span> <span class="s1">'Horrible Bosses 2 (2014)'</span><span class="p">,</span> 
+            <span class="s1">'Other Woman, The (2014)'</span><span class="p">,</span> <span class="s1">'Think Like a Man Too (2014)'</span><span class="p">,</span>
+            <span class="s1">'Seeking a Friend for the End of the World (2012)'</span><span class="p">,</span> <span class="s1">'Iron Man 2 (2010)'</span><span class="p">,</span> <span class="s1">'Iron Man 3 (2013)'</span><span class="p">,</span>
+            <span class="s1">'Avengers, The (2012)'</span><span class="p">,</span> <span class="s1">'Avengers: Age of Ultron (2015)'</span><span class="p">]</span>
+<span class="n">my_ratings</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">my_genres</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">my_movies</span><span class="p">)]</span><span class="o">.</span><span class="n">genres</span><span class="p">)</span>
+
+<span class="n">my_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'userId'</span><span class="p">:[</span><span class="n">my_id</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_ratings</span><span class="p">),</span>
+                          <span class="s1">'rating'</span><span class="p">:</span><span class="n">my_ratings</span><span class="p">,</span>
+                          <span class="s1">'movieId'</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">my_movies</span><span class="p">)]</span><span class="o">.</span><span class="n">movieId</span><span class="p">),</span>
+                          <span class="s1">'genres'</span><span class="p">:</span> <span class="n">my_genres</span><span class="p">,</span>
+                          <span class="s1">'timestamp'</span><span class="p">:[</span><span class="mi">1484126312</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_ratings</span><span class="p">)})</span>
+
+<span class="n">my_matrix</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">my_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [82]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">myrec_movies</span> <span class="o">=</span> <span class="n">cos_rec</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_id</span><span class="p">],</span> 
+                                              <span class="n">new_observation_data</span> <span class="o">=</span> <span class="n">my_matrix</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">diversity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">my_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">myrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="k">print</span> <span class="s1">'List of Recommended Movies from Cosine Similarity:'</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">myrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List of Recommended Movies from Cosine Similarity:
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[82]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Captain America: The First Avenger (2011)&apos;,
+ &apos;X-Men: First Class (2011)&apos;,
+ &apos;Guardians of the Galaxy (2014)&apos;,
+ &apos;Thor (2011)&apos;,
+ &apos;Dark Knight Rises, The (2012)&apos;,
+ &apos;Captain America: The Winter Soldier (2014)&apos;,
+ &apos;Thor: The Dark World (2013)&apos;,
+ &apos;Avatar (2009)&apos;,
+ &apos;Star Trek Into Darkness (2013)&apos;,
+ &apos;Amazing Spider-Man, The (2012)&apos;,
+ &apos;Looper (2012)&apos;,
+ &apos;Hobbit: An Unexpected Journey, The (2012)&apos;,
+ &apos;Kick-Ass (2010)&apos;,
+ &apos;Hobbit: The Desolation of Smaug, The (2013)&apos;,
+ &apos;Skyfall (2012)&apos;,
+ &apos;The Hunger Games: Catching Fire (2013)&apos;,
+ &apos;Dark Knight, The (2008)&apos;,
+ &apos;Mission: Impossible - Ghost Protocol (2011)&apos;,
+ &apos;I Am Legend (2007)&apos;,
+ &apos;Rise of the Planet of the Apes (2011)&apos;,
+ &apos;Harry Potter and the Deathly Hallows: Part 2 (2011)&apos;,
+ &apos;Harry Potter and the Deathly Hallows: Part 1 (2010)&apos;,
+ &apos;Batman Begins (2005)&apos;,
+ &apos;WALL\xc2\xb7E (2008)&apos;,
+ &apos;Up (2009)&apos;,
+ &apos;Jurassic World (2015)&apos;,
+ &apos;Incredible Hulk, The (2008)&apos;,
+ &apos;Zombieland (2009)&apos;,
+ &apos;The Amazing Spider-Man 2 (2014)&apos;,
+ &apos;Incredibles, The (2004)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matrix-Factorization">Matrix Factorization<a class="anchor-link" href="#Matrix-Factorization">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [62]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">nmf_model</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">factorization_recommender</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">user_id</span> <span class="o">=</span> <span class="s1">'userId'</span><span class="p">,</span> <span class="n">item_id</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span>
+                                                 <span class="n">target</span> <span class="o">=</span> <span class="s1">'rating'</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> 
+                                               <span class="n">side_data_factorization</span> <span class="o">=</span> <span class="bp">True</span>
+                                                <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Recsys training: model = factorization_recommender</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [83]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">myrec_movies</span> <span class="o">=</span> <span class="n">nmf_model</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_id</span><span class="p">],</span> 
+                                              <span class="n">new_observation_data</span> <span class="o">=</span> <span class="n">my_matrix</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">my_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">myrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="k">print</span> <span class="s1">'List of Recommended Movies from Matrix Factorization:'</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">myrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List of Recommended Movies from Matrix Factorization:
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[83]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;The Hunger Games: Catching Fire (2013)&apos;,
+ &apos;Frozen (2013)&apos;,
+ &apos;Gravity (2013)&apos;,
+ &apos;Star Wars: Episode VII - The Force Awakens (2015)&apos;,
+ &apos;Silver Linings Playbook (2012)&apos;,
+ &apos;American Hustle (2013)&apos;,
+ &apos;Man of Steel (2013)&apos;,
+ &apos;X-Men: Days of Future Past (2014)&apos;,
+ &apos;Hobbit: The Desolation of Smaug, The (2013)&apos;,
+ &apos;Band of Brothers (2001)&apos;,
+ &apos;Intouchables (2011)&apos;,
+ &apos;Thor: The Dark World (2013)&apos;,
+ &apos;Despicable Me 2 (2013)&apos;,
+ &apos;Argo (2012)&apos;,
+ &apos;Monsters University (2013)&apos;,
+ &apos;Toy Story 3 (2010)&apos;,
+ "Dr. Horrible&apos;s Sing-Along Blog (2008)",
+ &apos;Divergent (2014)&apos;,
+ &apos;Cosmos (1980)&apos;,
+ &apos;Senna (2010)&apos;,
+ &apos;Wreck-It Ralph (2012)&apos;,
+ &apos;Inside Out (2015)&apos;,
+ &apos;Life of Pi (2012)&apos;,
+ &apos;Louis C.K.: Live at the Beacon Theater (2011)&apos;,
+ &apos;Shawshank Redemption, The (1994)&apos;,
+ &apos;Rush (2013)&apos;,
+ &apos;Amazing Spider-Man, The (2012)&apos;,
+ &apos;Alone in the Wilderness (2004)&apos;,
+ "King&apos;s Speech, The (2010)",
+ &apos;Hobbit: An Unexpected Journey, The (2012)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Girlfriend&#x27;s-Recommendations">Girlfriend's Recommendations<a class="anchor-link" href="#Girlfriend&#x27;s-Recommendations">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [64]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">search_title</span><span class="p">(</span><span class="s1">'27 Dresses'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>12365    27 Dresses (2008)
+Name: title, dtype: object
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [65]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gf_movies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Hitch (2005)'</span><span class="p">,</span> <span class="s1">'Chef (2014)'</span><span class="p">,</span> <span class="s1">'Juno (2007)'</span><span class="p">,</span> <span class="s1">'How to Lose a Guy in 10 Days (2003)'</span><span class="p">,</span> 
+                <span class="s1">'Devil Wears Prada, The (2006)'</span><span class="p">,</span> <span class="s1">'Proposal, The (2009)'</span><span class="p">,</span>
+                <span class="s1">'Flight (2012)'</span><span class="p">,</span> <span class="s1">'Avengers, The (2012)'</span><span class="p">,</span> <span class="s1">'Friends with Kids (2011)'</span><span class="p">,</span>
+               <span class="s1">'Legally Blonde (2001)'</span><span class="p">,</span> <span class="s1">'Princess Diaries, The (2001)'</span><span class="p">,</span> <span class="s1">'Finding Nemo (2003)'</span><span class="p">,</span> <span class="s1">'Elf (2003)'</span><span class="p">,</span>
+               <span class="s1">'Along Came Polly (2004)'</span><span class="p">,</span> <span class="s1">'Notebook, The (2004)'</span><span class="p">,</span> <span class="s1">'Ratatouille (2007)'</span><span class="p">,</span> <span class="s1">'Knocked Up (2007)'</span><span class="p">,</span> 
+                <span class="s1">'Iron Man (2008)'</span><span class="p">,</span> <span class="s1">'Up (2009)'</span><span class="p">,</span> <span class="s1">'Zombieland (2009)'</span><span class="p">,</span> <span class="s1">'Avatar (2009)'</span><span class="p">,</span> <span class="s1">'Thor (2011)'</span><span class="p">,</span> 
+                <span class="s1">'Horrible Bosses (2011)'</span><span class="p">,</span> <span class="s1">'Captain America: The Winter Soldier (2014)'</span><span class="p">,</span> <span class="s1">'Mean Girls (2004)'</span><span class="p">,</span> <span class="s1">'WALL·E (2008)'</span><span class="p">,</span>
+               <span class="s1">'Leap Year (2010)'</span><span class="p">,</span><span class="s1">'27 Dresses (2008)'</span><span class="p">]</span>
+<span class="n">gf_ratings</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">gf_genres</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">gf_movies</span><span class="p">)]</span><span class="o">.</span><span class="n">genres</span><span class="p">)</span>
+
+<span class="n">gf_id</span> <span class="o">=</span> <span class="n">my_id</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [66]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gf_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'userId'</span><span class="p">:[</span><span class="n">gf_id</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">gf_ratings</span><span class="p">),</span>
+                          <span class="s1">'rating'</span><span class="p">:</span><span class="n">gf_ratings</span><span class="p">,</span>
+                          <span class="s1">'movieId'</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">gf_movies</span><span class="p">)]</span><span class="o">.</span><span class="n">movieId</span><span class="p">),</span>
+                          <span class="s1">'genres'</span><span class="p">:</span> <span class="n">gf_genres</span><span class="p">,</span>
+                          <span class="s1">'timestamp'</span><span class="p">:[</span><span class="mi">1484126312</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">gf_ratings</span><span class="p">)})</span>
+<span class="n">gf_matrix</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">gf_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [84]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gfrec_movies</span> <span class="o">=</span> <span class="n">cos_rec</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">gf_id</span><span class="p">],</span> <span class="n">new_observation_data</span> <span class="o">=</span> <span class="n">gf_matrix</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">gf_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="k">print</span> <span class="s1">'List of Recommended Movies from Cosine Similarity:'</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List of Recommended Movies from Cosine Similarity:
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[84]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Hangover, The (2009)&apos;,
+ &apos;Pirates of the Caribbean: The Curse of the Black Pearl (2003)&apos;,
+ &apos;Batman Begins (2005)&apos;,
+ &apos;V for Vendetta (2006)&apos;,
+ &apos;50 First Dates (2004)&apos;,
+ &apos;Dark Knight, The (2008)&apos;,
+ &apos;Harry Potter and the Prisoner of Azkaban (2004)&apos;,
+ &apos;Incredibles, The (2004)&apos;,
+ &apos;Bruce Almighty (2003)&apos;,
+ &apos;Inception (2010)&apos;,
+ &apos;Star Trek (2009)&apos;,
+ &apos;Monsters, Inc. (2001)&apos;,
+ &apos;Prestige, The (2006)&apos;,
+ &apos;Casino Royale (2006)&apos;,
+ &apos;Iron Man 2 (2010)&apos;,
+ &apos;Sherlock Holmes (2009)&apos;,
+ &apos;Dark Knight Rises, The (2012)&apos;,
+ &apos;How to Train Your Dragon (2010)&apos;,
+ &apos;District 9 (2009)&apos;,
+ &apos;Inglourious Basterds (2009)&apos;,
+ &apos;Catch Me If You Can (2002)&apos;,
+ &apos;X-Men: First Class (2011)&apos;,
+ &apos;Shrek (2001)&apos;,
+ &apos;Little Miss Sunshine (2006)&apos;,
+ &apos;Hot Fuzz (2007)&apos;,
+ &apos;Departed, The (2006)&apos;,
+ &apos;The Hunger Games (2012)&apos;,
+ "Pirates of the Caribbean: Dead Man&apos;s Chest (2006)",
+ &apos;Slumdog Millionaire (2008)&apos;,
+ &apos;Guardians of the Galaxy (2014)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [85]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gfrec_movies</span> <span class="o">=</span> <span class="n">nmf_model</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">gf_id</span><span class="p">],</span> <span class="n">new_observation_data</span> <span class="o">=</span> <span class="n">gf_matrix</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">gf_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="k">print</span> <span class="s1">'List of Recommended Movies from Matrix Factorization:'</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List of Recommended Movies from Matrix Factorization:
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[85]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;The Hunger Games: Catching Fire (2013)&apos;,
+ &apos;Frozen (2013)&apos;,
+ &apos;Gravity (2013)&apos;,
+ &apos;Star Wars: Episode VII - The Force Awakens (2015)&apos;,
+ &apos;Silver Linings Playbook (2012)&apos;,
+ &apos;American Hustle (2013)&apos;,
+ &apos;Man of Steel (2013)&apos;,
+ &apos;X-Men: Days of Future Past (2014)&apos;,
+ &apos;Hobbit: The Desolation of Smaug, The (2013)&apos;,
+ &apos;Band of Brothers (2001)&apos;,
+ &apos;Intouchables (2011)&apos;,
+ &apos;Iron Man 3 (2013)&apos;,
+ &apos;Thor: The Dark World (2013)&apos;,
+ &apos;Despicable Me 2 (2013)&apos;,
+ &apos;Argo (2012)&apos;,
+ &apos;Monsters University (2013)&apos;,
+ &apos;Toy Story 3 (2010)&apos;,
+ "Dr. Horrible&apos;s Sing-Along Blog (2008)",
+ &apos;Divergent (2014)&apos;,
+ &apos;Cosmos (1980)&apos;,
+ &apos;Senna (2010)&apos;,
+ &apos;Wreck-It Ralph (2012)&apos;,
+ &apos;Inside Out (2015)&apos;,
+ &apos;Life of Pi (2012)&apos;,
+ &apos;Louis C.K.: Live at the Beacon Theater (2011)&apos;,
+ &apos;Shawshank Redemption, The (1994)&apos;,
+ &apos;Rush (2013)&apos;,
+ &apos;Amazing Spider-Man, The (2012)&apos;,
+ &apos;Avengers: Age of Ultron (2015)&apos;,
+ &apos;Alone in the Wilderness (2004)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [86]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gfrec_movies</span> <span class="o">=</span> <span class="n">nmf_model</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">gf_id</span> <span class="o">+</span> <span class="mi">2000</span><span class="p">],</span> <span class="n">new_observation_data</span> <span class="o">=</span> <span class="n">gf_matrix</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">gf_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="k">print</span> <span class="s1">'List of Recommended Movies from Matrix Factorization:'</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List of Recommended Movies from Matrix Factorization:
+</pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt output_prompt">Out[86]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;The Hunger Games: Catching Fire (2013)&apos;,
+ &apos;Frozen (2013)&apos;,
+ &apos;Gravity (2013)&apos;,
+ &apos;Avengers, The (2012)&apos;,
+ &apos;Star Wars: Episode VII - The Force Awakens (2015)&apos;,
+ &apos;Silver Linings Playbook (2012)&apos;,
+ &apos;American Hustle (2013)&apos;,
+ &apos;Man of Steel (2013)&apos;,
+ &apos;X-Men: Days of Future Past (2014)&apos;,
+ &apos;Hobbit: The Desolation of Smaug, The (2013)&apos;,
+ &apos;Band of Brothers (2001)&apos;,
+ &apos;Intouchables (2011)&apos;,
+ &apos;Iron Man 3 (2013)&apos;,
+ &apos;Thor: The Dark World (2013)&apos;,
+ &apos;Despicable Me 2 (2013)&apos;,
+ &apos;Argo (2012)&apos;,
+ &apos;Monsters University (2013)&apos;,
+ &apos;Toy Story 3 (2010)&apos;,
+ "Dr. Horrible&apos;s Sing-Along Blog (2008)",
+ &apos;Divergent (2014)&apos;,
+ &apos;Cosmos (1980)&apos;,
+ &apos;Senna (2010)&apos;,
+ &apos;Wreck-It Ralph (2012)&apos;,
+ &apos;Inside Out (2015)&apos;,
+ &apos;Life of Pi (2012)&apos;,
+ &apos;Louis C.K.: Live at the Beacon Theater (2011)&apos;,
+ &apos;Shawshank Redemption, The (1994)&apos;,
+ &apos;Rush (2013)&apos;,
+ &apos;Amazing Spider-Man, The (2012)&apos;,
+ &apos;Avengers: Age of Ultron (2015)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There seems to be a slight problem with the matrix factorization model. It recommended almost the exact same movies for my girlfriend and me. I also ran the recommendation again for a user that is not in the dataset that have no ratings whatsoever and the recommendations are almost the same. Looking into their github, it seems that the recommendation only works if the user was originally in the training set. They state that the recommendation for new users with observations works best with item similarities such as the cosine similarity we used. My theory is the recommendation defaults to most popular movies which is the case if we input a new user not in the dataset with no data. Thus, the movies that were recommended my girlfriend and I recieved were probably the most popular movies in the set.</p>
+<p>I am still curious of which movies are recommended to us from the matrix model so I wil train another factorization model using a dataset that has our movies and ratings appended to the original dataset.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Train-new-matrix-model">Train new matrix model<a class="anchor-link" href="#Train-new-matrix-model">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [72]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">new_ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gf_matrix</span><span class="p">)</span>
+<span class="n">new_ratings</span> <span class="o">=</span> <span class="n">new_ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_matrix</span><span class="p">)</span>
+<span class="n">train2</span><span class="p">,</span> <span class="n">test2</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">recommender</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">random_split_by_user</span><span class="p">(</span><span class="n">new_ratings</span><span class="p">,</span> <span class="n">user_id</span> <span class="o">=</span> <span class="s1">'userId'</span><span class="p">,</span> <span class="n">item_id</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [100]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">nmf_model2</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">factorization_recommender</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">train2</span><span class="p">,</span> <span class="n">user_id</span> <span class="o">=</span> <span class="s1">'userId'</span><span class="p">,</span> <span class="n">item_id</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span>
+                                                 <span class="n">target</span> <span class="o">=</span> <span class="s1">'rating'</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>                                                  
+                                                <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<pre>Recsys training: model = factorization_recommender</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [101]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">myrec_movies</span> <span class="o">=</span> <span class="n">nmf_model2</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_id</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">my_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">myrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">myrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[101]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Lord of the Rings: The Return of the King, The (2003)&apos;,
+ &apos;Lord of the Rings: The Two Towers, The (2002)&apos;,
+ &apos;Lord of the Rings: The Fellowship of the Ring, The (2001)&apos;,
+ &apos;Band of Brothers (2001)&apos;,
+ &apos;Intouchables (2011)&apos;,
+ "Dr. Horrible&apos;s Sing-Along Blog (2008)",
+ &apos;Amazing Spider-Man, The (2012)&apos;,
+ &apos;The Hunger Games: Catching Fire (2013)&apos;,
+ &apos;Hobbit: An Unexpected Journey, The (2012)&apos;,
+ &apos;50/50 (2011)&apos;,
+ &apos;Dark Knight, The (2008)&apos;,
+ &apos;Star Wars: Episode V - The Empire Strikes Back (1980)&apos;,
+ &apos;Argo (2012)&apos;,
+ &apos;Spirited Away (Sen to Chihiro no kamikakushi) (2001)&apos;,
+ &apos;Shawshank Redemption, The (1994)&apos;,
+ &apos;Django Unchained (2012)&apos;,
+ &apos;Pirates of the Caribbean: The Curse of the Black Pearl (2003)&apos;,
+ &apos;Fight Club (1999)&apos;,
+ &apos;Silver Linings Playbook (2012)&apos;,
+ &apos;Cosmos (1980)&apos;,
+ &apos;Matrix, The (1999)&apos;,
+ &apos;Star Wars: Episode IV - A New Hope (1977)&apos;,
+ &apos;Monty Python and the Holy Grail (1975)&apos;,
+ &apos;Dark Knight Rises, The (2012)&apos;,
+ &apos;Pulp Fiction (1994)&apos;,
+ "Amelie (Fabuleux destin d&apos;Am\xc3\xa9lie Poulain, Le) (2001)",
+ &apos;Looper (2012)&apos;,
+ "King&apos;s Speech, The (2010)",
+ &apos;Senna (2010)&apos;,
+ &apos;Princess Bride, The (1987)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [102]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">gfrec_movies</span> <span class="o">=</span> <span class="n">nmf_model2</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">gf_id</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">gf_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="p">[</span><span class="s1">'movieId'</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">gfrec_movies</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">SFrame</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'movieId'</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">'rank'</span><span class="p">)[</span><span class="s1">'title'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[102]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;Lord of the Rings: The Fellowship of the Ring, The (2001)&apos;,
+ &apos;Lord of the Rings: The Return of the King, The (2003)&apos;,
+ &apos;Lord of the Rings: The Two Towers, The (2002)&apos;,
+ &apos;Pulp Fiction (1994)&apos;,
+ &apos;Band of Brothers (2001)&apos;,
+ &apos;Spirited Away (Sen to Chihiro no kamikakushi) (2001)&apos;,
+ &apos;Godfather, The (1972)&apos;,
+ &apos;Cosmos (1980)&apos;,
+ "Amelie (Fabuleux destin d&apos;Am\xc3\xa9lie Poulain, Le) (2001)",
+ "Dr. Horrible&apos;s Sing-Along Blog (2008)",
+ &apos;Fight Club (1999)&apos;,
+ &apos;Monty Python and the Holy Grail (1975)&apos;,
+ &apos;Eternal Sunshine of the Spotless Mind (2004)&apos;,
+ &apos;Lives of Others, The (Das leben der Anderen) (2006)&apos;,
+ &apos;City of God (Cidade de Deus) (2002)&apos;,
+ &apos;Godfather: Part II, The (1974)&apos;,
+ &apos;My Neighbor Totoro (Tonari no Totoro) (1988)&apos;,
+ &apos;Star Wars: Episode V - The Empire Strikes Back (1980)&apos;,
+ &apos;Memento (2000)&apos;,
+ &apos;Intouchables (2011)&apos;,
+ &apos;Exit Through the Gift Shop (2010)&apos;,
+ &apos;Blade Runner (1982)&apos;,
+ &apos;Django Unchained (2012)&apos;,
+ &apos;Dark Knight, The (2008)&apos;,
+ &apos;Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)&apos;,
+ &apos;Black Swan (2010)&apos;,
+ &apos;Fargo (1996)&apos;,
+ &apos;Shawshank Redemption, The (1994)&apos;,
+ &apos;Reservoir Dogs (1992)&apos;,
+ &apos;Seven Samurai (Shichinin no samurai) (1954)&apos;]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These recommendations are much better. We can tell that they are different and the model is not just suggesting the most popular movies as the prior model did.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Compare-Models">Compare Models<a class="anchor-link" href="#Compare-Models">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are two metrics that are commonly used to evaluate a model, the Root Mean Squared Error (RMSE) and the Precision-Recall.</p>
+<p>The root mean squared error value determines the average error for a typical prediction. The cosine similarity recommender has a RMSE of 3.5. Using this recommender, the typical prediction rating would be off by 3.5 stars. This is not a good RMSE for prediction purposes.</p>
+<p>The factorization model on the other hand, has a RMSE of 0.86 (first factorization model) and 0.83 (second factorization model). This is much better than the cosine similarity as we are only 0.86 stars in error for the typical rating prediction.</p>
+<p>If we are tasked to use RMSE as the evaluation metric, then the choice is as obvious as possible; the matrix factorization model is the model to use. However, RMSE is not the only metric that can be used. We can also use precision and recall as evaluation metrics.</p>
+<p>Precision and recall in terms of this problem can be thought of:</p>
+<ul>
+<li>Precision:<ul>
+<li>If our recommender suggested 5 movies and the user liked 3 of them, then the precision is 0.6.</li>
+</ul>
+</li>
+<li>Recall:<ul>
+<li>If the user likes 4 movies, and our recommender recommended 2 of those movies, then the recall is 0.5.</li>
+</ul>
+</li>
+</ul>
+<p>The tables below show the precision and recall for each model for each cutoff. The cutoff value simply just indicates the number of movies we recommend the user, i.e. if the cutoff is 2, then the recommender recommends 2 movies to the user.</p>
+<p>If we look closer at the precision and recall tables, we can see how poorly the factorization model does in terms of precision and recall. The factorization model doesn't even reach the double digits in percentage for either precision or recall. On the other hand, the cosine similarity recommender's precision and recall are much better. For a cutoff of 10 movies, the cosine similarity recommender has a precision of 17.3% and recall of 13.9%.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [89]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Cosine Similarity'</span>
+<span class="k">print</span> <span class="s1">'RMSE:'</span><span class="p">,</span> <span class="n">cos_rec</span><span class="o">.</span><span class="n">evaluate_rmse</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s1">'rating'</span><span class="p">)[</span><span class="s1">'rmse_overall'</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">cos_rec</span><span class="o">.</span><span class="n">evaluate_precision_recall</span><span class="p">(</span><span class="n">test</span><span class="p">)[</span><span class="s1">'precision_recall_overall'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Cosine Similarity
+RMSE: 3.50478891273
++--------+----------------+-----------------+
+| cutoff |   precision    |      recall     |
++--------+----------------+-----------------+
+|   1    | 0.275711159737 | 0.0290355806205 |
+|   2    | 0.248905908096 | 0.0486596248692 |
+|   3    | 0.231218088986 | 0.0660589020785 |
+|   4    | 0.214989059081 | 0.0812204458642 |
+|   5    | 0.205032822757 | 0.0922294367758 |
+|   6    | 0.195842450766 |  0.103395551506 |
+|   7    | 0.192716473898 |  0.116094148417 |
+|   8    | 0.185585339168 |  0.125649133811 |
+|   9    | 0.179187940676 |  0.13254804937  |
+|   10   | 0.17352297593  |  0.139067757904 |
++--------+----------------+-----------------+
+[18 rows x 3 columns]
+Note: Only the head of the SFrame is printed.
+You can use print_rows(num_rows=m, num_columns=n) to print more rows and columns.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [98]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Factorization (First Model):'</span>
+<span class="k">print</span> <span class="s1">'RMSE:'</span><span class="p">,</span> <span class="n">nmf_model</span><span class="o">.</span><span class="n">evaluate_rmse</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s1">'rating'</span><span class="p">)[</span><span class="s1">'rmse_overall'</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">nmf_model</span><span class="o">.</span><span class="n">evaluate_precision_recall</span><span class="p">(</span><span class="n">test</span><span class="p">)[</span><span class="s1">'precision_recall_overall'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Factorization (First Model):
+RMSE: 0.861800711168
++--------+-----------------+-------------------+
+| cutoff |    precision    |       recall      |
++--------+-----------------+-------------------+
+|   1    | 0.0120350109409 | 0.000287193391834 |
+|   2    | 0.0131291028446 | 0.000728116959314 |
+|   3    | 0.0142231947484 |  0.00131827751338 |
+|   4    | 0.0158643326039 |  0.00215368607086 |
+|   5    | 0.0168490153173 |  0.00281102144757 |
+|   6    | 0.0178701677608 |  0.00389621205826 |
+|   7    | 0.0175054704595 |  0.00473111554365 |
+|   8    | 0.0179157549234 |  0.00596288647235 |
+|   9    | 0.0181132992949 |  0.0067348204396  |
+|   10   | 0.0175054704595 |  0.00715749768078 |
++--------+-----------------+-------------------+
+[18 rows x 3 columns]
+Note: Only the head of the SFrame is printed.
+You can use print_rows(num_rows=m, num_columns=n) to print more rows and columns.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [103]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Factorization (Second Model):'</span>
+<span class="k">print</span> <span class="s1">'RMSE:'</span><span class="p">,</span> <span class="n">nmf_model2</span><span class="o">.</span><span class="n">evaluate_rmse</span><span class="p">(</span><span class="n">test2</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s1">'rating'</span><span class="p">)[</span><span class="s1">'rmse_overall'</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">nmf_model2</span><span class="o">.</span><span class="n">evaluate_precision_recall</span><span class="p">(</span><span class="n">test2</span><span class="p">)[</span><span class="s1">'precision_recall_overall'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Factorization (Second Model):
+RMSE: 0.837355564173
++--------+-----------------+------------------+
+| cutoff |    precision    |      recall      |
++--------+-----------------+------------------+
+|   1    | 0.0929487179487 | 0.00566837041854 |
+|   2    | 0.0731837606838 | 0.00832224084472 |
+|   3    | 0.0580484330484 | 0.0100003399032  |
+|   4    | 0.0542200854701 | 0.0126242738625  |
+|   5    | 0.0497863247863 | 0.0149520099196  |
+|   6    | 0.0486111111111 | 0.0167753069417  |
+|   7    | 0.0460927960928 | 0.0188217071248  |
+|   8    | 0.0438034188034 | 0.0198864556307  |
+|   9    | 0.0430911680912 | 0.0231613636804  |
+|   10   | 0.0418803418803 |  0.025327997889  |
++--------+-----------------+------------------+
+[18 rows x 3 columns]
+Note: Only the head of the SFrame is printed.
+You can use print_rows(num_rows=m, num_columns=n) to print more rows and columns.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [104]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Save Models</span>
+<span class="n">cos_rec</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'cosine_model'</span><span class="p">)</span>
+<span class="n">nmf_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'matrix_fac_model'</span><span class="p">)</span>
+<span class="n">nmf_model2</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'matrix_fac_us_model'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Which-Model-to-Choose?">Which Model to Choose?<a class="anchor-link" href="#Which-Model-to-Choose?">¶</a></h3><p>Choosing a particular model here is not obvious. While the factorization model dominates the cosine similarity recommender in terms of RMSE, the roles are flipped when we consider precision and recall. My take on this question is that it depends on what question and what problem you're trying to solve. Let's take Netflix for example, if I am just scrolling through a list of movies and wonder what my predicted rating would be for those movies, then the factorization model is the one to use. If all I want is a list of movies listed for me as recommended movies when I sign in, then the cosine simiarlity model is the one to use. Although, we can also use a combination of both methods to highlight the strengths of each model.</p>
+<p>At the end of the day, I now have a recommender to help my girlfriend and I decide what movie to watch next. To make sure we will both enjoy our next movie, I will find the intersection of our two recommended lists. Something I am actually suprised Netflix and Hulu do not implement as a feature for couples or even families especially with the new addition to their profiles: predict ratings for a movies viewed by multiple people such a couple, or family.</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://ttran0.github.io/tag/python.html">python</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Truong Tran </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Truong's Website ",
+  "url" : "https://ttran0.github.io",
+  "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg",
+  "description": ""
+}
+</script>
+</body>
+</html>
