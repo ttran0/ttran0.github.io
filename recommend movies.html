@@ -531,23 +531,23 @@ A = \begin{bmatrix}
      \end{bmatrix}
 $</p>
 <p>The fundamental idea of this process is as its name states, it takes the data matrix and factors it into a product of two matrices that best approximates the data matrix <strong>A</strong>:</p>
-<p>$A = \begin{bmatrix}
-       3 & 5 &   & 1 \
-         & 1 & 2 &    \
-         & 5 & 4 & 1</p>
-<pre><code> \end{bmatrix}$
-</code></pre>
-<p>= 
-$\begin{bmatrix}
+$$
+A = \begin{bmatrix}
+       3 & 5 &   & 1 \\
+         & 1 & 2 &    \\
+         & 5 & 4 & 1
+     \end{bmatrix}
+= 
+\begin{bmatrix}
       & & \\
       & & \\
       & &
-     \end{bmatrix}$</p>
-<p>$\begin{bmatrix}
-      & & & & \\
-      & & & &
-     \end{bmatrix}$</p>
-<p>The goal here is if we find the two matrices that best approximates <strong>A</strong>, then we can use the values from the product as approximations for the missing values in <strong>A</strong>. Therefore, we can use these approximations to recommend or not recommend movies to users. The model Graphlab uses is fundamentally this process described above. However, Graphlab adds in bias and weight terms to account for either user bias or item bias.</p>
+     \end{bmatrix}
+\begin{bmatrix}
+  & & & & \\
+  & & & &
+\end{bmatrix}
+$$<p>The goal here is if we find the two matrices that best approximates <strong>A</strong>, then we can use the values from the product as approximations for the missing values in <strong>A</strong>. Therefore, we can use these approximations to recommend or not recommend movies to users. The model Graphlab uses is fundamentally this process described above. However, Graphlab adds in bias and weight terms to account for either user bias or item bias.</p>
 </div>
 </div>
 </div>
