@@ -437,25 +437,22 @@ A = \begin{bmatrix}
      \end{bmatrix}
 $&lt;/p&gt;
 &lt;p&gt;The fundamental idea of this process is as its name states, it takes the data matrix and factors it into a product of two matrices that best approximates the data matrix &lt;strong&gt;A&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;$
-A = \begin{bmatrix}
-       3 &amp; 5 &amp;   &amp; 1           \
-         &amp; 1 &amp; 2 &amp;             \
-         &amp; 5 &amp; 4 &amp; 1
-     \end{bmatrix}&lt;/p&gt;
-&lt;h1 id="$"&gt;$&lt;a class="anchor-link" href="#$"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;$
-\begin{bmatrix}
+&lt;p&gt;$A = \begin{bmatrix}
+       3 &amp; 5 &amp;   &amp; 1 \
+         &amp; 1 &amp; 2 &amp;    \
+         &amp; 5 &amp; 4 &amp; 1&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; \end{bmatrix}$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;= 
+$\begin{bmatrix}
       &amp; &amp; \\
       &amp; &amp; \\
       &amp; &amp;
-     \end{bmatrix}
-$
-$
-\begin{bmatrix}
+     \end{bmatrix}$&lt;/p&gt;
+&lt;p&gt;$\begin{bmatrix}
       &amp; &amp; &amp; &amp; \\
       &amp; &amp; &amp; &amp;
-     \end{bmatrix}
-$&lt;/p&gt;
+     \end{bmatrix}$&lt;/p&gt;
 &lt;p&gt;The goal here is if we find the two matrices that best approximates &lt;strong&gt;A&lt;/strong&gt;, then we can use the values from the product as approximations for the missing values in &lt;strong&gt;A&lt;/strong&gt;. Therefore, we can use these approximations to recommend or not recommend movies to users. The model Graphlab uses is fundamentally this process described above. However, Graphlab adds in bias and weight terms to account for either user bias or item bias.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
