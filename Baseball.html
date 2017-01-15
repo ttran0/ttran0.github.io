@@ -22,11 +22,11 @@
 
 
 <meta name="author" content="Truong Tran" />
-<meta name="description" content="Third Time Through the Order Penalty" />
+<meta name="description" content="Analysis Topic:¶One topic that has been discussed recently in baseball is the third time through the order penalty (TTOP). Third time through the order penalty is simply the theory that a pitcher is less effective when he goes through the lineup of batters twice and faces each batter for the third time." />
 <meta name="keywords" content="python">
 <meta property="og:site_name" content="Truong's Website"/>
 <meta property="og:title" content="Using Hidden Markov Models to Make Smarter Pitching Decisions"/>
-<meta property="og:description" content="Third Time Through the Order Penalty"/>
+<meta property="og:description" content="Analysis Topic:¶One topic that has been discussed recently in baseball is the third time through the order penalty (TTOP). Third time through the order penalty is simply the theory that a pitcher is less effective when he goes through the lineup of batters twice and faces each batter for the third time."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://ttran0.github.io/Baseball.html"/>
 <meta property="og:type" content="article"/>
@@ -93,8 +93,1577 @@
 
 
   <div>
-    <p>In this analysis, I used the package Plotly to create some interactive charts that are not rendering properly on this site. So please go to this link here to check out my analysis:</p>
-<p><a href="http://nbviewer.jupyter.org/github/ttran0/Baseball_Models/blob/042adfefeb9a8185f4526d6882ba4f6508785aa1/TTOP_Analysis.ipynb">Hidden Markov Models Applied to Baseball</a></p>
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Analysis-Topic:">Analysis Topic:<a class="anchor-link" href="#Analysis-Topic:">¶</a></h2><p>One topic that has been discussed recently in baseball is the third time through the order penalty (TTOP). Third time through the order penalty is simply the theory that a pitcher is less effective when he goes through the lineup of batters twice and faces each batter for the third time.</p>
+<p>This topic has come up several times throughout the years. Here are a few links to articles discussing TTOP along with a group of interviews conducted with team general managers and their thoughts on the penalty:</p>
+<p><a href="http://www.sabermagician.com/visiting-the-fatigue-effect-in-starting-pitchers-the-times-through-the-order-penalty/">http://www.sabermagician.com/visiting-the-fatigue-effect-in-starting-pitchers-the-times-through-the-order-penalty/</a></p>
+<p><a href="http://www.businessinsider.com/ap-third-time-through-the-order-can-be-tough-to-navigate-2016-4">http://www.businessinsider.com/ap-third-time-through-the-order-can-be-tough-to-navigate-2016-4</a></p>
+<p><a href="http://sabr.org/latest/lichtman-pitch-types-and-times-through-order-penalty">http://sabr.org/latest/lichtman-pitch-types-and-times-through-order-penalty</a></p>
+<p><a href="http://sabr.org/latest/lichtman-pitch-types-and-times-through-order-penalty">http://sabr.org/latest/lichtman-pitch-types-and-times-through-order-penalty</a></p>
+<p>Interviews: <a href="http://www.fangraphs.com/blogs/managers-on-the-third-time-through-the-order/">http://www.fangraphs.com/blogs/managers-on-the-third-time-through-the-order/</a></p>
+<p>In 2012, a study was presented at the Sloan Conference by MIT. The Colorado Rockies took the idea of the third time through the order penalty and experimented with the strategy of pulling their pitchers when they reached the third time through the order. They called this strategy 'paired pitching': use two pitchers, both only going through the order at most two times. The experiment did not go so well as they only won 64 games out of 162 games that season.</p>
+<p>From then on, the topic of TTOP has been somewhat controversial among sabermetricians and baseball professionals.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal:">Goal:<a class="anchor-link" href="#Goal:">¶</a></h2><p>The goal of this analysis is to explore the third time through the order penalty. I will use data published by MLB to first, find evidence that pitchers do exhibit this third time through the order penalty, and second, use a statistical model, namely Hidden Markov Models, to explore an analytical approach teams can take to deal with the penalty, if it exists.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data">Data<a class="anchor-link" href="#Data">¶</a></h3><p>The data is parsed using the pitchRx package in R. This package was written by Carson Sievert and parses the xml files released and published by the MLB. I will parse the 2013 and 2014 seasons. The data is prased and put into a sqlite3 database. There are several tables that are created from this parser. I will only be using two tables, the atbat and pitch table. The atbat table has features on each plate appearance and the pitch table has features on each pitch.</p>
+<p>Remark: There is no particular reason I chose the 2013 and 2014 seasons. Any season or seasons would just do. For two seasons, the parser takes about a little over an hour to parse the data and create the database, so to grab more data, it would require a longer run time to create the database.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_columns'</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.float_format'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'</span><span class="si">%.3f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">normalize</span>
+<span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="kn">import</span> <span class="n">joblib</span>
+
+<span class="kn">from</span> <span class="nn">hmmlearn.hmm</span> <span class="kn">import</span> <span class="n">MultinomialHMM</span>
+<span class="kn">from</span> <span class="nn">hmmlearn.hmm</span> <span class="kn">import</span> <span class="n">GaussianHMM</span>
+<span class="kn">from</span> <span class="nn">pomegranate</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+
+<span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="kn">as</span> <span class="nn">py</span>
+<span class="c1"># plotly.offline.init_notebook_mode()</span>
+<span class="kn">from</span> <span class="nn">plotly.graph_objs</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">plotly.tools</span> <span class="kn">import</span> <span class="n">FigureFactory</span> <span class="k">as</span> <span class="n">FF</span>
+
+
+<span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+<span class="c1"># %load_ext pymatbridge</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">suppress</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Parse using pitchRx package</span>
+<span class="c1"># %%R</span>
+<span class="c1"># library('DBI')</span>
+<span class="c1"># library('dplyr')</span>
+<span class="c1"># library('ggplot2')</span>
+<span class="c1"># library('pitchRx')</span>
+<span class="c1"># db <- src_sqlite("pitchRx1314.sqlite3", create = TRUE)</span>
+<span class="c1"># scrape(start = "2013-01-01",end = "2014-12-01", connect = db$con)</span>
+<span class="c1"># scrape(start = "2013-01-01", end = "2014-12-01", suffix = files, connect = db$con)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'pitchRx1314.sqlite3'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Preview of the atbat table:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">    SELECT *</span>
+<span class="s1">    FROM atbat</span>
+<span class="s1">    LIMIT 10</span>
+<span class="s1">    '''</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>pitcher</th>
+<th>batter</th>
+<th>num</th>
+<th>b</th>
+<th>s</th>
+<th>o</th>
+<th>start_tfs</th>
+<th>start_tfs_zulu</th>
+<th>stand</th>
+<th>b_height</th>
+<th>p_throws</th>
+<th>atbat_des</th>
+<th>atbat_des_es</th>
+<th>event</th>
+<th>score</th>
+<th>home_team_runs</th>
+<th>away_team_runs</th>
+<th>url</th>
+<th>inning_side</th>
+<th>inning</th>
+<th>next_</th>
+<th>event2</th>
+<th>event3</th>
+<th>batter_name</th>
+<th>pitcher_name</th>
+<th>event4</th>
+<th>gameday_link</th>
+<th>date</th>
+<th>event_num</th>
+<th>event_es</th>
+<th>event2_es</th>
+<th>event3_es</th>
+<th>event4_es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>493157.000</td>
+<td>570805.000</td>
+<td>21.000</td>
+<td>0.000</td>
+<td>3.000</td>
+<td>1.000</td>
+<td>185159</td>
+<td>2013-02-24T18:51:59Z</td>
+<td>L</td>
+<td>6-2</td>
+<td>R</td>
+<td>Oscar Taveras strikes out swinging.</td>
+<td>Oscar Taveras se poncha tirÃ¡ndole.</td>
+<td>Strikeout</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>bottom</td>
+<td>3.000</td>
+<td>Y</td>
+<td>None</td>
+<td>None</td>
+<td>Oscar Taveras</td>
+<td>Koji Uehara</td>
+<td>None</td>
+<td>gid_2013_02_24_bosmlb_slnmlb_1</td>
+<td>2013_02_24</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>1</th>
+<td>493157.000</td>
+<td>434624.000</td>
+<td>22.000</td>
+<td>0.000</td>
+<td>0.000</td>
+<td>3.000</td>
+<td>192028</td>
+<td>2013-03-03T19:20:28Z</td>
+<td>R</td>
+<td>5-11</td>
+<td>R</td>
+<td>Jayson Nix flies out to center fielder Jacoby ...</td>
+<td>Jayson Nix batea elevado de out a jardinero ce...</td>
+<td>Flyout</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>top</td>
+<td>4.000</td>
+<td>Y</td>
+<td>None</td>
+<td>None</td>
+<td>Jayson Nix</td>
+<td>Koji Uehara</td>
+<td>None</td>
+<td>gid_2013_03_03_nyamlb_bosmlb_1</td>
+<td>2013_03_03</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>2</th>
+<td>493157.000</td>
+<td>461858.000</td>
+<td>50.000</td>
+<td>0.000</td>
+<td>0.000</td>
+<td>3.000</td>
+<td>200446</td>
+<td>2013-03-07T20:04:46Z</td>
+<td>R</td>
+<td>6-2</td>
+<td>R</td>
+<td>Trevor Plouffe grounds out, third baseman Drew...</td>
+<td>Trevor Plouffe batea rodado de out, tercera ba...</td>
+<td>Groundout</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>bottom</td>
+<td>5.000</td>
+<td>Y</td>
+<td>None</td>
+<td>None</td>
+<td>Trevor Plouffe</td>
+<td>Koji Uehara</td>
+<td>None</td>
+<td>gid_2013_03_07_bosmlb_minmlb_1</td>
+<td>2013_03_07</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>3</th>
+<td>493157.000</td>
+<td>425491.000</td>
+<td>49.000</td>
+<td>0.000</td>
+<td>0.000</td>
+<td>2.000</td>
+<td>200223</td>
+<td>2013-03-07T20:02:23Z</td>
+<td>L</td>
+<td>6-1</td>
+<td>R</td>
+<td>Ryan Doumit grounds out to first baseman Mike ...</td>
+<td>Ryan Doumit batea rodado de out a primera base...</td>
+<td>Groundout</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>bottom</td>
+<td>5.000</td>
+<td>Y</td>
+<td>None</td>
+<td>None</td>
+<td>Ryan Doumit</td>
+<td>Koji Uehara</td>
+<td>None</td>
+<td>gid_2013_03_07_bosmlb_minmlb_1</td>
+<td>2013_03_07</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Preview of the pitch table:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">    SELECT *</span>
+<span class="s1">    FROM pitch</span>
+<span class="s1">    LIMIT 2000</span>
+<span class="s1">    '''</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1005</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>des</th>
+<th>des_es</th>
+<th>id</th>
+<th>type</th>
+<th>tfs</th>
+<th>tfs_zulu</th>
+<th>x</th>
+<th>y</th>
+<th>sv_id</th>
+<th>start_speed</th>
+<th>end_speed</th>
+<th>sz_top</th>
+<th>sz_bot</th>
+<th>pfx_x</th>
+<th>pfx_z</th>
+<th>px</th>
+<th>pz</th>
+<th>x0</th>
+<th>y0</th>
+<th>z0</th>
+<th>vx0</th>
+<th>vy0</th>
+<th>vz0</th>
+<th>ax</th>
+<th>ay</th>
+<th>az</th>
+<th>break_y</th>
+<th>break_angle</th>
+<th>break_length</th>
+<th>pitch_type</th>
+<th>type_confidence</th>
+<th>zone</th>
+<th>nasty</th>
+<th>spin_dir</th>
+<th>spin_rate</th>
+<th>cc</th>
+<th>mt</th>
+<th>url</th>
+<th>inning_side</th>
+<th>inning</th>
+<th>next_</th>
+<th>num</th>
+<th>on_1b</th>
+<th>on_2b</th>
+<th>on_3b</th>
+<th>count</th>
+<th>gameday_link</th>
+<th>event_num</th>
+<th>play_guid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1000</th>
+<td>In play, out(s)</td>
+<td>En juego, out(s)</td>
+<td>521.000</td>
+<td>X</td>
+<td>221041</td>
+<td>2013-02-22T22:10:41Z</td>
+<td>127.040</td>
+<td>140.740</td>
+<td>130222_151027</td>
+<td>89.300</td>
+<td>81.200</td>
+<td>3.380</td>
+<td>1.760</td>
+<td>-9.530</td>
+<td>9.900</td>
+<td>-0.995</td>
+<td>2.571</td>
+<td>-1.499</td>
+<td>50.000</td>
+<td>6.330</td>
+<td>4.456</td>
+<td>-130.727</td>
+<td>-6.660</td>
+<td>-16.225</td>
+<td>31.717</td>
+<td>-15.251</td>
+<td>23.700</td>
+<td>42.000</td>
+<td>5.400</td>
+<td>FT</td>
+<td>0.910</td>
+<td>11.000</td>
+<td>None</td>
+<td>223.793</td>
+<td>2601.810</td>
+<td></td>
+<td></td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>bottom</td>
+<td>8.000</td>
+<td>Y</td>
+<td>64.000</td>
+<td>552662.000</td>
+<td>nan</td>
+<td>nan</td>
+<td>1-0</td>
+<td>gid_2013_02_22_sdnmlb_seamlb_1</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>1001</th>
+<td>Called Strike</td>
+<td>Strike cantado</td>
+<td>529.000</td>
+<td>S</td>
+<td>221347</td>
+<td>2013-02-22T22:13:47Z</td>
+<td>102.150</td>
+<td>165.780</td>
+<td>130222_151347</td>
+<td>90.100</td>
+<td>82.800</td>
+<td>3.440</td>
+<td>1.560</td>
+<td>-13.100</td>
+<td>3.880</td>
+<td>0.067</td>
+<td>1.681</td>
+<td>-2.798</td>
+<td>50.000</td>
+<td>5.226</td>
+<td>11.847</td>
+<td>-131.608</td>
+<td>-4.321</td>
+<td>-22.903</td>
+<td>28.689</td>
+<td>-25.322</td>
+<td>23.800</td>
+<td>37.900</td>
+<td>7.700</td>
+<td>FT</td>
+<td>1.007</td>
+<td>8.000</td>
+<td>None</td>
+<td>253.344</td>
+<td>2635.282</td>
+<td></td>
+<td></td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>top</td>
+<td>9.000</td>
+<td>N</td>
+<td>65.000</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>0-0</td>
+<td>gid_2013_02_22_sdnmlb_seamlb_1</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>1002</th>
+<td>Foul</td>
+<td>Foul</td>
+<td>530.000</td>
+<td>S</td>
+<td>221359</td>
+<td>2013-02-22T22:13:59Z</td>
+<td>103.860</td>
+<td>155.420</td>
+<td>130222_151359</td>
+<td>91.800</td>
+<td>83.900</td>
+<td>3.380</td>
+<td>1.500</td>
+<td>-13.720</td>
+<td>3.500</td>
+<td>-0.137</td>
+<td>2.120</td>
+<td>-2.878</td>
+<td>50.000</td>
+<td>5.279</td>
+<td>11.923</td>
+<td>-134.062</td>
+<td>-3.448</td>
+<td>-24.769</td>
+<td>31.130</td>
+<td>-25.775</td>
+<td>23.700</td>
+<td>39.800</td>
+<td>7.800</td>
+<td>FT</td>
+<td>0.840</td>
+<td>8.000</td>
+<td>None</td>
+<td>255.514</td>
+<td>2768.439</td>
+<td></td>
+<td></td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>top</td>
+<td>9.000</td>
+<td>N</td>
+<td>65.000</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>0-1</td>
+<td>gid_2013_02_22_sdnmlb_seamlb_1</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>1003</th>
+<td>Foul</td>
+<td>Foul</td>
+<td>531.000</td>
+<td>S</td>
+<td>221426</td>
+<td>2013-02-22T22:14:26Z</td>
+<td>87.550</td>
+<td>132.110</td>
+<td>130222_151426</td>
+<td>94.400</td>
+<td>86.700</td>
+<td>3.380</td>
+<td>1.500</td>
+<td>-10.040</td>
+<td>9.010</td>
+<td>0.445</td>
+<td>2.848</td>
+<td>-2.722</td>
+<td>50.000</td>
+<td>5.262</td>
+<td>12.172</td>
+<td>-137.854</td>
+<td>-3.860</td>
+<td>-19.329</td>
+<td>30.496</td>
+<td>-14.756</td>
+<td>23.800</td>
+<td>46.900</td>
+<td>4.800</td>
+<td>FF</td>
+<td>1.312</td>
+<td>3.000</td>
+<td>None</td>
+<td>227.976</td>
+<td>2738.270</td>
+<td></td>
+<td></td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>top</td>
+<td>9.000</td>
+<td>N</td>
+<td>65.000</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>0-2</td>
+<td>gid_2013_02_22_sdnmlb_seamlb_1</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>1004</th>
+<td>Ball</td>
+<td>Bola mala</td>
+<td>532.000</td>
+<td>B</td>
+<td>221444</td>
+<td>2013-02-22T22:14:44Z</td>
+<td>63.520</td>
+<td>164.060</td>
+<td>130222_151445</td>
+<td>89.500</td>
+<td>82.500</td>
+<td>3.390</td>
+<td>1.540</td>
+<td>-1.550</td>
+<td>7.670</td>
+<td>1.140</td>
+<td>1.585</td>
+<td>-2.694</td>
+<td>50.000</td>
+<td>5.414</td>
+<td>10.404</td>
+<td>-130.717</td>
+<td>-6.217</td>
+<td>-2.675</td>
+<td>28.076</td>
+<td>-18.849</td>
+<td>23.800</td>
+<td>1.600</td>
+<td>4.700</td>
+<td>FC</td>
+<td>1.018</td>
+<td>14.000</td>
+<td>None</td>
+<td>191.350</td>
+<td>1508.401</td>
+<td></td>
+<td></td>
+<td>http://gd2.mlb.com/components/game/mlb/year_20...</td>
+<td>top</td>
+<td>9.000</td>
+<td>N</td>
+<td>65.000</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>0-2</td>
+<td>gid_2013_02_22_sdnmlb_seamlb_1</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will be doing a lot of dataset splicing and calculating baseball statistics so I will write functions so we don't have to repeat the process. The following functions will be used:</p>
+<p><strong>get_split_index</strong>: Function to find the pitch number that seperates the first two times through the order and the third time through the order</p>
+<p><strong>split_3rd</strong>: Function that splits the dataset into two. One that includes only data on first time through the order and another that only includes third time through the order and beyond. This function works on either one game, or multiple games (or entire season).</p>
+<p><strong>innings_pitched</strong>: Returns the number of innings_pitched.</p>
+<p><strong>strikeout_ratio</strong>: Calculates the strikeout ratio per 9 innings.</p>
+<p><strong>fip</strong>: Calculates the FIP value.</p>
+<p><strong>whip</strong>: Calculates the WHIP.</p>
+<p><strong> walks_ratio</strong>: Calculates the walks ratio per 9 innings.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Equations:</p>
+$$
+FIP = \frac{13*\text{Home Runs} + 3 * (\text{Walks} + \text{Hit By Pitch}) - 2 * \text{Strikeouts}}{\text{Innings Pitched}} + \text{FIP Constant},\quad \text{FIP Constant} = 3.10
+$$$$
+WHIP = \frac{\text{Walks} + \text{Hits}}{\text{Innings Pitched}}
+$$$$ \text{K/9} = 9 * \frac{Strikeouts}{\text{Innings Pitched}} $$$$ \text{BB/9} = 9 * \frac{Walks}{\text{Innings Pitched}}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_split_index</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">batter_old</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">batter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">batter_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">batter</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">batter_old</span> <span class="o">!=</span> <span class="n">batter_new</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">split_3rd</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">before_3rd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">after_3rd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+        <span class="n">game_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">split_index</span> <span class="o">=</span> <span class="n">get_split_index</span><span class="p">(</span><span class="n">game_df</span><span class="p">)</span> <span class="c1"># Get row number that splits third time through order</span>
+        <span class="n">before_3rd</span> <span class="o">=</span> <span class="n">before_3rd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">split_index</span><span class="p">,:])</span> <span class="c1"># Append dataframes</span>
+        <span class="n">after_3rd</span> <span class="o">=</span> <span class="n">after_3rd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">game_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">split_index</span><span class="p">:,:])</span>
+        
+    <span class="k">return</span> <span class="n">before_3rd</span><span class="p">,</span> <span class="n">after_3rd</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">one_out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Groundout'</span><span class="p">,</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Lineout'</span><span class="p">,</span><span class="s1">'Sac Bunt'</span><span class="p">,</span><span class="s1">'Pop Out'</span><span class="p">,</span><span class="s1">'Flyout'</span><span class="p">,</span><span class="s1">'Sac Fly'</span><span class="p">,</span><span class="s1">'Forceout'</span><span class="p">,</span>
+                     <span class="s1">'Runner Out'</span><span class="p">,</span><span class="s1">'Fielders Choice Out'</span><span class="p">,</span><span class="s1">'Bunt Groundout'</span><span class="p">,</span><span class="s1">'Fielders Choice'</span><span class="p">,</span><span class="s1">'Bunt Pop Out'</span><span class="p">,</span><span class="s1">'Sac Fly'</span><span class="p">,</span>
+                    <span class="s1">'Bunt Lineout'</span><span class="p">]</span>
+    <span class="n">two_out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Double Play'</span><span class="p">,</span><span class="s1">'Grounded Into DP'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">,</span><span class="s1">'Sac Fly DP'</span><span class="p">,</span><span class="s1">'Sacrifice Bunt DP'</span><span class="p">]</span>
+    <span class="n">three_out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Triple Play'</span><span class="p">]</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+        <span class="n">max_inning</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">inning</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">game_ip</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">max_inning</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="p">:</span>
+            <span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">inning</span> <span class="o">==</span> <span class="n">i</span><span class="p">)]</span>
+            <span class="n">one_outs</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">one_out_plays</span><span class="p">))</span>
+            <span class="n">two_outs</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">two_out_plays</span><span class="p">))</span>
+            <span class="n">three_outs</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">three_out_plays</span><span class="p">))</span>
+            <span class="n">game_ip</span> <span class="o">+=</span> <span class="p">(</span><span class="n">one_outs</span> <span class="o">+</span> <span class="n">two_outs</span> <span class="o">+</span> <span class="n">three_outs</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span>
+            <span class="n">ip</span> <span class="o">+=</span> <span class="p">(</span><span class="n">one_outs</span> <span class="o">+</span> <span class="n">two_outs</span> <span class="o">+</span> <span class="n">three_outs</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span>
+    <span class="k">return</span> <span class="n">ip</span>
+
+<span class="k">def</span> <span class="nf">strikeout_ratio</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">9.0</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">]))</span><span class="o">/</span><span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fip</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">hr</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Home Run'</span><span class="p">]))</span>
+    <span class="n">bb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Walk'</span><span class="p">]))</span>
+    <span class="n">hbp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Hit By Pitch'</span><span class="p">]))</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">]))</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="n">hr</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">bb</span> <span class="o">+</span> <span class="n">hbp</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">ip</span> <span class="o">+</span> <span class="mf">3.10</span>
+
+<span class="k">def</span> <span class="nf">whip</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">bb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Walk'</span><span class="p">]))</span>
+    <span class="n">hits</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Single'</span><span class="p">,</span><span class="s1">'Home Run'</span><span class="p">,</span><span class="s1">'Double'</span><span class="p">,</span><span class="s1">'Triple'</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">bb</span> <span class="o">+</span> <span class="n">hits</span><span class="p">)</span><span class="o">/</span><span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">walks_ratio</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Walk'</span><span class="p">]))</span><span class="o">/</span><span class="n">innings_pitched</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="mf">9.0</span>
+
+<span class="k">def</span> <span class="nf">get_game</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()[</span><span class="n">game</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Find-Evidence:">Find Evidence:<a class="anchor-link" href="#Find-Evidence:">¶</a></h2><p>First, we will try to find evidence that pitchers are effected by this third time through the order penalty. I will take the starting pitchers who started 10 or more games in the 2013 season and split their datasets into one that includes first two times through the order and another one with third time through the order and beyond. Then, calculate their stats (FIP, WHIP, strikeout ratio per 9, etc.) and determine how many pitchers exhibit the penalty effect. I grabbed the list of pitchers from baseball-reference:</p>
+<p><a href="http://www.baseball-reference.com/leagues/MLB/2013-standard-pitching.shtml">http://www.baseball-reference.com/leagues/MLB/2013-standard-pitching.shtml</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pitchers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'pitchers.csv'</span><span class="p">)[</span><span class="s1">'Name'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">before_fip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_fip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">before_whip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_whip</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">before_strikeout</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_strikeout</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">before_walks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">after_walks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pitcher</span> <span class="ow">in</span> <span class="n">pitchers</span><span class="p">:</span>
+<span class="c1">#     print pitcher</span>
+    <span class="n">sql_query</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">    SELECT *</span>
+<span class="s1">    FROM atbat</span>
+<span class="s1">    WHERE pitcher_name == ? AND (date >  '2013_03_31' AND date < '2013_09_29' )</span>
+<span class="s1">    '''</span>
+    <span class="n">player_bat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_query</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">conn</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">pitcher</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">player_bat_df</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">player_bat_df</span> <span class="o">=</span> <span class="n">player_bat_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'date'</span><span class="p">,</span> <span class="s1">'num'</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    
+    <span class="n">before</span><span class="p">,</span><span class="n">after</span> <span class="o">=</span> <span class="n">split_3rd</span><span class="p">(</span><span class="n">player_bat_df</span><span class="p">)</span>
+    
+    <span class="n">before_fip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fip</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_fip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fip</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">before_whip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">whip</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_whip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">whip</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">before_strikeout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">strikeout_ratio</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_strikeout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">strikeout_ratio</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">before_walks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">walks_ratio</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+    <span class="n">after_walks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">walks_ratio</span><span class="p">(</span><span class="n">after</span><span class="p">))</span>
+    <span class="n">pitch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pitcher</span><span class="p">)</span>
+    
+<span class="n">stats_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'aaname'</span><span class="p">:</span><span class="n">pitch</span><span class="p">,</span>
+                        <span class="s1">'before_fip'</span><span class="p">:</span><span class="n">before_fip</span><span class="p">,</span>
+                        <span class="s1">'after_fip'</span><span class="p">:</span><span class="n">after_fip</span><span class="p">,</span>
+                       <span class="s1">'before_whip'</span><span class="p">:</span><span class="n">before_whip</span><span class="p">,</span>
+                       <span class="s1">'after_whip'</span><span class="p">:</span><span class="n">after_whip</span><span class="p">,</span>
+                       <span class="s1">'before_strikeout'</span><span class="p">:</span><span class="n">before_strikeout</span><span class="p">,</span>
+                       <span class="s1">'after_strikeout'</span><span class="p">:</span><span class="n">after_strikeout</span><span class="p">,</span>
+                       <span class="s1">'before_walks'</span><span class="p">:</span><span class="n">before_walks</span><span class="p">,</span>
+                       <span class="s1">'after_walks'</span><span class="p">:</span><span class="n">after_walks</span><span class="p">})</span>
+                            
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'aaname'</span><span class="p">,</span><span class="s1">'before_fip'</span><span class="p">,</span><span class="s1">'after_fip'</span><span class="p">,</span><span class="s1">'before_whip'</span><span class="p">,</span><span class="s1">'after_whip'</span><span class="p">,</span>
+       <span class="s1">'before_strikeout'</span><span class="p">,</span><span class="s1">'after_strikeout'</span><span class="p">,</span><span class="s1">'before_walks'</span><span class="p">,</span><span class="s1">'after_walks'</span><span class="p">]</span>
+
+<span class="n">stats_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>aaname</th>
+<th>before_fip</th>
+<th>after_fip</th>
+<th>before_whip</th>
+<th>after_whip</th>
+<th>before_strikeout</th>
+<th>after_strikeout</th>
+<th>before_walks</th>
+<th>after_walks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Adam Wainwright</td>
+<td>2.595</td>
+<td>2.544</td>
+<td>1.043</td>
+<td>1.100</td>
+<td>8.806</td>
+<td>7.089</td>
+<td>1.400</td>
+<td>0.938</td>
+</tr>
+<tr>
+<th>1</th>
+<td>James Shields</td>
+<td>3.542</td>
+<td>3.498</td>
+<td>1.339</td>
+<td>1.108</td>
+<td>8.453</td>
+<td>6.723</td>
+<td>2.965</td>
+<td>2.277</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Justin Verlander</td>
+<td>3.122</td>
+<td>3.932</td>
+<td>1.358</td>
+<td>1.309</td>
+<td>8.803</td>
+<td>8.959</td>
+<td>3.745</td>
+<td>1.964</td>
+</tr>
+<tr>
+<th>3</th>
+<td>R.A. Dickey</td>
+<td>4.036</td>
+<td>5.744</td>
+<td>1.259</td>
+<td>1.208</td>
+<td>7.307</td>
+<td>6.750</td>
+<td>2.539</td>
+<td>3.432</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Hisashi Iwakuma</td>
+<td>3.678</td>
+<td>2.970</td>
+<td>1.036</td>
+<td>0.909</td>
+<td>7.325</td>
+<td>8.178</td>
+<td>1.513</td>
+<td>1.688</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Percentage of Pitchers Affected:'</span>
+<span class="k">print</span> <span class="s1">'FIP:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_fip</span> <span class="o"><</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_fip</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+<span class="k">print</span> <span class="s1">'WHIP:'</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_whip</span> <span class="o"><</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_whip</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+<span class="k">print</span> <span class="s1">'Strikeout per9:'</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_strikeout</span> <span class="o">></span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_strikeout</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+<span class="k">print</span> <span class="s1">'Walk ratio per9:'</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_walks</span> <span class="o"><</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_walks</span><span class="p">])</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stats_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Percentage of Pitchers Affected:
+FIP: 0.634920634921
+WHIP: 0.68253968254
+Strikeout per9: 0.785714285714
+Walk ratio per9: 0.619047619048
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we can see, over 50% of the pitchers in the 2013 season are affected by TTOP. A stacked bar chart of 20 pitchers can be seen below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x_trace</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_before</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_after</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">pitcher_name</span> <span class="o">=</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">x_trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pitcher_name</span><span class="p">)</span>
+    <span class="n">y_before</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span> <span class="o">==</span> <span class="n">pitcher_name</span><span class="p">,</span> <span class="s1">'before_fip'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">y_after</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span> <span class="o">==</span> <span class="n">pitcher_name</span><span class="p">,</span> <span class="s1">'after_fip'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="n">trace1</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_trace</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_before</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'Before TTO'</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'rgb(49,130,189)'</span><span class="p">))</span>
+<span class="n">trace2</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_trace</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_after</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'After TTO'</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'rgb(150,0,0)'</span><span class="p">))</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'Before and After Thrid Time Through Order FIP'</span><span class="p">,</span>
+                <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'Pitcher'</span><span class="p">),</span> <span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'FIP'</span><span class="p">),</span> <span class="n">barmode</span> <span class="o">=</span> <span class="s1">'stack'</span> <span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">,</span> <span class="n">trace2</span><span class="p">]</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">)</span>
+<span class="c1"># plotly.offline.iplot(fig)</span>
+
+<span class="n">x_trace</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_before</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_after</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">pitcher_name</span> <span class="o">=</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">x_trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pitcher_name</span><span class="p">)</span>
+    <span class="n">y_before</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span> <span class="o">==</span> <span class="n">pitcher_name</span><span class="p">,</span> <span class="s1">'before_whip'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">y_after</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span> <span class="o">==</span> <span class="n">pitcher_name</span><span class="p">,</span> <span class="s1">'after_whip'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="n">trace1</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_trace</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_before</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'Before TTO'</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'rgb(49,130,189)'</span><span class="p">))</span>
+<span class="n">trace2</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_trace</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_after</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'After TTO'</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'rgb(150,0,0)'</span><span class="p">))</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'Before and After Thrid Time Through Order WHIP'</span><span class="p">,</span>
+                <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'Pitcher'</span><span class="p">),</span> <span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'WHIP'</span><span class="p">),</span> <span class="n">barmode</span> <span class="o">=</span> <span class="s1">'stack'</span> <span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">,</span> <span class="n">trace2</span><span class="p">]</span>
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">fig1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/184.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">fig2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/186.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hidden-Markov-Model">Hidden Markov Model<a class="anchor-link" href="#Hidden-Markov-Model">¶</a></h2><p>A Hidden Markov Model (HMM) is composed of a sequence of states $s_1, s_2, s_3, ..., s_n$, where each state generates an observation, $y_1, y_2,..., y_n$. The assumption of a hidden markov model is that the next state is only dependent on the previous state. This is considered a <em>first order</em> HMM and the sequence of states is called a <em>Markov Chain.</em></p>
+<p><img alt="title" src="http://sites.stat.psu.edu/~jiali/pictures/hmm.gif" /></p>
+<p>Let's cook up a scenario for an example: The weather (sunny or raining) on a day will influence what I do on that day (go shopping or watch a movie at home). Assuming that the weather condition is the sequence of states, and my action is the sequence of observations. One possible sequence of states can be {raining, sunny, sunny, raining}, and one possible sequence of observations can be {shop, movie, shop, shop}.</p>
+<p>Notice that each state (raining or sunny) generates an observation (shop or movie). 
+Now, let's say we have no other way of recalling what the weather was the last 4 days, so I told you what I did for the past four days, i.e. {shop, shop, movie, shop}. From there, we are tasked to determine the most likely sequence of weather on each day. The hidden markov model is a method that allows us tackle this task.</p>
+<p>The hidden markov model assumes we have a sequence of observations and we can infer the most likely sequence of states that correspond. We can also estimate the probabilities of one state transitioning to another. For example, we can determine the probability of transitioning from raining on one day to sunny on the next. Additionally, we can determine the probability of each state emitting a specific observation. For example, the probability that I shop given the weather is in the a sunny state.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Applying-Hidden-Markov-Model-to-Baseball-to-Make-Smarter-Decisions">Applying Hidden Markov Model to Baseball to Make Smarter Decisions<a class="anchor-link" href="#Applying-Hidden-Markov-Model-to-Baseball-to-Make-Smarter-Decisions">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will extend this idea to the problem we are trying to analyze: the third time through the order penalty. I will assume that the pitcher has three states during a game: good pitching state, mediocre pitching state, and bad pitching state. The observation sequence will consist of: the pitch was a strike, the pitch was a ball, and the pitch resulted in a hit (single, double, etc.). For each pitcher, we will apply the hidden markov model to the sequence of observations (strike, ball, hit) to determine the most likely sequence of states that the pitcher was in before each pitch. From here, we can see how often the pitcher was in a good pitching state and so on. Additionally, we can recover the state transitioning probabilities and emission probabilities.</p>
+<p>As history dictates (2012 Colorado Rockies season), pulling a pitcher as soon as he finishes pitching to his 18th batter (second time through the order) in a game does not produce good results. While a majority of pitchers do suffer from TTOP, there are certain pitchers that actually perform better third time through the order. Thus, applying one strategy to all pitchers proved to be unsuccessful. One possible aid for smart decision-making during the game is to look at the state transitioning probabilities for each pitcher. If John Doe, our starting pitcher has a very low probability of transitioning out of a bad state, then we can come to a conclusion that when John starts to pitch poorly during a game, he is less likely to recover and get back into a state where he is pitching well again. Thus, especially during the third or fourth time through the order, we will take John out of the game if he starts performing poorly.</p>
+<p>If we are in the middle of the season and our starting pitchers are pitching their 13th game this week, we can take the sequence of observations for their previous 12 games and look at their state transitioning probabilities. This will help us make smarter decisions during this week's games on whether to pull them out of the game if they start to enter a bad pitching state.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Recovering-State-Sequence-and-Estimating-State-Transition-Probabilities-and-Emission-Probabilites">Recovering State Sequence and Estimating State Transition Probabilities and Emission Probabilites<a class="anchor-link" href="#Recovering-State-Sequence-and-Estimating-State-Transition-Probabilities-and-Emission-Probabilites">¶</a></h3><p>I will use the hmmlearn package in python to apply the hidden markov model to this data. I actually  experimented with other packages including Pomegranate, HMM in R, the built in HMM for Matlab, and I also wrote my own code in Python and Matlab to recover the state sequence and probabilities. I decided to use the hmmlearn package in Python because of speed and it is very easy to use. I will train our Hidden Markov Model using the entire 2013 season for a specified pitcher. For quick analysis, I will use the Hidden Markov Model to recover transition and emission probabilities for two pitchers, one who had a successful 2013 season, and one who did not have a great season: Adam Wainwright, and Jeremy Guthrie.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">stats_df</span><span class="o">.</span><span class="n">before_fip</span> <span class="o">-</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">after_fip</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+<span class="c1"># stats_df.aaname[index[0]]</span>
+
+<span class="k">def</span> <span class="nf">hidden_markov</span><span class="p">(</span><span class="n">pitcher</span><span class="p">):</span>
+    <span class="n">sql_query</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">    SELECT </span>
+<span class="s1">    X.date as date,</span>
+<span class="s1">    X.event as event,</span>
+<span class="s1">    pitch.inning as inning,</span>
+<span class="s1">    X.o as o,</span>
+<span class="s1">    X.s as o,</span>
+<span class="s1">    X.b as b, </span>
+<span class="s1">    X.s as s, </span>
+<span class="s1">    X.pitcher_name as pitcher_name,</span>
+<span class="s1">    X.batter_name as batter,</span>
+<span class="s1">    pitch.type as type,</span>
+<span class="s1">    pitch.x0 as x_location,</span>
+<span class="s1">    pitch.z0 as z_location</span>
+<span class="s1">    FROM (</span>
+<span class="s1">        SELECT *</span>
+<span class="s1">        FROM atbat</span>
+<span class="s1">        WHERE pitcher_name = ? AND (date >  '2013_03_30' AND date < '2013_09_29')</span>
+<span class="s1">    ) AS X</span>
+<span class="s1">    INNER JOIN pitch on X.gameday_link = pitch.gameday_link AND X.num = pitch.num</span>
+<span class="s1">    ORDER BY date,inning, id, o ASC</span>
+<span class="s1">    '''</span>
+    
+    <span class="n">player_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_query</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">conn</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">pitcher</span><span class="p">])</span>
+
+    <span class="n">stats_df</span><span class="p">[</span><span class="n">stats_df</span><span class="o">.</span><span class="n">aaname</span> <span class="o">==</span> <span class="n">pitcher</span><span class="p">][</span><span class="n">cols</span><span class="p">]</span>
+
+    <span class="n">out_plays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Groundout'</span><span class="p">,</span><span class="s1">'Strikeout'</span><span class="p">,</span><span class="s1">'Lineout'</span><span class="p">,</span><span class="s1">'Sac Bunt'</span><span class="p">,</span><span class="s1">'Pop Out'</span><span class="p">,</span>
+                                                     <span class="s1">'Flyout'</span><span class="p">,</span><span class="s1">'Sac Fly'</span><span class="p">,</span><span class="s1">'Forceout'</span><span class="p">,</span>
+                                                     <span class="s1">'Runner Out'</span><span class="p">,</span><span class="s1">'Fielders Choice Out'</span><span class="p">,</span><span class="s1">'Bunt Groundout'</span><span class="p">,</span>
+                                                     <span class="s1">'Fielders Choice'</span><span class="p">,</span><span class="s1">'Bunt Pop Out'</span><span class="p">,</span><span class="s1">'Sac Fly'</span><span class="p">,</span>
+                                                     <span class="s1">'Bunt Lineout'</span><span class="p">,</span>
+                                                     <span class="s1">'Double Play'</span><span class="p">,</span><span class="s1">'Grounded Into DP'</span><span class="p">,</span><span class="s1">'Strikeout - DP'</span><span class="p">,</span>
+                                                     <span class="s1">'Sac Fly DP'</span><span class="p">,</span><span class="s1">'Sacrifice Bunt DP'</span><span class="p">,</span> 
+                                                     <span class="s1">'Triple Play'</span>
+                                                    <span class="p">]</span>
+    <span class="n">observations</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">player_df</span><span class="o">.</span><span class="n">type</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">player_df</span><span class="o">.</span><span class="n">type</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'X'</span>
+                    <span class="k">else</span> <span class="s1">'S'</span> <span class="k">if</span> <span class="p">((</span><span class="n">player_df</span><span class="o">.</span><span class="n">event</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">out_plays</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">player_df</span><span class="o">.</span><span class="n">type</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'X'</span><span class="p">))</span>
+                    <span class="k">else</span> <span class="s1">'X'</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">player_df</span><span class="p">))</span>
+                   <span class="p">]</span>
+
+    <span class="n">observations</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">type</span>
+    <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">observations</span><span class="p">)</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">observations</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">d</span><span class="p">])</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">player_df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+    <span class="n">hmm</span> <span class="o">=</span> <span class="n">MultinomialHMM</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">)</span>
+    <span class="n">hmm</span><span class="o">.</span><span class="n">startprob_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">4.</span><span class="p">])</span>
+    <span class="n">hmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">lengths</span><span class="p">)</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="n">hmm</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">lengths</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">hmm</span><span class="p">,</span> <span class="n">pitcher</span> <span class="o">+</span> <span class="s2">".pkl"</span><span class="p">)</span> <span class="c1"># Save Model</span>
+    
+    <span class="n">hmmdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'states'</span><span class="p">:</span><span class="n">states</span><span class="p">,</span>
+                          <span class="s1">'event'</span><span class="p">:</span><span class="n">player_df</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                          <span class="s1">'date'</span><span class="p">:</span><span class="n">player_df</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+                          <span class="s1">'batter'</span><span class="p">:</span><span class="n">player_df</span><span class="o">.</span><span class="n">batter</span><span class="p">,</span> 
+                          <span class="s1">'event'</span><span class="p">:</span><span class="n">player_df</span><span class="o">.</span><span class="n">event</span><span class="p">,</span>
+                          <span class="s1">'inning'</span><span class="p">:</span> <span class="n">player_df</span><span class="o">.</span><span class="n">inning</span>
+                         <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">player_df</span><span class="p">,</span> <span class="n">hmmdf</span><span class="p">,</span> <span class="n">hmm</span><span class="o">.</span><span class="n">transmat_</span><span class="p">,</span> <span class="n">hmm</span><span class="o">.</span><span class="n">emissionprob_</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_plot</span><span class="p">(</span><span class="n">Pitcher</span><span class="p">):</span>
+    <span class="n">player_df</span><span class="p">,</span> <span class="n">hmmdf</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">hidden_markov</span><span class="p">(</span><span class="n">Pitcher</span><span class="p">)</span>
+    <span class="n">df_A</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'State 0'</span><span class="p">,</span> <span class="s1">'State 1'</span><span class="p">,</span> <span class="s1">'State 2'</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">df_A</span><span class="p">[</span><span class="s1">'States'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'State 0'</span><span class="p">,</span> <span class="s1">'State 1'</span><span class="p">,</span> <span class="s1">'State 2'</span><span class="p">]</span>
+    <span class="n">df_A</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'States'</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">table1</span> <span class="o">=</span> <span class="n">FF</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">df_A</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">index_title</span> <span class="o">=</span> <span class="s1">'Transition Matrix'</span><span class="p">)</span>
+<span class="c1">#     plotly.offline.iplot(table1)</span>
+    <span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">table1</span><span class="p">)</span>
+    
+    <span class="n">df_b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Ball'</span><span class="p">,</span> <span class="s1">'Strike'</span><span class="p">,</span> <span class="s1">'Hit'</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">df_b</span><span class="p">[</span><span class="s1">'States'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'State 0'</span><span class="p">,</span> <span class="s1">'State 1'</span><span class="p">,</span> <span class="s1">'State 2'</span><span class="p">]</span>
+    <span class="n">df_b</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'States'</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">table2</span> <span class="o">=</span> <span class="n">FF</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">df_b</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">index_title</span> <span class="o">=</span> <span class="s1">'Emission Matrix'</span><span class="p">)</span>
+<span class="c1">#     plotly.offline.iplot(table2)</span>
+    <span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+    
+    
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">button</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'visible'</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'All'</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">'restyle'</span><span class="p">))</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Scatter</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">get_game</span><span class="p">(</span><span class="n">hmmdf</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_game</span><span class="p">(</span><span class="n">hmmdf</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">states</span><span class="p">,</span>
+                   <span class="n">name</span> <span class="o">=</span> <span class="s1">'Game'</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">show</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">==</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'visible'</span><span class="p">,</span> <span class="n">show</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="s1">'Game'</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                           <span class="n">method</span> <span class="o">=</span> <span class="s1">'restyle'</span><span class="p">))</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s1">'States Chain'</span><span class="p">,</span>
+        <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'Pitch'</span><span class="p">),</span>
+        <span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'State'</span><span class="p">),</span>
+        <span class="n">updatemenus</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span>
+                <span class="nb">dict</span><span class="p">(</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span>
+                    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">yanchor</span> <span class="o">=</span> <span class="s1">'top'</span><span class="p">,</span>
+                    <span class="n">buttons</span> <span class="o">=</span> <span class="n">button</span>  
+                <span class="p">)</span>
+            <span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">)</span>
+<span class="c1">#     plotly.offline.iplot(fig)</span>
+    <span class="k">return</span> <span class="n">table1</span><span class="p">,</span> <span class="n">table2</span><span class="p">,</span> <span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Decisions-Decisions">Decisions Decisions<a class="anchor-link" href="#Decisions-Decisions">¶</a></h2><p>Below are the tables of the transition and emission matrices for Adam Wainwright and Jeremy Guthrie. For the transition matrix, we can view current state by row and the next state is by column. For example, the probability of Adam Wainwright transitioning from State 0 to State 1 is 61.18%. For the emission matrix, the values represent the probability of emitting the indicated column being in each state. For example, if Adam Wainwright is currently in state 0, he has a 60.5% chance of throwing a ball, and a 16.3% chance of giving up a hit.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Adam-Wainwright">Adam Wainwright<a class="anchor-link" href="#Adam-Wainwright">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">table1</span><span class="p">,</span> <span class="n">table2</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">get_plot</span><span class="p">(</span><span class="s1">'Adam Wainwright'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="170px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/192.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">table1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="170px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/194.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice that the states here are by number opposed to the assumption we made earlier: good, mediocre, bad. Because the model is a mathematical model, the states had to be encoded to recover the probabilities and sequence of states. However, from the tables, we can infer which state is the bad state, medicore state, and good state.</p>
+<p>First notice Wainwright's emission matrix, if he is in state 0, he has a 60.5% chance of throwing a ball, which is the highest of all the states. Thus, this state is the medicore state. Next, notice if he is in state 1, he is 68.78% likely to throw a strike, which is the highest percentage of all states; state 1 will be our good state. Finally, if he is  in state 2, he is 58.89% likely to give up a hit, the highest probability of all states so state 2 will be our bad state. So we have established for Wainwright that :</p>
+<p>State 2 = Bad State</p>
+<p>State 0 = Mediocre State</p>
+<p>State 1 = Good State</p>
+<p>Next, observe his transition matrix. When he is in his bad state (state 2), he has a 0% chance of self-transitioning to state 0. Instead, he is most likely to transition to state 1 (56.03%), which is his good state.  When he is in his medicore state, he also has the highest probability of transitioning to state 1, his good state with 61.18% probability. This tells us that when he goes into a bad or mediocre state during a game, he is most likley to leave that state and is likely to go back into his good state.</p>
+<p>Below are the plots of the Markov Chains, the sequence of states for each game in the season. Feel free to use the drop down menu to navigate to any individual game to see the sequence of states for the pitcher.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/196.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Jeremy-Guthrie">Jeremy Guthrie<a class="anchor-link" href="#Jeremy-Guthrie">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">table1</span><span class="p">,</span> <span class="n">table2</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">get_plot</span><span class="p">(</span><span class="s1">'Jeremy Guthrie'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="170px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/202.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">table1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="170px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/204.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we do the same analysis for Jeremy Guthrie, we can conclude that his corresponding states are:</p>
+<p>State 2 = Bad State</p>
+<p>State 0 = Mediocre State</p>
+<p>State 1 = Good State</p>
+<p>Looking at his transition matrix, we can see that when Guthrie is in his bad state (state 2), he has a 17.69% chance of returning to his bad state. The biggest difference between Guthrie and Weinwright is that when he is in either a good state or mediocre state, he has the highest probability to transition back into his bad state. In fact, when Guthrie is in his good state, he only has a 17.8% chance of staying in his good state. Additionally, unlike Weinwright who has 0% chance of staying in his bad state, Guthrie still has a 17.69% chance of staying in his bad state. We can see the distinction between these two pitchers in terms of their transition and emission matrices.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/206.embed" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><p>We can see from running the HMM on Adam Wainwright and Jeremy Guthrie that there is a distinction on their transitioning and emission matrices. Adam Wainwright had transitioning probabilites that favored going back into his good state. Jeremy Guthrie matrices did not establish the same feature. We see from Guthrie's transitioning matrix that he can struggle and transition to his bad state often. The differences between their HMM results can be an explantion for their season results. Wainwright had a 2.55 FIP and 2.94 ERA (Earned Run Average) while Guthrie had a 4.79 FIP and 4.04 ERA in 2013 .</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="More-Analysis:">More Analysis:<a class="anchor-link" href="#More-Analysis:">¶</a></h2><p>I will do more analysis soon. We still need to look at more pitchers to see if their transitioning and emission matrices provide indication of their season results. As time permits, I will do more comparisons and produce more charts to show results. I am actually excited about these results as it shows promise in a method to aid smarter decisions during the game. I am actually interested in extending this analysis to relievers to measure their effectiveness.</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
   </div>
   <div class="tag-cloud">
     <p>
