@@ -165,7 +165,7 @@
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [43]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_boston</span>
@@ -226,7 +226,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
@@ -307,7 +307,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">E</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">lam</span><span class="p">):</span>
@@ -323,7 +323,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">approx</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
@@ -335,24 +335,27 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [34]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">ridge_gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">lam</span><span class="p">):</span>
     <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
     <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">10000</span>
     <span class="n">E_new</span> <span class="o">=</span> <span class="p">[]</span>
+    
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
         <span class="n">E_old</span> <span class="o">=</span> <span class="n">E</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta</span><span class="p">)):</span>
-                    
+        <span class="n">new_beta</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">beta</span><span class="p">)):</span>        
             <span class="n">grad_alpha</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">beta</span><span class="p">))</span>
             <span class="n">grad_beta</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">beta</span><span class="p">))</span> <span class="o">*</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
-    
-            <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_beta</span>
+            <span class="n">new_beta</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_beta</span>
+            
         <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_alpha</span>
-<span class="c1">#         E_new = E(X, y, alpha, beta, lam)</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="n">new_beta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">E_new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">lam</span><span class="p">))</span>
+        
         <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">E_old</span> <span class="o">-</span> <span class="n">E_new</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o"><</span> <span class="mf">1e-5</span><span class="p">:</span>
             <span class="k">print</span> <span class="s1">'iteration: '</span><span class="p">,</span> <span class="n">i</span>
             <span class="k">break</span>
@@ -365,7 +368,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [35]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -381,7 +384,7 @@ where $\eta$ is the learning rate of the descent</p>
 <div class="output">
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>iteration:  3032
+<pre>iteration:  3381
 </pre>
 </div>
 </div>
@@ -390,7 +393,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [36]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">alpha</span>
@@ -400,9 +403,9 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[36]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>28.49951422421243</pre>
+<pre>28.475268188072143</pre>
 </div>
 </div>
 </div>
@@ -410,7 +413,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [37]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">beta</span>
@@ -420,13 +423,13 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ -5.59242568e+00,   2.03416956e+01,  -5.91858062e+00,
-         3.12994788e-01,  -1.13987685e-02,   3.59101705e+00,
-        -8.00988747e+00,  -1.44749801e+00,   1.49396985e+00,
-        -1.48264899e+01,  -4.89212948e+00,   8.41809286e+00,
-        -2.30274683e+01])</pre>
+<pre>array([ -5.59594165e+00,   2.03470300e+01,  -5.92076018e+00,
+         3.13360437e-01,  -1.12404872e-02,   3.59673948e+00,
+        -8.00014375e+00,  -1.44831674e+00,   1.49694953e+00,
+        -1.48060744e+01,  -4.89348630e+00,   8.43209562e+00,
+        -2.30469348e+01])</pre>
 </div>
 </div>
 </div>
@@ -434,7 +437,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [38]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">E</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
@@ -444,9 +447,9 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>30603.651496179838</pre>
+<pre>30603.651781551976</pre>
 </div>
 </div>
 </div>
@@ -454,7 +457,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [47]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
@@ -475,9 +478,9 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[47]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/214.embed" style="border:none;" width="100%"></iframe>
+<iframe height="525px" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~ttran0/220.embed" style="border:none;" width="100%"></iframe>
 </div>
 </div>
 </div>
@@ -512,7 +515,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [22]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">ridge_model</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -530,7 +533,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">alpha_r</span>
@@ -540,7 +543,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>28.506452621239482</pre>
 </div>
@@ -550,7 +553,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">beta_r</span>
@@ -560,7 +563,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>array([ -5.60378835e+00,   2.03384767e+01,  -5.92328692e+00,
          3.13700771e-01,  -1.14427211e-02,   3.59527073e+00,
@@ -574,7 +577,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [25]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">E</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha_r</span><span class="p">,</span> <span class="n">beta_r</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -584,7 +587,7 @@ where $\eta$ is the learning rate of the descent</p>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>30603.649105510798</pre>
 </div>
