@@ -22,11 +22,11 @@
 
 
 <meta name="author" content="Truong Tran" />
-<meta name="description" content="" />
+<meta name="description" content="In my last notebook, I used a multilayer perceptron network (MLP) for classification using the MNIST dataset. For this notebook, I will apply a Convolutional Neural Network to the same dataset and see how this network performs| compared to the MLP." />
 <meta name="keywords" content="python">
 <meta property="og:site_name" content="Truong's Website"/>
 <meta property="og:title" content="Convolutional Neural Network with Tensorflow + GPU"/>
-<meta property="og:description" content=""/>
+<meta property="og:description" content="In my last notebook, I used a multilayer perceptron network (MLP) for classification using the MNIST dataset. For this notebook, I will apply a Convolutional Neural Network to the same dataset and see how this network performs| compared to the MLP."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://ttran0.github.io/CNN-Tensorflow.html"/>
 <meta property="og:type" content="article"/>
@@ -1065,6 +1065,15 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In my last notebook, I used a multilayer perceptron network (MLP) for classification using the MNIST dataset. For this notebook, I will apply a Convolutional Neural Network to the same dataset and see how this network performs| compared to the MLP.</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
@@ -1132,15 +1141,6 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <pre>(10, 784)</pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In my last notebook, I used a multilayer perceptron network (MLP) for classification using the MNIST dataset. For this notebook, I will apply a Convolutional Neural Network to the same dataset and see how this network performs| compared to the MLP.</p>
 </div>
 </div>
 </div>
@@ -1367,6 +1367,13 @@ $$<p>and we apply this filter matrix to the image with a stride of 1.</p>
 <p><strong> Pooling Layer </strong>:
 The pooling layer is a way to do non-linear down sampling. Max pooling is the most common type of pooling. The max pooling layer partitions the input matrix into non-overlapping sub-regions in a defined number of strides and computes the max of the sub-region and stores the max into a result matrix. An example of max pooling with stride = 2:</p>
 <p><img alt="title" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png" /></p>
+<p>Sources of images:</p>
+<ul>
+<li><p><a href="http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution">http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution</a></p>
+</li>
+<li><p><a href="http://cs231n.github.io/convolutional-networks/">http://cs231n.github.io/convolutional-networks/</a></p>
+</li>
+</ul>
 <p>Both the convolution and pooling layers are ways to not only detect distinctive features in our classes, but they also eliminate the number of parameters in our model. This is a huge deal because using a traditional neural network for image classification can be very costly in terms of the number of parameters required.</p>
 <p><strong> Fun fact:</strong> The structure of a convolutional neural network is motivated by the animal visual cortex.</p>
 </div>

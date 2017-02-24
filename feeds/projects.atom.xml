@@ -971,6 +971,15 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In my last notebook, I used a multilayer perceptron network (MLP) for classification using the MNIST dataset. For this notebook, I will apply a Convolutional Neural Network to the same dataset and see how this network performs| compared to the MLP.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
@@ -1038,15 +1047,6 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 &lt;pre&gt;(10, 784)&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In my last notebook, I used a multilayer perceptron network (MLP) for classification using the MNIST dataset. For this notebook, I will apply a Convolutional Neural Network to the same dataset and see how this network performs| compared to the MLP.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1273,6 +1273,13 @@ $$&lt;p&gt;and we apply this filter matrix to the image with a stride of 1.&lt;/
 &lt;p&gt;&lt;strong&gt; Pooling Layer &lt;/strong&gt;:
 The pooling layer is a way to do non-linear down sampling. Max pooling is the most common type of pooling. The max pooling layer partitions the input matrix into non-overlapping sub-regions in a defined number of strides and computes the max of the sub-region and stores the max into a result matrix. An example of max pooling with stride = 2:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="title" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Sources of images:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution"&gt;http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://cs231n.github.io/convolutional-networks/"&gt;http://cs231n.github.io/convolutional-networks/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Both the convolution and pooling layers are ways to not only detect distinctive features in our classes, but they also eliminate the number of parameters in our model. This is a huge deal because using a traditional neural network for image classification can be very costly in terms of the number of parameters required.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; Fun fact:&lt;/strong&gt; The structure of a convolutional neural network is motivated by the animal visual cortex.&lt;/p&gt;
 &lt;/div&gt;
