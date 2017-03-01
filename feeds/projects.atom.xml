@@ -14589,6 +14589,18 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Background-information"&gt;Background information&lt;a class="anchor-link" href="#Background-information"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;With the support of the Institutional Research Department at Long Beach City College, I was given 10 years of college wide student data to provide them with any insights.  For the purpose of privacy, the data will not be displayed in this notebook. However, I can provide desciptions and the variables that are being used along with results from the analysis. The data was given to me in three tables, enrollment, miscellaneous, and awards.&lt;/p&gt;
+&lt;p&gt;The topic that interests me about education data is determining patterns to improve the retention and persistance rates. Retention and persistance is one of, if not the most, important topics in higher education.&lt;/p&gt;
+&lt;p&gt;After doing some research and speaking with a few people in education, many institutions use the probation rule to flag students as "at risk"; the student is on probation if he/she has a gpa of 2.0 or less. Once a student is on probation, the college reaches out to the student to offer early intervention and provide the students with additional resources to improve their academics. The detailed policy for Long Beach City College can be found from this link :  &lt;a href="http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf"&gt;http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The goal of my analysis is use machine learning models to further improve the "at risk" flagging system that many institutions use today. If schools can have a better basis and understanding of which students are more likely to be at risk, they can effectively allocate resources and help many more students persist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [79]:&lt;/div&gt;
@@ -14620,18 +14632,6 @@ h6:hover .anchor-link {
  u'width': 1300}&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Background-information"&gt;Background information&lt;a class="anchor-link" href="#Background-information"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;With the support of the Institutional Research Department at Long Beach City College, I was given 10 years of college wide student data to provide them with any insights.  For the purpose of privacy, the data will not be displayed in this notebook. However, I can provide desciptions and the variables that are being used along with results from the analysis. The data was given to me in three tables, enrollment, miscellaneous, and awards.&lt;/p&gt;
-&lt;p&gt;The topic that interests me about education data is determining patterns to improve the retention and persistance rates. Retention and persistance is one of, if not the most, important topics in higher education.&lt;/p&gt;
-&lt;p&gt;After doing some research and speaking with a few people in education, many institutions use the probation rule to flag students as "at risk"; the student is on probation if he/she has a gpa of 2.0 or less. Once a student is on probation, the college reaches out to the student to offer early intervention and provide the students with additional resources to improve their academics. The detailed policy for Long Beach City College can be found from this link :  &lt;a href="http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf"&gt;http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The goal of my analysis is use machine learning models to further improve the "at risk" flagging system that many institutions use today. If schools can have a better basis and understanding of which students are more likely to be at risk, they can effectively allocate resources and help many more students persist.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -24505,7 +24505,7 @@ GN9YgDHG+MYCjDHGN/8Pe+s95dEcN4QAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Neural-Network"&gt;Neural Network&lt;a class="anchor-link" href="#Neural-Network"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="&amp;lt;a href=" http: scikit-learn.org stable _images multilayerperceptron_network.png"&gt;http://scikit-learn.org/stable/_images/multilayerperceptron_network.png&lt;/a&gt;", width = 320, height = 320&gt;&lt;/p&gt;
+&lt;h2 id="Neural-Network---Multilayer-Perceptron"&gt;Neural Network - Multilayer Perceptron&lt;a class="anchor-link" href="#Neural-Network---Multilayer-Perceptron"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img alt="title" src="http://docs.opencv.org/2.4/_images/mlp.png" /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -24515,7 +24515,7 @@ GN9YgDHG+MYCjDHGN/8Pe+s95dEcN4QAAAAASUVORK5CYII=
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;nn_model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MLPClassifier&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'hidden_layer_sizes'&lt;/span&gt;&lt;span class="p"&gt;:[(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)],&lt;/span&gt;&lt;span class="s1"&gt;'alpha'&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="mf"&gt;0.0001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'activation'&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="s1"&gt;'tanh'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'relu'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'hidden_layer_sizes'&lt;/span&gt;&lt;span class="p"&gt;:[(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;,)],&lt;/span&gt;&lt;span class="s1"&gt;'alpha'&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="mf"&gt;0.0001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'activation'&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="s1"&gt;'tanh'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'relu'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
          &lt;span class="s1"&gt;'learning_rate'&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="s1"&gt;'adaptive'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'constant'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;'max_iter'&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;]}&lt;/span&gt;
 &lt;span class="n"&gt;gs_nn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;GridSearchCV&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nn_model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;gs_nn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

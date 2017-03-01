@@ -22,11 +22,11 @@
 
 
 <meta name="author" content="Truong Tran" />
-<meta name="description" content="" />
+<meta name="description" content="Background information¶With the support of the Institutional Research Department at Long Beach City College, I was given 10 years of college wide student data to provide them with any insights. For the purpose of privacy, the data will not be displayed in this notebook. However, I can provide desciptions and the variables that are being used along with results from the analysis. The data was given to me in three tables, enrollment, miscellaneous, and awards." />
 <meta name="keywords" content="python">
 <meta property="og:site_name" content="Truong's Website"/>
 <meta property="og:title" content="Long Beach City College Retention Analysis"/>
-<meta property="og:description" content=""/>
+<meta property="og:description" content="Background information¶With the support of the Institutional Research Department at Long Beach City College, I was given 10 years of college wide student data to provide them with any insights. For the purpose of privacy, the data will not be displayed in this notebook. However, I can provide desciptions and the variables that are being used along with results from the analysis. The data was given to me in three tables, enrollment, miscellaneous, and awards."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://ttran0.github.io/Retention Analysis.html"/>
 <meta property="og:type" content="article"/>
@@ -1065,6 +1065,18 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Background-information">Background information<a class="anchor-link" href="#Background-information">¶</a></h2><p>With the support of the Institutional Research Department at Long Beach City College, I was given 10 years of college wide student data to provide them with any insights.  For the purpose of privacy, the data will not be displayed in this notebook. However, I can provide desciptions and the variables that are being used along with results from the analysis. The data was given to me in three tables, enrollment, miscellaneous, and awards.</p>
+<p>The topic that interests me about education data is determining patterns to improve the retention and persistance rates. Retention and persistance is one of, if not the most, important topics in higher education.</p>
+<p>After doing some research and speaking with a few people in education, many institutions use the probation rule to flag students as "at risk"; the student is on probation if he/she has a gpa of 2.0 or less. Once a student is on probation, the college reaches out to the student to offer early intervention and provide the students with additional resources to improve their academics. The detailed policy for Long Beach City College can be found from this link :  <a href="http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf">http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf</a></p>
+<p>The goal of my analysis is use machine learning models to further improve the "at risk" flagging system that many institutions use today. If schools can have a better basis and understanding of which students are more likely to be at risk, they can effectively allocate resources and help many more students persist.</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [79]:</div>
@@ -1096,18 +1108,6 @@ h6:hover .anchor-link {
  u'width': 1300}</pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Background-information">Background information<a class="anchor-link" href="#Background-information">¶</a></h2><p>With the support of the Institutional Research Department at Long Beach City College, I was given 10 years of college wide student data to provide them with any insights.  For the purpose of privacy, the data will not be displayed in this notebook. However, I can provide desciptions and the variables that are being used along with results from the analysis. The data was given to me in three tables, enrollment, miscellaneous, and awards.</p>
-<p>The topic that interests me about education data is determining patterns to improve the retention and persistance rates. Retention and persistance is one of, if not the most, important topics in higher education.</p>
-<p>After doing some research and speaking with a few people in education, many institutions use the probation rule to flag students as "at risk"; the student is on probation if he/she has a gpa of 2.0 or less. Once a student is on probation, the college reaches out to the student to offer early intervention and provide the students with additional resources to improve their academics. The detailed policy for Long Beach City College can be found from this link :  <a href="http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf">http://www.lbcc.edu/Admissions/documents/Probation%20and%20Dismissal%20FAQS.pdf</a></p>
-<p>The goal of my analysis is use machine learning models to further improve the "at risk" flagging system that many institutions use today. If schools can have a better basis and understanding of which students are more likely to be at risk, they can effectively allocate resources and help many more students persist.</p>
 </div>
 </div>
 </div>
@@ -10981,7 +10981,7 @@ GN9YgDHG+MYCjDHGN/8Pe+s95dEcN4QAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Neural-Network">Neural Network<a class="anchor-link" href="#Neural-Network">¶</a></h2><p><img src="&lt;a href=" http: scikit-learn.org stable _images multilayerperceptron_network.png">http://scikit-learn.org/stable/_images/multilayerperceptron_network.png</a>", width = 320, height = 320></p>
+<h2 id="Neural-Network---Multilayer-Perceptron">Neural Network - Multilayer Perceptron<a class="anchor-link" href="#Neural-Network---Multilayer-Perceptron">¶</a></h2><p><img alt="title" src="http://docs.opencv.org/2.4/_images/mlp.png" /></p>
 </div>
 </div>
 </div>
@@ -10991,7 +10991,7 @@ GN9YgDHG+MYCjDHGN/8Pe+s95dEcN4QAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">nn_model</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">()</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'hidden_layer_sizes'</span><span class="p">:[(</span><span class="mi">100</span><span class="p">,),</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span><span class="s1">'alpha'</span><span class="p">:[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="s1">'activation'</span><span class="p">:[</span><span class="s1">'tanh'</span><span class="p">,</span> <span class="s1">'relu'</span><span class="p">],</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'hidden_layer_sizes'</span><span class="p">:[(</span><span class="mi">100</span><span class="p">,),</span> <span class="p">(</span><span class="mi">150</span><span class="p">,)],</span><span class="s1">'alpha'</span><span class="p">:[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="s1">'activation'</span><span class="p">:[</span><span class="s1">'tanh'</span><span class="p">,</span> <span class="s1">'relu'</span><span class="p">],</span>
          <span class="s1">'learning_rate'</span><span class="p">:[</span><span class="s1">'adaptive'</span><span class="p">,</span><span class="s1">'constant'</span><span class="p">],</span> <span class="s1">'max_iter'</span><span class="p">:[</span><span class="mi">500</span><span class="p">]}</span>
 <span class="n">gs_nn</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">nn_model</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
 <span class="n">gs_nn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
