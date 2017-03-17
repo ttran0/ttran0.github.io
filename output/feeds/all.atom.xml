@@ -20797,43 +20797,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Students attend community college for many reasons. Since this analysis is focused on students who intend to get their transfer degrees, and/or associate degrees. I will subset this data based on education goals. After looking through the awards table, the following were the most frequent education goals stated on the applications of students that finished and earned their degrees.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [91]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edgoaldes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[91]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;array(['Undecided on Goal', 'Obtain a vocational degree without transfer',
-       "Obtain a bachelor's degree after completing an associate degree",
-       'Improve basic skills in English, reading, writing or mathematics',
-       'Learn English (English as a second language classes-ESL)',
-       'Prepare for a new career (acquire job skills)',
-       'Goal is not listed above',
-       "Obtain a bachelor's degree without completing associate degree",
-       'Discover/formulate career interests, plans, goals', 'nan',
-       'Maintain a certificate or license (nursing, real estate etc)',
-       'Obtain an associate degree without transfer',
-       'Advance in current job/career (update job skills)',
-       'Educational Development (personal enrichment)',
-       'Activity or performance class only (i.e. P.E., Drama, Chorus) etc.',
-       'Obtain a vocational certificate without transfer',
-       "Obtain a bachelor's degree after completing a vocational degree",
-       'Complete Credits for a high school diploma or GED',
-       '4Yrs College-Meet College Requirements'], dtype=object)&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;p&gt;Students attend community college for many reasons. I will filter the dataset and remove students who indicate that they are enrolled just for activity, learning a specific trade/class, or just to improve a specific skill through one or two courses. Thus, I will subset this data of students who indicated that they want to attain a certificate or degree, and also students who were undcided on their goals.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
