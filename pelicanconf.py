@@ -40,6 +40,7 @@ DEFAULT_PAGINATION = 10
 SITELOGO = 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg'
 MARKUP = ('md', 'ipynb')
 THEME = './Flex'
+JINJA_ENVIRONMENT = {}
 MAIN_MENU = True
 DISPLAY_PAGES_ON_MENU = True
 PLUGIN_PATH = './plugins'
