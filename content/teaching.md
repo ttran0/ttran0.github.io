@@ -15,29 +15,3 @@ In addition to promoting curiosity, I practice my philosophy by establishing the
 
 
 The courses I have taught are: Algebra, Business Calculus, Calculus I, Calculus II, Applied Mathematics/Differential Equations, Introduction to Java Programming, and Numerical Methods.
-
-
-I have attached all of my instructor evaluations below:
-
-
-[Intermediate Algebra - Fall 13]({filename}/pdfs/MAPB7_F13.pdf)
-<br></br>
-[Calculus II - Spring 14]({filename}/pdfs/Math123_S14.pdf)
-<br></br>
-[Calculus II - Fall 14]({filename}/pdfs/Math123_F14.pdf)
-<br></br>
-[Calculus II - Fall 15]({filename}/pdfs/Math123_F15.pdf)
-<br></br>
-[Calculus II - Spring 15]({filename}/pdfs/Math123_S15.pdf)
-<br></br>
-[Calculus I - Spring 16]({filename}/pdfs/Math122_S16.pdf)
-<br></br>
-[Introduction to Java Programming and Problem Solving - Spring 16]({filename}/pdfs/Cecs174_S16.pdf)
-<br></br>
-[Numerical Methods - Spring 16]({filename}/pdfs/Cecs271_S16.pdf)
-<br></br>
-[Calculus I - Fall 16]({filename}/pdfs/Math122_F16.pdf)
-<br></br>
-[Numerical Methods - Spring 16]({filename}/pdfs/Cecs271_F16.pdf)
-<br></br>
-[Math 370A Applied Math/Differential Equations]({filename}/pdfs/Math370_F16.pdf)
