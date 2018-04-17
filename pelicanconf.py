@@ -37,8 +37,8 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
-# SITELOGO = 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlNAAAAJDUwZmRlZmQ1LWRkYmMtNDA0OC1hMzVkLTQ0NmEzN2E4MjI4MA.jpg'
-SITELOGO = 'sitelogo.png'
+SITELOGO = 'https://media.licdn.com/dms/image/C5103AQE-KW5gH0banw/profile-displayphoto-shrink_200_200/0?e=1529121600&v=beta&t=t7WWD9umuS0wPmwZbYJQBMajMvCBZHHWEbQuy67A_1M.jpg'
+# SITELOGO = 'sitelogo.png'
 MARKUP = ('md', 'ipynb')
 THEME = './Flex'
 JINJA_ENVIRONMENT = {}
